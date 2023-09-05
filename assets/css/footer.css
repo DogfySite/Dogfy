@@ -34,7 +34,7 @@ footer {
     text-decoration: underline;
 }
 
-.footer-columns ul a:visited{
+.footer-columns ul a:visited, a:link{
     color: #262626;
 }
 

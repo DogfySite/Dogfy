@@ -55,12 +55,13 @@ button:hover {
     background-color: #555;
 }
 
-button a:visited{
+button a:visited, a:link{
     color: white;
     text-decoration: none;
 }
 
-.button-2 a:visited{
+
+.button-2 a:visited, a:link{
     color: #262626;
     text-decoration: none;    
 }
@@ -83,7 +84,7 @@ img {
 }
 
 
-@media screen and (max-width: 730px) {
+@media screen and (max-width: 1100px) {
     .content {
         flex-direction: column; 
         padding: 0px;
