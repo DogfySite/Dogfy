@@ -11,6 +11,7 @@ main {
     display: flex;
     justify-content: center;
     background-color: #fcf4ec;
+    padding: 20px;
     /* Centraliza horizontalmente */
 }
 
