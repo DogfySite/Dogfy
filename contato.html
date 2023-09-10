@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/bs/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/nav-bar.css">
-    <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/contact.css">
     <title>Dogfy</title>
@@ -57,27 +56,39 @@
     <main>
         <div class="content">
             <div class="column">
-                <img src="assets/img/home-dogs1.png" alt="Imagem de cachorros e gatinhos">
+                <img class="img-contato" src="assets/img/pngegg.png" alt="Imagem de cachorros e gatinhos">
+
+                <!-- Alerta de sucesso (inicialmente oculto) -->
+                <div id="successAlert" class="alert alert-custom" role="alert" style="display: none;">
+                    Mensagem enviada com sucesso!
+                </div>
+
             </div>
             <div class="column">
                 <div class="text-section">
-                    <h1>Entre em Contato</h1>
-                    <p>Explore o futuro conosco!</p>
-                    <p>Sinta-se a vontade para entrar em contato.</p>
+                    <h1 class="entre-em-contato">Entre em Contato</h1>
+                    <p class="entre-em-contato2">Se você tem alguma dúvida, sugestão, ou precisa de assistência sinta-se a vontade para entrar em contato!</p>
+                    <p class="entre-em-contato3">A sua opinião é muito importante para nós!</p>
                 </div>
                 <section>
                     <div class="container">
-                        <form id="contact-form">
-                            <label for="nome">Nome:</label>
-                            <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
-
-                            <label for="email">Email:</label>
-                            <input type="email" id="email" name="email" placeholder="Endereço de email" required>
-
-                            <label for="mensagem">Mensagem:</label>
-                            <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem" required style="resize: none;"></textarea>
-
-                            <button type="submit">Enviar mensagem</button>
+                            <div class="container mt-4">
+                                <form id="myForm">
+                                    <form id="contact-form">
+                                        <label for="nome">Nome:</label>
+                                        <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+            
+                                        <label for="email">Email:</label>
+                                        <input type="email" id="email" name="email" placeholder="Endereço de email" required>
+            
+                                        <label for="mensagem">Mensagem:</label>
+                                        <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem" required style="resize: none;"></textarea>
+            
+                                        <button type="submit">Enviar Mensagem</button>
+                                    
+                                </form>
+                                
+                            </div>
                         </form>
                     </div>
                 </section>
@@ -159,6 +170,27 @@
 
         </div>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        // Captura o evento de envio do formulário
+        document.getElementById("myForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Mostra o alerta de sucesso
+            document.getElementById("successAlert").style.display = "block";
+
+            //limpa o form
+            document.getElementById("myForm").reset();
+
+            // Esconde o alerta após 3 segundos
+            setTimeout(function () {
+                document.getElementById("successAlert").style.display = "none";
+            }, 3000);
+        });
+    </script>
     <script src="assets/bs/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>

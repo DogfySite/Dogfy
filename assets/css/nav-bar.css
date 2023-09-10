@@ -33,6 +33,9 @@ header {
     color: #C9A98D; 
 }
 
+.nav-link:hover {
+    text-decoration: underline;
+}
 
 .nav-list ul {
     display: flex;
@@ -66,6 +69,16 @@ header {
     font-weight: 500;
     font-size: 13px;
 }
+
+button {
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+button:hover {
+    background-color: #555;
+}
+
 
 .mobile-menu-icon {
     display: none;

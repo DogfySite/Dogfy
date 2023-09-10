@@ -23,14 +23,14 @@ body {
 }
 
 h1 {
-    font-size: 20px;
+    font-size: 35px;
     font-weight: 600;
     margin-bottom: 10px;
     color: #403E3B;
 }
 
 p {
-    font-size: 15px;
+    font-size: 20px;
     color: #262626;
 }
 
@@ -83,6 +83,13 @@ img {
     border: 1px solid;
 }
 
+.carousel-inner{
+    height: 35em;   
+}
+
+.carousel-inner > .carousel-item {
+    border-radius: 10px;
+}
 
 @media screen and (max-width: 1100px) {
     .content {

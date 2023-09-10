@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Poppins:wght@100;200;400;500&display=swap');
 
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f7f7f7;
@@ -16,11 +19,11 @@ main {
 }
 
 .content {
-    max-width: 800px;
+    max-width: 1000px;
     background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     /* Define um layout flexível para os elementos dentro da content */
 }
@@ -38,8 +41,9 @@ main {
 }
 
 
-img {
+.img-contato {
     max-width: 100%;
+    
 }
 
 form button {
@@ -48,10 +52,20 @@ form button {
     border: none;
     padding: 10px;
     cursor: pointer;
-    font-weight: bold;
     width: 100%;
     margin-top: 10px;
-    /* Adiciona espaçamento acima do botão */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.alert-custom {
+    background-color: #d2c1b2;
+    color: #fff; 
+}
+
+button:hover {
+    background-color: #555;
 }
 
 form input[type="text"],
@@ -66,11 +80,18 @@ form textarea {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
 }
 
-p2 {
-    font-size: 18px;
+.entre-em-contato {
+    font-size: 35px;
     font-weight: 600;
-    margin-bottom: 20px;
-    color: #403E3B;
+}
+
+.entre-em-contato2, .entre-em-contato3 {
+    font-size: 18px;
+    color: #262626;
+}
+
+.entre-em-contato2 {
+    margin-bottom: 5px;
 }
 
 form button:hover {
@@ -91,7 +112,43 @@ form label {
 
 label {
     margin-top: 10px;
+    margin-bottom: 10px;
     font-weight: bold;
     color: #333;
     display: block; 
+}
+
+@media screen and (max-width: 1100px) {
+    .content {
+        flex-direction: column; 
+        padding: 0px;
+        margin: 20px;
+    }
+
+    .text-section {
+        width: 100%;
+        max-width: 100%; 
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 30px; 
+    }
+
+    p {
+        font-size: 15px; 
+    }
+
+    .buttons {
+        margin-top: 10px; 
+    }
+
+    button {
+        padding: 8px 16px; 
+        font-size: 14px; 
+    }
+
+    .image-contato {
+        display: none;
+    }
 }
