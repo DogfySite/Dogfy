@@ -20,22 +20,7 @@
 
     <script src="assets/bs/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
-    <script>
-        // Carregua o header e o footer
-        document.addEventListener("DOMContentLoaded", function() {
-            fetch("header.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("header-placeholder").innerHTML = data;
-                });
-    
-            fetch("footer.html")
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById("footer-placeholder").innerHTML = data;
-                });
-        });
-    </script>
+    <script src="assets/js/hef.js"></script>
 </body>
 </body>
 
