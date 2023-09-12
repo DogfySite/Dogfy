@@ -14,133 +14,29 @@
 </head>
 
 <body>
-    <header>    
-        <nav class="nav-bar">
-            <div class="nav-container">
-                <div class="logo">
-                    <img src="assets/img/Dogfy (1).png" width="197px">
-                </div>
-                <div class="nav-list">
-                    <ul>
-                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item current"><a href="adote.html" class="nav-link">Adote</a></li>
-                        <li class="nav-item"><a href="ongs.html" class="nav-link">ONG's</a></li>
-                        <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
-                    </ul>
-                </div>
-            </div>    
+    <div id="header-placeholder"></div>
 
-            <div class="login-button">
-                <button><a href="cadastro.html">Cadastre-se</a></button>
-            </div>
-           
+    <div id="footer-placeholder"></div>
 
-            <div class="mobile-menu-icon">
-                <button onclick="menuShow()"><img class="icon" src="assets/img/menu_white_36dp.svg" alt=""></button>
-            </div>
-        </nav>
-        <div class="mobile-menu">
-            <ul>
-                <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="adote.html" class="nav-link">Adote</a></li>
-                <li class="nav-item"><a href="ongs.html" class="nav-link">ONG's</a></li>
-                <li class="nav-item"><a href="contato.html" class="nav-link">Contato</a></li>
-            </ul>
-            
-
-            <div class="login-button">
-                <button><a href="cadastro.html">Cadastre-se</a></button>
-            </div>
-        </div>
-    </header>
-
-
-    <main>
-        <h3>Página de adoção</h3><br>
-        <h3></h3><br>
-        <h3></h3><br>
-        <h3></h3><br>
-        <h3></h3><br>
-        <h3></h3><br>
-        <h3></h3><br>
-        <h3></h3><br>
-        <h3></h3><br>
-    </main>
-
-
-    <footer>
-        <div class="footer-wrapper">
-            <div class="footer-columns">
-
-                <section class="footer-logo">
-                    <h2>
-                        <img src="assets/img/Dogfy (1).png" width="300px">
-                    </h2>
-                </section>
-
-                <section>
-                    <ul>
-                        <li>
-                            <a href="index.html" title="home">Home</a>
-                        </li>
-                        <li>
-                            <a href="adote.html" title="adote">Adote</a>
-                        </li>
-                        <li>
-                            <a href="ongs.html" title="ongs">ONG's</a>
-                        </li>
-                        <li>
-                            <a href="contato.html" title="contato">Contato</a>
-                        </li>
-                       
-                    </ul>
-                </section>
-
-                <section>
-                    <ul>
-                        <li>
-                            <a href="https://www.instagram.com/dogfysite/" title="instagram">Instagram</a>
-                        </li>
-                        <li>
-                            <a href="#" title="facebook">Facebook</a>
-                        </li>
-                        <li>
-                            <a href="#" title="linkedin">LinkedIn</a>
-                        </li>
-                    </ul>
-                </section>
-
-                <section>
-                    <ul>
-                        <li>
-                            <a href="#" title="termos">Termos</a>
-                        </li>
-                        <li>
-                            <a href="#" title="privacidade">Privacidade</a>
-                        </li>
-                        <li>
-                            <a href="#" title="cookies">Cookies</a>
-                        </li>
-                        <li>
-                            <a href="#" title="licença">Licença</a>
-                        </li>
-                        <li>
-                            <a href="#" title="contato">Contato</a>
-                        </li>
-                    </ul>
-                </section>
-
-                <section class="allrights">
-                    <small>2023 © Dogfy</small> <br>
-                    <small>All rights reserved</small>
-                </section>
-            </div>
-
-                
-        </div>
-    </footer>
     <script src="assets/bs/js/bootstrap.min.js"></script>
     <script src="assets/js/script.js"></script>
+    <script>
+        // Carregua o header e o footer
+        document.addEventListener("DOMContentLoaded", function() {
+            fetch("header.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("header-placeholder").innerHTML = data;
+                });
+    
+            fetch("footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById("footer-placeholder").innerHTML = data;
+                });
+        });
+    </script>
+</body>
 </body>
 
 </html>
