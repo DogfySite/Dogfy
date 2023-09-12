@@ -91,6 +91,45 @@ img {
     border-radius: 10px;
 }
 
+.parceiros {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.parceiros h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 80px;
+}
+
+.parceiros h3{
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 12px;
+}
+
+.parceiros p {
+    font-size: 15px;
+}
+
+.parceiros p2 {
+    font-size: 13px;
+    color: gray;
+    display: block;
+    margin-top: 20px;
+}
+
+.col {
+    width: 150px;
+    height: 200px;
+    background-color: #fff; 
+    border: none; 
+    margin: 20px;
+    border-radius: 10px;
+    padding: 30px;
+    
+}
+
 @media screen and (max-width: 1100px) {
     .content {
         flex-direction: column; 
