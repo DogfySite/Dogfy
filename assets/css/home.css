@@ -19,7 +19,7 @@ body {
 
 
 .text-section {
-    flex: 1; 
+    flex: 1;
 }
 
 h1 {
@@ -48,23 +48,25 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     font-weight: 400;
-    
+
 }
 
 
-button a:visited, a:link{
+button a:visited,
+a:link {
     color: white;
     text-decoration: none;
 }
 
 
-.button-2 a:visited, a:link{
+.button-2 a:visited,
+a:link {
     color: #262626;
-    text-decoration: none;    
+    text-decoration: none;
 }
 
 .image-section {
-    flex: 1; 
+    flex: 1;
     text-align: right;
     margin: 30px;
 }
@@ -74,14 +76,14 @@ img {
     height: auto;
 }
 
-.button-2{
+.button-2 {
     background-color: #fcf4ec;
     color: #262626;
     border: 1px solid;
 }
 
-.carousel-inner{
-    height: 30em;   
+.carousel-inner {
+    height: 30em;
 }
 
 .parceiros {
@@ -95,7 +97,7 @@ img {
     margin-top: 80px;
 }
 
-.parceiros h3{
+.parceiros h3 {
     text-align: center;
     margin-bottom: 50px;
     font-size: 12px;
@@ -115,8 +117,8 @@ img {
 .col {
     width: 150px;
     height: 200px;
-    background-color: #fff; 
-    border: none; 
+    background-color: #fff;
+    border: none;
     margin: 20px;
     border-radius: 10px;
     padding: 30px;
@@ -129,8 +131,9 @@ img {
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 50px;
-    overflow: visible; /* Permite que o conteúdo ultrapasse os limites da div */
-    position: relative; 
+    overflow: visible;
+    /* Permite que o conteúdo ultrapasse os limites da div */
+    position: relative;
 }
 
 .perguntasFrequentes h1 {
@@ -138,53 +141,48 @@ img {
 }
 
 .gatinho {
-    position: absolute; 
-    top: -180px; 
-    left: -50px;
-    height: 550px; 
-    z-index: 1; 
+    height: 550px;
+    margin-top: -250px;
+
 }
 
 .duvida {
-    position: absolute;
-    bottom: 200px;
+margin-bottom: 40px;
 }
 
 @media screen and (max-width: 1100px) {
     .content {
-        flex-direction: column; 
+        flex-direction: column;
         padding: 0px;
         margin: 40px;
     }
 
     .text-section {
         width: 100%;
-        max-width: 100%; 
+        max-width: 100%;
         margin-bottom: 10px;
     }
 
     h1 {
-        font-size: 30px; 
+        font-size: 30px;
     }
 
     p {
-        font-size: 15px; 
+        font-size: 15px;
     }
 
     .buttons {
-        margin-top: 10px; 
+        margin-top: 10px;
     }
 
     button {
-        padding: 8px 16px; 
-        font-size: 14px; 
+        padding: 8px 16px;
+        font-size: 14px;
     }
 
     .image-section {
         width: 100%;
-        max-width: 100%; 
-        text-align: center; 
+        max-width: 100%;
+        text-align: center;
     }
 }
-
-
