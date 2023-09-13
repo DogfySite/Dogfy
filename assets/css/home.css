@@ -81,7 +81,7 @@ img {
 }
 
 .carousel-inner{
-    height: 35em;   
+    height: 25em;   
 }
 
 .carousel-inner > .carousel-item {
@@ -128,7 +128,7 @@ img {
 }
 .perguntasFrequentes {
     background-color: white;
-    margin: 150px;
+    margin: 150px 0px 40px 0px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 50px;
