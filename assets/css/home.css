@@ -81,11 +81,7 @@ img {
 }
 
 .carousel-inner{
-    height: 25em;   
-}
-
-.carousel-inner > .carousel-item {
-    border-radius: 10px;
+    height: 30em;   
 }
 
 .parceiros {
@@ -126,6 +122,7 @@ img {
     padding: 30px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 }
+
 .perguntasFrequentes {
     background-color: white;
     margin: 150px 0px 40px 0px;
