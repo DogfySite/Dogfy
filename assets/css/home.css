@@ -128,18 +128,30 @@ img {
 }
 .perguntasFrequentes {
     background-color: white;
-    margin: 50px;
+    margin: 150px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     padding: 50px;
+    overflow: visible; /* Permite que o conteúdo ultrapasse os limites da div */
+    position: relative; 
 }
 
 .perguntasFrequentes h1 {
     margin-bottom: 20px;
 }
 
+.gatinho {
+    position: absolute; 
+    top: -180px; 
+    left: -50px;
+    height: 550px; 
+    z-index: 1; 
+}
 
-
+.duvida {
+    position: absolute;
+    bottom: 370px;
+}
 
 @media screen and (max-width: 1100px) {
     .content {
