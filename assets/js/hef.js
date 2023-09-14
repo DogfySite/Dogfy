@@ -12,3 +12,5 @@
                 document.getElementById("footer-placeholder").innerHTML = data;
             });
     });
+
+    
