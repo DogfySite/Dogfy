@@ -87,8 +87,8 @@ img {
 }
 
 .parceiros {
-    margin-left: 100px;
-    margin-right: 100px;
+    margin: auto 100px;
+    padding-bottom: 50px;
 }
 
 .parceiros h1 {
@@ -141,13 +141,18 @@ img {
 }
 
 .gatinho {
-    height: 550px;
+    max-height: 550px;
     margin-top: -250px;
 
 }
 
 .duvida {
-margin-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.transparent {
+    all:none;
+    background: transparent;
 }
 
 @media screen and (max-width: 1100px) {
@@ -155,6 +160,10 @@ margin-bottom: 40px;
         flex-direction: column;
         padding: 0px;
         margin: 40px;
+    }
+
+    .parceiros {
+        margin: auto 20px;
     }
 
     .text-section {
@@ -173,11 +182,19 @@ margin-bottom: 40px;
 
     .buttons {
         margin-top: 10px;
+        gap: 10px;
+        display: flex;
+        flex-direction: column;
     }
 
     button {
         padding: 8px 16px;
         font-size: 14px;
+    }
+
+
+    .buttons button {
+        width: 100%;
     }
 
     .image-section {

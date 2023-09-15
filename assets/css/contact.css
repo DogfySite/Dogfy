@@ -43,7 +43,7 @@ main {
 
 .img-contato {
     max-width: 100%;
-    
+
 }
 
 form button {
@@ -68,11 +68,15 @@ form input[type="email"],
 form textarea {
     padding: 10px;
     margin-bottom: 15px;
-    border: none; /* Remove a borda padrão */
-    border-radius: 10px; /* Borda arredondada para os campos */
+    border: none;
+    /* Remove a borda padrão */
+    border-radius: 10px;
+    /* Borda arredondada para os campos */
     width: 100%;
-    background-color: #f0f0f0; /* Cor de fundo "fofa" */
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    background-color: #f0f0f0;
+    /* Cor de fundo "fofa" */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    /* Sombra suave */
 }
 
 .entre-em-contato {
@@ -80,7 +84,8 @@ form textarea {
     font-weight: 600;
 }
 
-.entre-em-contato2, .entre-em-contato3 {
+.entre-em-contato2,
+.entre-em-contato3 {
     font-size: 18px;
     color: #262626;
 }
@@ -110,37 +115,37 @@ label {
     margin-bottom: 10px;
     font-weight: bold;
     color: #333;
-    display: block; 
+    display: block;
 }
 
 @media screen and (max-width: 1100px) {
     .content {
-        flex-direction: column; 
+        flex-direction: column;
         padding: 0px;
         margin: 20px;
     }
 
     .text-section {
         width: 100%;
-        max-width: 100%; 
+        max-width: 100%;
         margin-bottom: 10px;
     }
 
     h1 {
-        font-size: 30px; 
+        font-size: 30px;
     }
 
     p {
-        font-size: 15px; 
+        font-size: 15px;
     }
 
     .buttons {
-        margin-top: 10px; 
+        margin-top: 10px;
     }
 
     button {
-        padding: 8px 16px; 
-        font-size: 14px; 
+        padding: 8px 16px;
+        font-size: 14px;
     }
 
     .image-contato {
