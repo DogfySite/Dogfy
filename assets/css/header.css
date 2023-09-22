@@ -10,6 +10,9 @@ body {
 }
 
 .nav-item {
-    margin-right: 20px; /* Ajuste este valor conforme necessário para aumentar ou diminuir o espaçamento */
+    margin-right: 20px;
 }
-              
+  
+.nav-item:hover {
+    text-decoration: underline;
+}

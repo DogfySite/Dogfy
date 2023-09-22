@@ -75,9 +75,10 @@ form textarea {
     font-weight: 600;
 }
 
-.entre-em-contato2, .entre-em-contato3 {
-    font-size: 18px;
+.entre-em-contato2 {
+    font-size: 15px;
     color: #262626;
+    font-weight: 400;
 }
 
 .entre-em-contato2 {

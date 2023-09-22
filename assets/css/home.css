@@ -66,6 +66,10 @@ a:link {
     text-decoration: none;
 }
 
+.queroAdotar:hover, .button-2:hover, .enviePergunta:hover {
+    background-color: #555;
+}
+
 .image-section {
     flex: 1;
     text-align: right;
