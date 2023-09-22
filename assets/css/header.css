@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+* {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+body {
+    min-width: 372px;
+}
+
+.nav-item {
+    margin-right: 20px; /* Ajuste este valor conforme necessário para aumentar ou diminuir o espaçamento */
+}
+              

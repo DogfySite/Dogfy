@@ -4,11 +4,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #f7f7f7;
-}
 
 main {
     display: flex;
@@ -93,11 +88,7 @@ form button:hover {
     background-color: #555;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    /* Empilha os elementos verticalmente */
-}
+
 
 form label {
     margin-top: 10px;
@@ -111,39 +102,4 @@ label {
     font-weight: bold;
     color: #333;
     display: block; 
-}
-
-@media screen and (max-width: 1100px) {
-    .content {
-        flex-direction: column; 
-        padding: 0px;
-        margin: 20px;
-    }
-
-    .text-section {
-        width: 100%;
-        max-width: 100%; 
-        margin-bottom: 10px;
-    }
-
-    h1 {
-        font-size: 30px; 
-    }
-
-    p {
-        font-size: 15px; 
-    }
-
-    .buttons {
-        margin-top: 10px; 
-    }
-
-    button {
-        padding: 8px 16px; 
-        font-size: 14px; 
-    }
-
-    .image-contato {
-        display: none;
-    }
 }
