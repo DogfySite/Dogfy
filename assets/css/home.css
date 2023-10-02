@@ -7,6 +7,7 @@
 
 body {
     background-color: #fcf4ec;
+    min-width: 372px;
 }
 
 .content {
@@ -65,6 +66,10 @@ a:link {
     text-decoration: none;
 }
 
+.queroAdotar:hover, .button-2:hover, .enviePergunta:hover {
+    background-color: #555;
+}
+
 .image-section {
     flex: 1;
     text-align: right;
@@ -87,8 +92,8 @@ img {
 }
 
 .parceiros {
-    margin: auto 100px;
-    padding-bottom: 50px;
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .parceiros h1 {
@@ -141,18 +146,13 @@ img {
 }
 
 .gatinho {
-    max-height: 550px;
+    height: 550px;
     margin-top: -250px;
 
 }
 
 .duvida {
-    margin-bottom: 40px;
-}
-
-.transparent {
-    all:none;
-    background: transparent;
+margin-bottom: 40px;
 }
 
 @media screen and (max-width: 1100px) {
@@ -160,10 +160,6 @@ img {
         flex-direction: column;
         padding: 0px;
         margin: 40px;
-    }
-
-    .parceiros {
-        margin: auto 20px;
     }
 
     .text-section {
@@ -182,19 +178,11 @@ img {
 
     .buttons {
         margin-top: 10px;
-        gap: 10px;
-        display: flex;
-        flex-direction: column;
     }
 
     button {
         padding: 8px 16px;
         font-size: 14px;
-    }
-
-
-    .buttons button {
-        width: 100%;
     }
 
     .image-section {

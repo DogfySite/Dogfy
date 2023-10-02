@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/bs/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/nav-bar.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="icon" type="image/x-icon" href="assets/img/Dogfy-removebg-preview.png">
     <title>Dogfy</title>
@@ -32,12 +30,11 @@
                 <div class="text-section">
                     <h1 class="entre-em-contato">Entre em Contato</h1>
                     <p class="entre-em-contato2">Se você tem alguma dúvida, sugestão, ou precisa de assistência sinta-se a vontade para entrar em contato!</p>
-                    <p class="entre-em-contato3">A sua opinião é muito importante para nós!</p>
                 </div>
                 <section>
                     <div class="container">
                             <div class="container mt-4">
-                                <form id="myForm">
+                                <form id="myForm" onsubmit="cadastrarMensagem()">
                                     <form id="contact-form">
                                         <label for="nome">Nome:</label>
                                         <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
@@ -65,6 +62,7 @@
 
     <div id="footer-placeholder"></div>
 
+    <script src="assets/js/postMethodContato.js"></script>
     <script src="assets/js/hef.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
