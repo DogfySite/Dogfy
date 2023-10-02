@@ -8,3 +8,7 @@
 body {
     background-color: #fcf4ec;
 }
+
+.wrapper {
+    min-height: 100vh;
+}
