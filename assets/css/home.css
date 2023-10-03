@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Poppins:wght@100;200;400;500&display=swap');
 
 * {
@@ -191,3 +192,202 @@ margin-bottom: 40px;
         text-align: center;
     }
 }
+=======
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400&family=Poppins:wght@100;200;400;500&display=swap');
+
+* {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: #fcf4ec;
+    min-width: 372px;
+}
+
+.wrapper {
+    min-height: 100vh;
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin: 0 150px;
+}
+
+
+.text-section {
+    flex: 1;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #403E3B;
+}
+
+p {
+    font-size: 20px;
+    color: #262626;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+button {
+    background-color: #C9A98D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 400;
+
+}
+
+
+button a:visited,
+a:link {
+    color: white;
+    text-decoration: none;
+}
+
+
+.button-2 a:visited,
+a:link {
+    color: #262626;
+    text-decoration: none;
+}
+
+.queroAdotar:hover, .button-2:hover, .enviePergunta:hover {
+    background-color: #555;
+}
+
+.image-section {
+    flex: 1;
+    text-align: right;
+    margin: 30px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.button-2 {
+    background-color: #fcf4ec;
+    color: #262626;
+    border: 1px solid;
+}
+
+.carousel-inner {
+    height: 30em;
+}
+
+.parceiros {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.parceiros h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-top: 80px;
+}
+
+.parceiros h3 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 12px;
+}
+
+.parceiros p {
+    font-size: 15px;
+}
+
+.parceiros p2 {
+    font-size: 13px;
+    color: gray;
+    display: block;
+    margin-top: 20px;
+}
+
+.col {
+    width: 150px;
+    height: 200px;
+    background-color: #fff;
+    border: none;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perguntasFrequentes {
+    background-color: white;
+    margin: 150px 0px 40px 0px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 50px;
+    overflow: visible;
+    /* Permite que o conteúdo ultrapasse os limites da div */
+    position: relative;
+}
+
+.perguntasFrequentes h1 {
+    margin-bottom: 20px;
+}
+
+.gatinho {
+    height: 550px;
+    margin-top: -250px;
+
+}
+
+.duvida {
+margin-bottom: 40px;
+}
+
+@media screen and (max-width: 1100px) {
+    .content {
+        flex-direction: column;
+        padding: 0px;
+        margin: 40px;
+    }
+
+    .text-section {
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    p {
+        font-size: 15px;
+    }
+
+    .buttons {
+        margin-top: 10px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    .image-section {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+}
+>>>>>>> 38dbd4cac84623e52b5e5b77fa667177a7321acc
