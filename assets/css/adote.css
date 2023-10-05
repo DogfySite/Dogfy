@@ -30,8 +30,22 @@ body {
     font-size: 15px;
 }
 
+
 button:hover {
     background-color: #555;
+}
+
+.botaoBusca {
+    background-color: #C9A98D;
+    font-size: 10px;
+    color: white;
+    padding: 5px 5px;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 455px) {
