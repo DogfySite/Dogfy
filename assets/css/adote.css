@@ -12,3 +12,34 @@ body {
 .wrapper {
     min-height: 100vh;
 }
+
+.adoteumAumigo {
+    font-size: 40px;
+    margin: 40px 0 5px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+}
+
+.companheiro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: gray;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+@media screen and (max-width: 455px) {
+    .adoteumAumigo {
+        font-size: 30px;
+    }
+
+    .companheiro {
+        font-size: 13px;
+    }
+}

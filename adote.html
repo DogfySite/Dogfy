@@ -18,26 +18,249 @@
         <div id="header-placeholder"></div>
         
         <main class="flex-fill">
-            <h1>Adote um aumigo!</h1>
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 col-md-5">
-                        <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" placeholder="Busca">
-                                <button class="">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                                    </svg>
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col-12 col-md-7">
+            <h1 class="adoteumAumigo">Adote um aumigo!</h1>
+            <p class="companheiro">Chegou a hora de escolher o seu companheiro...</p>
 
+            <main class="flex-fill">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 col-md-5">
+                            <form class="justify-content-center justify-content-md-start mb-3 mb-md-0">
+                                <div class="input-group input-group-sm">
+                                    <input type="text" class="form-control" placeholder="Digite aqui o que procura">
+                                    <button class="">Buscar</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="col-12 col-md-7">
+                            <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
+                                <form class="d-inline-block">
+                                    <select class="form-select form-select-sm">
+                                        <option>Ordenar pelo nome</option>
+                                        <option>Ordenar pela idade</option>
+                                        <option>Ordenar pelo porte</option>
+                                    </select>
+                                </form>
+                                <nav class="d-inline-block me-3">
+                                    <ul class="pagination pagination-sm my-0">
+                                        <li class="page-item">
+                                            <a class="page-link disabled" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">4</a>
+                                        </li>      
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">4</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">5</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">6</a>                                  
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr mt-3>
+
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card text-center bg-light">
+                                <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                    <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                                </a>
+                                <a href="">
+                                    <img src="assets/img/teste.webp" class="card-img-top" style="height: 200px; width: auto;">
+                                </a>
+                                <div class="card-header">
+                                    Localização
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Nome</h5>
+                                    <p class="card-text truncar-3l">
+                                        Sobre o animal / ONG/ SEXO
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <button href="" class="mt-2 d-block w-100">
+                                        Quero adotar
+                                    </button>
+                                    <small class="text-success">ONG</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card text-center bg-light">
+                                <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                    <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                                </a>
+                                <a href="">
+                                    <img src="assets/img/teste2.png" class="card-img-top" style="height: 200px; width: auto;">
+                                </a>
+                                <div class="card-header">
+                                    Localização
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Nome</h5>
+                                    <p class="card-text truncar-3l">
+                                        Sobre o animal / ONG/ SEXO
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <button href="" class="mt-2 d-block w-100">
+                                        Quero adotar
+                                    </button>
+                                    <small class="text-success">ONG</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card text-center bg-light">
+                                <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                    <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                                </a>
+                                <a href="">
+                                    <img src="assets/img/teste3.jpg" class="card-img-top" style="height: 200px; width: auto;">
+                                </a>
+                                <div class="card-header">
+                                    Localização
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Nome</h5>
+                                    <p class="card-text truncar-3l">
+                                        Sobre o animal / ONG/ SEXO
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <button href="" class="mt-2 d-block w-100">
+                                        Quero adotar
+                                    </button>
+                                    <small class="text-success">ONG</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card text-center bg-light">
+                                <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                    <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                                </a>
+                                <a href="">
+                                    <img src="assets/img/teste4.png" class="card-img-top" style="height: 200px; width: auto;">
+                                </a>
+                                <div class="card-header">
+                                    Localização
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Nome</h5>
+                                    <p class="card-text truncar-3l">
+                                        Sobre o animal / ONG/ SEXO
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <button href="" class="mt-2 d-block w-100">
+                                        Quero adotar
+                                    </button>
+                                    <small class="text-success">ONG</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card text-center bg-light">
+                                <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                    <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                                </a>
+                                <a href="">
+                                    <img src="assets/img/teste5.jpg" class="card-img-top" style="height: 200px; width: auto;">
+                                </a>
+                                <div class="card-header">
+                                    Localização
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Nome</h5>
+                                    <p class="card-text truncar-3l">
+                                        Sobre o animal / ONG/ SEXO
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <button href="" class="mt-2 d-block w-100">
+                                        Quero adotar
+                                    </button>
+                                    <small class="text-success">ONG</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="card text-center bg-light">
+                                <a href="#" class="position-absolute end-0 p-2 text-danger">
+                                    <i class="bi-suit-heart" style="font-size: 24px; line-height: 24px;"></i>
+                                </a>
+                                <a href="">
+                                    <img src="assets/img/teste.jfif" class="card-img-top" style="height: 200px; width: auto;">
+                                </a>
+                                <div class="card-header">
+                                    Localização
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Nome</h5>
+                                    <p class="card-text truncar-3l">
+                                        Sobre o animal / ONG/ SEXO
+                                    </p>
+                                </div>
+                                <div class="card-footer">
+                                    <button href="" class="mt-2 d-block w-100">
+                                        Quero adotar
+                                    </button>
+                                    <small class="text-success">ONG</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <hr mt-3>
+    
+                    <div class="row pb-3">
+                        <div class="col-12">
+                            <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
+                                <form class="d-inline-block">
+                                    <select class="form-select form-select-sm">
+                                        <option>Ordenar pelo nome</option>
+                                        <option>Ordenar pela idade</option>
+                                        <option>Ordenar pelo porte</option>
+                                    </select>
+                                </form>
+                                <nav class="d-inline-block me-3">
+                                    <ul class="pagination pagination-sm my-0">
+                                        <li class="page-item">
+                                            <a class="page-link disabled" href="#">1</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">2</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">3</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">4</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">5</a>
+                                        </li>
+                                        <li class="page-item">
+                                            <a class="page-link" href="#">6</a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
         </main>
 
         <div id="footer-placeholder"></div>
