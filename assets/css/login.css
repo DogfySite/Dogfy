@@ -48,7 +48,6 @@ body {
 .my-form__wrapper {
     border-radius: 10px;
     background-color: white;
-    display: flex;
     flex-direction: column;
     align-items: center;
     gap: 12px;
