@@ -1,0 +1,280 @@
+/* Importa a fonte 'Dosis' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&display=swap');
+
+/* Define variáveis CSS globais */
+:root {
+   --Fundo: #fcf4ec;
+   --MarromClaro: #C9A98D;
+   --MarromClaro50: #C9A98D 50%;
+   --CinzaEscuro: #505050;
+   --border: .1rem solid #aaa;
+   --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+/* Define uma fonte padrão, remove margens e preenchimentos padrão e define o box-sizing para 
+border-box para todos os elementos */
+* {
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 55%;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   transition: all 0.4s cubic-bezier(.43, 1.1, .62, 1.08);
+}
+
+/* Define a cor de fundo para todo o corpo do documento */
+body {
+   background-color: #fcf4ec;
+}
+
+/* Adiciona preenchimento à seção */
+section {
+   padding: 5rem 15%;
+}
+
+/* Estiliza o cabeçalho com preenchimento, exibição flexível para alinhamento de itens, sombra 
+de caixa, posição fixa no topo e cor de fundo */
+.header {
+   padding-top: 1.5rem;
+   padding-bottom: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   box-shadow: var(--box-shadow);
+   position: sticky;
+   top: 0;
+   left: 0;
+   right: 0;
+ /*background: #fcf4ec;*/
+   background: white;
+   z-index: 1000;
+}
+
+/* Estiliza o logo no cabeçalho */
+.header .logo {
+   font-size: 5rem;
+}
+
+/* Estiliza os links na barra de navegação do cabeçalho */
+.header .navbar a {
+   font-size: 1.7rem;
+   font-weight: 700;
+   margin-left: 3rem;
+}
+
+/* Altera a cor dos links na barra de navegação do cabeçalho quando o mouse passa sobre eles */
+.header .navbar a:hover {
+   color: #C9A98D;
+}
+
+/* Adiciona um gradiente linear como imagem de fundo aos links na barra de navegação e define 
+outras propriedades para criar um efeito de animação ao passar o mouse */
+.navbar>a {
+   background-image: linear-gradient(to right,
+         #C9A98D,
+         #C9A98D 50%,
+         #505050 50%);
+   background-size: 200% 100%;
+   background-position: -100%;
+   display: inline-block;
+   padding: 2px 0;
+   position: relative;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   transition: all 0.3s ease-in-out;
+}
+
+/* Adiciona um elemento antes dos links na barra de navegação com uma cor de fundo específica */
+.navbar>a:before {
+   content: '';
+   background: #C9A98D;
+   display: block;
+   position: absolute;
+   bottom: -3px;
+   left: 0;
+   width: 0;
+   height: 4px;
+   border-radius: 5px;
+   transition: all 0.3s ease-in-out;
+}
+
+/* Altera a posição da imagem de fundo e a largura do elemento antes dos links na barra de 
+navegação quando o mouse passa sobre eles */
+.navbar>a:hover {
+   background-position: 0;
+}
+
+.navbar>a:hover::before {
+   width: 100%;
+}
+
+/* Estiliza os links na barra de navegação de login e cadastro do cabeçalho */
+
+.header .navbarloginecadastro a {
+   font-size: 1.7rem;
+   font-weight: 700;
+   margin-left: 3rem;
+}
+
+/* Altera a cor dos links na barra de navegação de login e cadastro do cabeçalho quando o mouse 
+passa sobre eles */
+
+.header .navbarloginecadastro a:hover {
+   color: #C9A98D;
+}
+
+/* Adiciona um gradiente linear como imagem de fundo aos links na barra de navegação de login e 
+cadastro e define outras propriedades para criar um efeito de animação ao passar o mouse */
+
+.navbarloginecadastro>a {
+   background-image: linear-gradient(to right,
+         #C9A98D,
+         #C9A98D 50%,
+         #505050 50%);
+   background-size: 200% 100%;
+   background-position: -100%;
+   display: inline-block;
+   padding: 2px 0;
+   position: relative;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   transition: all 0.3s ease-in-out;
+}
+
+/* Adiciona um elemento antes dos links na barra de navegação de login e cadastro com uma cor de fundo 
+específica */
+
+.navbarloginecadastro>a:before {
+   content: '';
+   background: #C9A98D;
+   display: block;
+   position: absolute;
+   bottom: -3px;
+   left: 0;
+   width: 0;
+   height: 4px;
+   border-radius: 5px;
+   transition: all 0.3s ease-in-out;
+}
+
+/* Altera a posição da imagem de fundo e a largura do elemento antes dos links na barra de navegação 
+de login e cadastro quando o mouse passa sobre eles */
+
+.navbarloginecadastro>a:hover {
+   background-position: 0;
+}
+
+.navbarloginecadastro>a:hover::before {
+   width: 100%;
+}
+
+/* Estiliza o botão do menu com um tamanho de fonte específico, cursor como ponteiro, cor específica
+ e inicialmente oculto */
+
+#menu-btn {
+   font-size: 3.5rem;
+   cursor: pointer;
+   color: var(--CinzaEscuro);
+   display: none;
+}
+
+/* Define estilos diferentes para vários elementos dependendo da largura da janela do navegador */
+
+@media (max-width :1100px) {
+
+   /* Reduz o preenchimento da seção e o tamanho da fonte para todo o documento HTML */
+
+   section {
+      padding: 4rem 8rem;
+   }
+
+   html {
+      font-size: 50%;
+   }
+}
+
+@media (max-width :800px) {
+
+   /* Altera a direção flexível do contêiner flexível para coluna e remove o preenchimento */
+
+   .flex-container {
+      flex-direction: column;
+      padding: 0px;
+   }
+
+   /* Exibe o botão do menu e gira o ícone 'fa-times' em 180 graus */
+
+   #menu-btn {
+      display: inline-block;
+   }
+
+   .fa-times {
+      transform: rotate(180deg);
+   }
+
+   /* Estiliza a barra de navegação no cabeçalho para exibição em dispositivos móveis */
+
+   .header .navbar {
+      position: absolute;
+      top: calc(99% + 2rem);
+      left: 0;
+      right: 0;
+      background-color: var(--Fundo);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+   }
+
+   /* Altera a forma da barra de navegação no cabeçalho quando ela está ativa em dispositivos
+     móveis */
+
+   .header .navbar.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+   /* Altera a exibição dos links na barra de navegação no cabeçalho para exibição em dispositivos 
+    móveis */
+
+   .header .navbar a {
+      display: block;
+      margin: 2rem;
+      text-align: center;
+      width: fit-content;
+      margin: 1rem;
+   }
+
+   /* Estiliza a barra de navegação de login e cadastro no cabeçalho para exibição em dispositivos 
+    móveis */
+
+   .header .navbarloginecadastro {
+      position: absolute;
+      top: calc(99% + 20rem);
+      left: 0;
+      right: 0;
+      background-color: var(--Fundo);
+      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+   }
+
+   /* Altera a forma da barra de navegação de login e cadastro no cabeçalho quando ela está ativa 
+    em dispositivos móveis */
+
+   .header .navbarloginecadastro.active {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+   }
+
+   /* Altera a exibição dos links na barra de navegação de login e cadastro no cabeçalho para 
+    exibição em dispositivos móveis */
+
+   .header .navbarloginecadastro a {
+      display: block;
+      margin: 2rem;
+      text-align: center;
+      width: fit-content;
+      margin: 1rem;
+   }
+}

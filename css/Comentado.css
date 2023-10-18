@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&display=swap');
+
+/* Define variáveis de cores, bordas e sombras */
+:root {
+   --Fundo: #fcf4ec;
+   --MarromClaro: #C9A98D;
+   --MarromClaro50: #C9A98D 50%;
+   --CinzaEscuro: #505050;
+   --border: .1rem solid #aaa;
+   --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+/* Define estilos globais para todos os elementos */
+* {
+   font-family: Arial, Helvetica, sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+   text-decoration: none;
+   transition: all 0.4s cubic-bezier(.43, 1.1, .62, 1.08);
+}
+
+/* Define o tamanho da fonte para o elemento html */
+html {
+   font-size: 62.5%;
+   scroll-padding-top: 6rem;
+}
+
+/* Define a cor de fundo para o corpo do documento */
+body {
+   background-color: #fcf4ec;
+}
+
+/* Define estilos para a seção */
+section {
+   padding: 5rem 20%;
+}
+
+/* Define estilos para o cabeçalho */
+.header {
+   padding-top: 1.5rem;
+   padding-bottom: 1rem;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   box-shadow: var(--box-shadow);
+   position: sticky;
+   top: 0;
+   left: 0;
+   right: 0;
+   background: #fcf4ec;
+   z-index: 1000;
+   border-bottom: 3px solid var(--MarromClaro);
+}
+
+/* Define estilos para o logo no cabeçalho */
+.header .logo {
+   font-size: 5rem;
+}
+
+/* Define estilos para os links na barra de navegação do cabeçalho */
+.header .navbar a {
+   font-size: 1.7rem;
+   font-weight: 700;
+   margin-left: 3rem;
+}
+
+/* Define estilos para os links na barra de navegação do cabeçalho quando o mouse passa sobre eles */
+.header .navbar a:hover {
+   color: #C9A98D;
+}
+
+/* Define estilos para os links na barra de navegação */
+.navbar>a {
+...
+}
+
+/* Define estilos para o botão do menu */
+#menu-btn {
+...
+}
+
+/* Define estilos específicos para diferentes tamanhos de tela usando media queries */
+@media (max-width:1050px) {
+...
+}
+@media (max-width:700px) {
+...
+}

@@ -1,0 +1,226 @@
+/* Importa a fonte 'Dosis' do Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&display=swap');
+
+
+/* Define cores e estilos que serão usados no CSS */
+:root {
+   --Fundo: #fcf4ec;
+   --MarromClaro: #C9A98D;
+   --MarromClaro50: #C9A98D 50%;
+   --CinzaEscuro: #505050;
+   --border: .1rem solid #aaa;
+   --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+/* Define estilos que serão aplicados a todos os elementos da página */
+* {
+   font-family: Arial, Helvetica, sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+   text-decoration: none;
+   transition: all 0.4s cubic-bezier(.43, 1.1, .62, 1.08);
+
+}
+
+/* Define estilos para o elemento HTML, como tamanho da fonte e comportamento de rolagem */
+html {
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 6rem;
+}
+
+/* Define a cor de fundo do corpo da página */
+body {
+   background-color: #fcf4ec;
+}
+
+/* Define estilos para o rodapé, como alinhamento de texto e padding */
+.footer {
+   text-align: center;
+   background: white;
+   padding-bottom: 1.5rem;
+   padding-top: 0.4rem;
+
+}
+
+
+/* Define margem para o elemento de rede social no rodapé */
+.footer .social {
+   margin: 1rem 0;
+   margin-bottom: 40px;
+}
+
+/* Define estilos para os links de rede social no rodapé, como altura,
+ largura, alinhamento de linha, cor, margem e tamanho da fonte */
+.footer .social a {
+   height: 6rem;
+   width: 6rem;
+   line-height: 5.8rem;
+   color: var(--white);
+   margin: 0.3rem;
+   font-size: 2.5rem;
+}
+
+/* Define estilos para os links de compartilhamento no rodapé quando o mouse 
+passa sobre eles, como cor de fundo e cor do texto */
+.footer .social a:hover {
+   background: var(--MarromClaro50);
+   color: white;
+}
+
+/* Define estilos para o crédito no rodapé, como tamanho da fonte e cor */
+.footer .credit {
+   font-size: 1.2rem;
+   color: #505050;
+}
+
+
+/* Define estilos para o modalt e modalp, como display, posição, z-index, padding-top,
+ left, top, width, height, overflow e cor de fundo */
+.modalt,
+.modalp {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   padding-top: 150px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0, 0, 0);
+   background-color: rgba(0, 0, 0, 0.4);
+}
+
+h3 {
+   padding-top: 1.4rem;
+
+}
+
+#psub {
+   margin-left: 3rem;
+   margin-top: 1.2rem;
+}
+
+#subparagrafo,
+#paragrafo {
+   margin-top: 2rem;
+}
+
+
+
+/* Modal Content */
+/* Define estilos para o conteúdo do modal, como cor de fundo, margem e padding */
+.modal-content {
+   background-color: #fefefe;
+   margin: auto;
+   padding: 50px;
+   border: 1px solid #888;
+   width: 80%;
+   font-size: 1.4rem;
+   text-align: justify;
+   text-justify: inter-word;
+   text-align-last: start;
+   position: relative;
+}
+
+
+/* Define estilos para o botão myBtn, como decoração do texto e peso da fonte */
+#myBtn,
+#myBtn1,
+#LinkDogfy {
+   text-decoration: none;
+   font-weight: 700;
+
+}
+
+#LinkDogfy {
+   color: Blue;
+}
+
+
+/* Define estilos para o Pol quando o mouse passa sobre ele, como cor e cursor */
+.Pol:hover {
+   color: #C9A98D;
+   cursor: pointer;
+}
+
+#LinkDogfy:hover {
+   color: #C9A98D;
+   cursor: pointer;
+
+}
+
+/* Define estilos para o botão close, como cor, posição e tamanho da fonte */
+.close {
+   color: #aaaaaa;
+   top: 10px;
+   right: 3%;
+   font-size: 35px;
+   font-weight: bold;
+   color: rgb(138, 0, 0);
+   position: absolute;
+}
+
+/* Define estilos para o botão close quando ele está focado ou quando o mouse 
+passa sobre ele, como cor e cursor */
+.close:hover,
+.close:focus {
+   color: #000;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+@media (max-width:991px) {
+
+   /* Redefine o padding da seção quando a largura da tela é menor que 991px */
+   section {
+      padding: 3rem 6rem;
+   }
+
+   /* Redefine o tamanho da fonte do HTML quando a largura da tela é menor que 991px */
+   html {
+      font-size: 55%;
+   }
+
+}
+
+/* Estilo específico para a classe allrights. Definindo tamanho da fonte,
+cor do texto e padding-top. */
+.allrights {
+   font-size: 1.3rem;
+   color: #505050;
+   padding-top: 20px;
+
+}
+
+/*Voltar ao Topo*/
+
+/* Define a aparência inicial e o comportamento do botão. */
+#btnTopo {
+   visibility: hidden;
+   opacity: 0;
+   position: fixed;
+   bottom: 20px;
+   right: 30px;
+   z-index: 99;
+   border: none;
+   outline: none;
+   background-color: transparent;
+   color: #505050;
+   cursor: pointer;
+   padding: 15px;
+   font-size: 50px;
+   transition: visibility 0s, opacity 2s;
+}
+
+/* Define como o botão deve se comportar e aparecer quando o mouse passa sobre ele. */
+#btnTopo:hover {
+   color: #C9A98D;
+   transform: translateY(-10px);
+   transition: transform 0.5s, color 0.5s;
+}
