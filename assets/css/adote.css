@@ -22,6 +22,21 @@ body {
     color: black;
 }
 
+.button-container {
+    text-align: center;
+}
+
+.button-container button {
+    padding: 10px 20px;
+    margin: 5px 0 20px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+
 .companheiro {
     display: flex;
     align-items: center;
