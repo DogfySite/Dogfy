@@ -156,7 +156,15 @@ img {
 }
 
 .duvida {
-margin-bottom: 40px;
+    margin-bottom: 40px;
+}
+
+.aindacomduvida{
+    font-size: 30px;
+}
+
+.mobilecarrossel {
+    display: none;
 }
 
 @media screen and (max-width: 1100px) {
@@ -193,5 +201,37 @@ margin-bottom: 40px;
         width: 100%;
         max-width: 100%;
         text-align: center;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .queroAdotar{
+        margin: 0 0 10px 0;
+    }
+
+    .carousel-inner, .carousel-control-prev, .carousel-control-next {
+        display: none;
+    }
+
+    .mobilecarrossel{
+        display:block;
+        text-align: center;
+        justify-content: center;
+        margin: 15px;
+    }
+
+    .imgcarrosselm {
+        width: 250px;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .parceiros {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .gatinho {
+        display: none;
     }
 }

@@ -16,3 +16,16 @@ body {
 .nav-item:hover {
     text-decoration: underline;
 }
+
+.nav-link {
+    line-height: 144px;
+}
+
+    
+
+@media screen and (max-width: 990px) {
+    .nav-link {
+        line-height: 15px;
+        text-align: center;
+    }
+}
