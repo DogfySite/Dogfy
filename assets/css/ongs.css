@@ -17,6 +17,10 @@ body {
     min-width: 372px;
 }
 
+.modal-title {
+    font-weight: bold;
+}
+
 .parceiro {
     font-size: 35px !important;
     margin: 40px 0 5px 0;
@@ -126,4 +130,77 @@ a:link {
         font-size: 30px;
     }
 
+}
+
+/* Estilos para o formulário */
+form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+form label {
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+    display: block;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form input[type="tel"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 10px;
+    width: 100%;
+    background-color: #f0f0f0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+form button[type="submit"] {
+    background-color: #C9A98D;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+form button[type="submit"]:hover {
+    background-color: #555;
+}
+
+/* Estilos para o checkbox */
+input#concordo2 {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* link nos termos e condições */
+form a:visited,
+form a:link {
+    color: #C9A98D;
+    text-decoration: none;
+}
+/* container do formulário */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* mensagem de senha não correspondente */
+.password-mismatch {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
 }
