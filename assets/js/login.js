@@ -1,11 +1,34 @@
-let loginForm = document.querySelector(".my-form");
+function validateLogin() {
+    event.preventDefault();
 
-loginForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    let email = document.getElementById("email");
-    let password = document.getElementById("password");
+    const email = document.getElementById('email').value;
+    const senha = document.getElementById('password').value;
 
-    console.log('Email:', email.value);
-    console.log('Password:', password.value);
-    // processa e manda para a API
-});
+    const login = {
+        email: email,
+        senhaUsuario: senha
+    }
+
+    fetch('https://localhost:44309/api/Usuario/validarLoginUser', {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json',
+        },
+        body: JSON.stringify(login),
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Email ou senha incorretos, por favor verifique.');
+            }
+            return response.json();
+        })  
+        .then(data => {
+            sessionStorage.setItem('sessionId', data.idUsuario);
+            //document.getElementById('mensagemSucesso').innerHTML = 'Login efetuado com sucesso';
+            window.location.href = '/index.html';
+        })
+        .catch((error) => {
+            console.error('Error', error);
+            document.getElementById('mensagemSucesso').innerHTML = error.message;
+        });
+}

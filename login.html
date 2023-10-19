@@ -24,7 +24,7 @@
                             <h1>Bem-vindo de volta!</h1>
                             <p>Por favor insira seus dados!</p>
                         </div>
-                        <form class="my-form">
+                        <form class="my-form" id="login-form" onsubmit="validateLogin()">
                             <div class="text-field">
                                 <label>Tipo de usuário:</label>
                                 <div class="user-type">
@@ -56,10 +56,10 @@
                                     name="password"
                                     placeholder="Sua senha"
                                     title="Minimum 6 characters at least 1 Alphabet and 1 Number"
-                                    pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
                                     required
                                 >
                             </div>
+                            <p id="mensagemSucesso">Email ou senha incorretos, por favor verifique.</p>
                             <input type="submit" class="my-form__button" value="Login">
                             <div class="my-form__actions">
                                 <div class="my-form__row">
