@@ -9,7 +9,7 @@ function solicitarAnimais() {
             return response.json();
         })
         .then(data => {
-            console.log(data);
+            //console.log(data);
             document.getElementById("petList").innerHTML = "";
 
             const divRow = document.createElement("div");
@@ -124,7 +124,7 @@ function filtrarAnimais(){
         cidaOng: cidadePet
     }
 
-    console.log(filtro);
+    //console.log(filtro);
     fetch(apiUrl,{
         method: 'POST',
         headers:{
