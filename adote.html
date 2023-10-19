@@ -85,13 +85,44 @@
                                     </p>
                                 </div>
                                 <div class="card-footer border-light">
-                                    <button href="" class="mt-2 d-block w-100">
-                                        Quero adotar
-                                    </button>
+                                    <button class="ong-button mt-2 d-block w-100" data-bs-toggle="modal"
+                                    data-bs-target="#ongModal1">Quero adotar</button>
                                     <small class="text-success">ONG</small>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="modal fade" id="ongModal1" tabindex="-1" aria-labelledby="ongModal1Label"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="ongModal1Label">Confirme sua adoção: </h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <img src="assets/img/lina.jfif" style="width: 200px;" alt="Imagem do pet">
+                                        <br>
+                                        <br>
+                                            <strong>Nome: </strong><p>Lina</p>
+                                            <strong>Idade: </strong><p>2 anos</p>
+                                            <strong>Gênero: </strong><p>Fêmea</p>
+                                            <strong>ONG localizado: </strong><p>ONG da gigi</p>
+                                            <strong>Cidade localizado: </strong><p>São Paulo - SP</p>
+                                            <strong>Por que quer adotar esse pet?</strong>
+                                            <form>
+                                                <label for="sobre"></label><input type="text" class="form-control" id="sobre" name="nome" required><br>
+                                                <strong>Você tem condições para cuidar desse pet com muito amor e carinho?</strong>
+                                                <label for="sobre"></label><input type="text" class="form-control" id="sobre" name="nome" required><br>
+                                                <button type="submit">Confirmo que quero adotar</button>
+                                            </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
                             <div class="card text-center bg-light border-light">
                                 <a href="">
