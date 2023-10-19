@@ -1,15 +1,31 @@
 function validateLogin() {
     event.preventDefault();
 
-    const email = document.getElementById('email').value;
-    const senha = document.getElementById('password').value;
+    var apiUrl = '';
 
-    const login = {
-        email: email,
-        senhaUsuario: senha
+    var email = document.getElementById('email').value;
+    var senha = document.getElementById('password').value;
+
+    if(document.querySelector("#pessoa").checked == true){
+        apiUrl = 'https://localhost:44309/api/Usuario/validarLoginUser';
+
+        var login = {
+            email: email,
+            senhaUsuario: senha
+        };
+
     }
 
-    fetch('https://localhost:44309/api/Usuario/validarLoginUser', {
+    if(document.querySelector("#ong").checked == true){
+        apiUrl = 'https://localhost:44309/api/Ong/validarLogin';
+
+        var login = {
+            emailOng: email,
+            senhaOng: senha
+        };
+    }
+
+    fetch(apiUrl, {
         method: 'POST',
         headers: {
             'Content-type': 'application/json',
@@ -23,9 +39,13 @@ function validateLogin() {
             return response.json();
         })  
         .then(data => {
-            sessionStorage.setItem('sessionId', data.idUsuario);
-            //document.getElementById('mensagemSucesso').innerHTML = 'Login efetuado com sucesso';
-            window.location.href = '/index.html';
+            if(document.querySelector("#pessoa").checked == true){
+                sessionStorage.setItem('sessionId', data.idUsuario);
+            }else{
+                sessionStorage.setItem('sessionId', data.idOng);
+            }
+
+            window.location.href = '/ongeusuarioLogado.html';
         })
         .catch((error) => {
             console.error('Error', error);
