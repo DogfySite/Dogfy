@@ -189,13 +189,14 @@ body {
     .login-wrapper {
         grid-template-columns: 1fr;
         height: 100vh;
-        margin-bottom: 90px;
+        margin-bottom: 250px;
     }
     
     .info-side {
         flex-direction: column-reverse;
         padding: 48px 48px 48px 32px;
     }
+
 }
 
     .user-type {
