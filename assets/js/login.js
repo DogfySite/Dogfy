@@ -7,7 +7,7 @@ function validateLogin() {
     var senha = document.getElementById('password').value;
 
     if(document.querySelector("#pessoa").checked == true){
-        apiUrl = 'https://localhost:44309/api/Usuario/validarLoginUser';
+        apiUrl = 'http://191.252.153.53:81/api/Usuario/validarLoginUser';
 
         var login = {
             email: email,
@@ -17,7 +17,7 @@ function validateLogin() {
     }
 
     if(document.querySelector("#ong").checked == true){
-        apiUrl = 'https://localhost:44309/api/Ong/validarLogin';
+        apiUrl = 'http://191.252.153.53:81/api/Ong/validarLogin';
 
         var login = {
             emailOng: email,
