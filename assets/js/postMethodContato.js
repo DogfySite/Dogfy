@@ -14,7 +14,7 @@ function postRequest(url, body){
 function cadastrarMensagem(){
     event.preventDefault()
 
-    let url = "https://localhost:44309/api/Contato/registrarContato"; 
+    let url = "http://191.252.153.53:81/api/Contato/registrarContato"; 
     
     let nome = document.getElementById("nome").value;
     let email = document.getElementById("email").value;

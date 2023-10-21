@@ -56,9 +56,9 @@
                                     <label for="cidade-select" class="me-2">Cidade:</label>
                                     <select id="cidade-animal" class="form-select form-select-sm">
                                         <option value="">Todas</option>
-                                        <option value="sp">São Paulo</option>
-                                        <option value="sa">Santo André</option>
-                                        <option value="sbc">São Bernardo do Campo</option>
+                                        <option value="São Paulo">São Paulo</option>
+                                        <option value="Santo André">Santo André</option>
+                                        <option value="São Bernardo do Campo">São Bernardo do Campo</option>
                                     </select>
                                     <button class="ms-md-2" style="margin-left: 20px;" onclick="filtrarAnimais()">Filtrar</button>
                                 </div>
@@ -269,6 +269,12 @@
                     </div>
                 </div>
         </main>
+
+        <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner-border text-light" role="status">
+              <span class="visually-hidden">Carregando...</span>
+            </div>
+          </div>
 
         <div id="footer-placeholder"></div>
     </div>
