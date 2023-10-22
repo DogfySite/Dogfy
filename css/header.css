@@ -46,7 +46,7 @@ de caixa, posição fixa no topo e cor de fundo */
    top: 0;
    left: 0;
    right: 0;
- /*background: #fcf4ec;*/
+   /*background: #fcf4ec;*/
    background: white;
    z-index: 1000;
 }
@@ -250,7 +250,7 @@ de login e cadastro quando o mouse passa sobre eles */
 
    .header .navbarloginecadastro {
       position: absolute;
-      top: calc(99% + 20rem);
+      top: calc(99% + 24rem);
       left: 0;
       right: 0;
       background-color: var(--Fundo);

@@ -1,0 +1,249 @@
+/* Importa a fonte Dosis do Google Fonts com diferentes pesos de fonte */
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&display=swap');
+
+
+/* Define variáveis CSS globais para cores, bordas e sombras */
+:root {
+   --Fundo: #fcf4ec;
+   --MarromClaro: #C9A98D;
+   --MarromClaro50: #C9A98D 50%;
+   --CinzaEscuro: #505050;
+   --border: .1rem solid #aaa;
+   --box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+}
+
+/* Define estilos globais para todos os elementos da página */
+* {
+   font-family: Arial, Helvetica, sans-serif;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+   text-decoration: none;
+   transition: all 0.4s cubic-bezier(.43, 1.1, .62, 1.08);
+}
+
+/* Define estilos para o elemento html, incluindo tamanho da fonte e comportamento de rolagem */
+html {
+   font-size: 62.5%;
+   overflow-x: hidden;
+   scroll-behavior: smooth;
+   scroll-padding-top: 6rem;
+}
+
+/* Define a largura da barra de rolagem */
+html::-webkit-scrollbar {
+   width: 1.2rem;
+}
+
+/* Define a cor de fundo da trilha da barra de rolagem */
+html::-webkit-scrollbar-track {
+   background-color: var(--white);
+}
+
+/* Define a cor do polegar da barra de rolagem */
+html::-webkit-scrollbar-thumb {
+   background-color: var(--MarromClaro);
+}
+
+/* Define a cor de fundo do corpo da página */
+body {
+   background-color: var(--Fundo);
+}
+
+/* Adiciona preenchimento ao redor das seções */
+section {
+   padding: 5rem 20%;
+}
+
+/* Centraliza o texto e remove a margem inferior dos cabeçalhos */
+.heading {
+   text-align: center;
+   margin-bottom: 0rem;
+}
+
+/* Define o tamanho da fonte e a cor dos spans dentro dos cabeçalhos */
+.heading span {
+   font-size: 2.5rem;
+   color: var(--white);
+}
+
+/* Define o preenchimento superior, o tamanho da fonte e a cor dos h3 dentro dos cabeçalhos */
+.heading h3 {
+   padding-top: 60px;
+   font-size: 2.3rem;
+   color: var(--CinzaEscuro);
+}
+
+/* Faz com que as imagens dos projetos preencham completamente o contêiner da imagem do projeto */
+.project-img img {
+   height: 100%;
+   width: 100%;
+   object-fit: cover;
+}
+
+/* Define estilos para os parágrafos dentro das informações do projeto */
+.project-info p {
+   color: black;
+   font-size: 1.4rem;
+   margin-top: 5px;
+   line-height: 2.0rem;
+   font-weight: 300;
+   letter-spacing: 0.05rem;
+}
+
+/* Define a cor de fundo da seção de projetos */
+#projects {
+   background-color: var(--Fundo);
+}
+
+/* Define estilos para a classe .projects dentro da seção #projects */
+#projects .projects {
+   flex-direction: column;
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 100px 0;
+}
+
+/* Define a margem inferior para o h1 dentro do cabeçalho dos projetos */
+#projects .projects-header h1 {
+   margin-bottom: 50px;
+}
+
+/* Define estilos para a classe .all-projects dentro da seção #projects */
+#projects .all-projects {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+}
+
+/* Define estilos para a classe .project-item dentro da seção #projects */
+#projects .project-item {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   width: 80%;
+   margin: 20px auto;
+   overflow: hidden;
+}
+
+/* Define estilos para a classe .project-info dentro da seção #projects */
+#projects .project-info {
+   padding: 30px;
+   flex-basis: 50%;
+   height: 100%;
+   display: flex;
+   align-items: flex-start;
+   justify-content: center;
+   flex-direction: column;
+   background-image: linear-gradient(60deg, #ffffff 0%, #e9e9e9 100%);
+   color: rgb(0, 0, 0);
+}
+
+/* Define o tamanho da fonte e o peso da fonte para o h1 dentro das informações do projeto */
+#projects .project-info h1 {
+   font-size: 4rem;
+   font-weight: 500;
+}
+
+/* Define estilos para o h2 dentro das informações do projeto */
+#projects .project-info h2 {
+   font-size: 1.8rem;
+   font-weight: 500;
+   margin-top: 10px;
+}
+
+/* Define a cor do texto para os parágrafos dentro das informações do projeto */
+#projects .project-info p {
+   color: rgb(0, 0, 0);
+}
+
+/* Define estilos para a classe .project-img dentro da seção #projects */
+#projects .project-img {
+   flex-basis: 50%;
+   height: 300px;
+   overflow: hidden;
+   position: relative;
+}
+
+/* Define um pseudo-elemento after para a classe .project-img com um gradiente de fundo */
+#projects .project-img:after {
+   content: '';
+   position: absolute;
+   left: 0;
+   top: 0;
+   height: 100%;
+   width: 100%;
+   background-image: linear-gradient(60deg, #bb5700 0%, #bb5700 100%);
+   opacity: 0.1;
+}
+
+/* Adiciona uma transição ao transformar as imagens dentro da classe .project-img */
+#projects .project-img img {
+   transition: 0.3s ease transform;
+}
+
+/* Aumenta o tamanho das imagens dentro da classe .project-img quando o item do projeto é passado com o mouse */
+#projects .project-item:hover .project-img img {
+   transform: scale(1.1);
+}
+
+/* Adiciona preenchimento ao redor das seções para telas com largura máxima de 991px */
+@media (max-width:991px) {
+   section {
+      padding: 3rem 6rem;
+   }
+
+   /* Define o tamanho da fonte para o elemento html para telas com largura máxima de 991px */
+   html {
+      font-size: 55%;
+   }
+
+   /* Define a altura mínima para a classe .slide dentro da classe .home para telas com largura máxima de 991px */
+   .home .slide {
+      min-height: 80vh;
+   }
+
+   /* Centraliza o texto e define a largura e a margem para a classe .content dentro da classe .slide para telas com largura máxima de 991px */
+}
+
+.home .slide .content {
+   text-align: center;
+   width: 100%;
+   margin: auto;
+}
+
+/* Define o tamanho da fonte para o h1 com a classe .section-title para telas com largura mínima de 768px */
+@media only screen and (min-width: 768px) {
+   h1.section-title {
+      font-size: 6rem;
+   }
+
+   /* Define a direção do flex para a classe .project-item dentro da seção #projects para telas com largura mínima de 768px */
+   #projects .project-item {
+      flex-direction: row;
+   }
+
+   /* Inverte a direção do flex para cada segundo item do projeto para telas com largura mínima de 768px */
+   #projects .project-item:nth-child(even) {
+      flex-direction: row-reverse;
+   }
+
+   /* Define a altura, margem, largura e raio da borda para a classe .project-item dentro da seção #projects para telas com largura mínima de 768px */
+   #projects .project-item {
+      height: 400px;
+      margin: 0;
+      width: 100%;
+      border-radius: 0;
+   }
+
+
+
+   /* Define a altura para a classe .project-img dentro da classe .all-projects dentro da seção #projects para telas com largura mínima de 768px */
+   #projects .all-projects .project-img {
+      height: 100%;
+   }
+}
