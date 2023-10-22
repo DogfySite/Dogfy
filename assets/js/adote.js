@@ -17,6 +17,10 @@ function solicitarAnimais() {
             return response.json();
         })
         .then(data => {
+            setTimeout(() => {
+                fecharCarregamento();
+            }, 700);
+            
             //console.log(data);
             document.getElementById("petList").innerHTML = "";
 
@@ -173,6 +177,7 @@ function solicitarAnimais() {
 }
 
 window.addEventListener("load", solicitarAnimais);
+window.addEventListener("load", carregarApi);
 
 function filtrarAnimais() {
     event.preventDefault();
@@ -389,32 +394,31 @@ function preencherModal(data, petId) {
         <strong>ONG localizado: </strong><p>${data.nomeOng}</p>
         <strong>Cidade localizado: </strong><p>${data.cidaOng} - ${data.estadoOng}</p>
         <strong>Por que quer adotar esse pet?</strong>
-        <form onsubmit="enviarAdocao()">
-            <label for="sobre"></label><input type="text" class="form-control" id="sobre" name="nome" required><br>
+        <form>
+            <label for="sobre"></label><input type="text" class="form-control" id="motivo" name="nome" required><br>
             <strong>Você tem condições para cuidar desse pet com muito amor e carinho?</strong>
-            <label for="sobre"></label><input type="text" class="form-control" id="sobre" name="nome" required><br>
-            <button type="submit" value="${data.idPet}">Confirmo que quero adotar</button>
+            <label for="sobre"></label><input type="text" class="form-control" id="condicao" name="nome" required><br>
+            <button type="button" value="${data.idPet}" onclick="enviarAdocao(event)">Confirmo que quero adotar</button>
         </form>
     `;
 }
 
 function enviarAdocao(event) {
+    carregarApi();
     const apiUrl = "http://191.252.153.53:81/api/Adoption/envioDeAdocao";
 
-    const petId = event.target.value; // Pega o valor do botão que é o ID do pet
+    const petId = event.target.value;
     const userId = sessionStorage.getItem('sessionId');
     const dataAdocao = new Date().toISOString();
-    var motivo = document.getElementById('sobre')
+    const motivoInput = document.getElementById('motivo').value;
+    //const condicoesInput = document.getElementById('condicao').value;    
 
     const adoption = {
         idUsuario: userId,
         idPet: petId,
         dataAdocao: dataAdocao,
-        motivoAdocao: motivo
+        motivoAdocao: motivoInput
     };
-
-    console.log(adoption)
-
 
     fetch(apiUrl, {
         method: 'POST',
@@ -430,6 +434,9 @@ function enviarAdocao(event) {
             return response.text();
         })
         .then(data => {
+            setTimeout(() => {
+                fecharCarregamento();
+            }, 1000);
             console.log('Sucesso: ', data);            
         })
         .catch((error) => {
