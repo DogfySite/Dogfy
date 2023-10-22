@@ -171,8 +171,8 @@ function solicitarAnimais() {
             });
         })
         .catch(error => {
-
             console.error("Erro:", error);
+            fecharCarregamento();
         });
 }
 
@@ -311,6 +311,7 @@ function filtrarAnimais() {
                         })
                         .catch(error => {
                             console.error("Erro na requisição:", error);
+                            fecharCarregamento();
                         });
                 });
 
@@ -379,6 +380,7 @@ function filtrarAnimais() {
         })
         .catch(error => {
             console.error("Erro:", error);
+            fecharCarregamento();
         });
 }
 
@@ -441,6 +443,6 @@ function enviarAdocao(event) {
         })
         .catch((error) => {
             console.log('Erro:', error);
+            fecharCarregamento();
         })
-    
 }
