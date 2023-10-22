@@ -17,6 +17,10 @@ function solicitarAnimais() {
             return response.json();
         })
         .then(data => {
+            setTimeout(() => {
+                fecharCarregamento();
+            }, 700);
+            
             //console.log(data);
             document.getElementById("petList").innerHTML = "";
 
@@ -173,6 +177,7 @@ function solicitarAnimais() {
 }
 
 window.addEventListener("load", solicitarAnimais);
+window.addEventListener("load", carregarApi);
 
 function filtrarAnimais() {
     event.preventDefault();
