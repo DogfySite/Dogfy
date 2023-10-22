@@ -58,7 +58,11 @@ function carregarOngsHome() {
             }, 800);
         })
         .catch(error => {
+            
             console.error("Erro:", error);
+            setTimeout(() => {
+                fecharCarregamento();
+            }, 800);
         });
 }
 
