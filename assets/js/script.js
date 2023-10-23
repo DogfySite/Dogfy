@@ -8,3 +8,11 @@ function menuShow() {
         document.querySelector('.icon').src = "assets/img/close_white_36dp.svg";
     }
 }
+
+function tipoUsuario(){
+        if(!sessionStorage.getItem('OsessionId')){
+            window.location.href = '/adote.html';
+        }else{
+            window.location.href = '/cadastraranimal.html';
+        }
+}
