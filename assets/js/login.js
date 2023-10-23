@@ -40,9 +40,9 @@ function validateLogin() {
         })  
         .then(data => {
             if(document.querySelector("#pessoa").checked == true){
-                sessionStorage.setItem('sessionId', data.idUsuario);
+                sessionStorage.setItem('UsessionId', data.idUsuario);
             }else{
-                sessionStorage.setItem('sessionId', data.idOng);
+                sessionStorage.setItem('OsessionId', data.idOng);
             }
 
             window.location.href = '/ongeusuarioLogado.html';
