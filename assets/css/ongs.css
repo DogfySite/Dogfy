@@ -37,7 +37,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #403E3B;
+    color: #070707;
     font-weight: bold;
 }
 
@@ -76,6 +76,10 @@ img {
     margin-left: 20px;
     flex-direction: column;
     width: 100px;
+}
+
+.row {
+    
 }
 
 button:hover {
@@ -191,6 +195,7 @@ form a:link {
     color: #C9A98D;
     text-decoration: none;
 }
+
 /* container do formulário */
 .form-group {
     display: flex;

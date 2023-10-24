@@ -41,54 +41,47 @@
                                         </div>
                                         <div class="modal-body">
                                             <form>
+                                                <!-- Seus campos de formulário aqui -->
                                                 <div class="form-group">
                                                     <label for="nomedaong">ONG:</label>
-                                                    <input type="text" class="form-control" id="nomedaong" name="nomedaong" required>
-                                                
+                                                    <input type="text" class="form-control" id="nomedaong" name="nome">
                                                     <label for="cnpj">CNPJ:</label>
-                                                    <input type="text" class="form-control" id="cnpj" name="cnpj" required>
-                                                
+                                                    <input type="text" class="form-control" id="nomedaong" name="nome">
                                                     <label for="rua">Rua:</label>
-                                                    <input type="text" class="form-control" id="rua" name="rua" required>
-                                                
+                                                    <input type="text" class="form-control" id="rua" name="nome">
                                                     <label for="bairro">Bairro:</label>
-                                                    <input type="text" class="form-control" id="bairro" name="bairro" required>
-                                                
+                                                    <input type="text" class="form-control" id="bairro" name="nome">
                                                     <label for="cidade">Cidade:</label>
-                                                    <input type="text" class="form-control" id="cidade" name="cidade" required>
-                                                
+                                                    <input type="text" class="form-control" id="cidade" name="nome">
                                                     <label for="estado">Estado:</label>
-                                                    <input type="text" class="form-control" id="estado" name="estado" required>
-                                                
+                                                    <input type="text" class="form-control" id="estado" name="nome">
                                                     <label for="email">Email:</label>
-                                                    <input type="email" class="form-control" id="email" name="email" required>
-                                                
+                                                    <input type="text" class="form-control" id="email" name="nome">
                                                     <label for="contato">Contato:</label>
-                                                    <input type="text" class="form-control" id="contato" name="contato" required>
-                                                
+                                                    <input type="text" class="form-control" id="contato" name="nome">
                                                     <label for="sobre">Nos conte brevemente sobre sua ONG:</label>
-                                                    <input type="text" class="form-control" id="sobre" name="sobre" required>
-                                                
+                                                    <input type="text" class="form-control" id="sobre" name="nome">
                                                     <label for="senha">Senha:</label>
-                                                    <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha" required>
-                                                
+                                                    <input type="password" id="senha" name="senha" placeholder="Senha"
+                                                        required><br>
+
                                                     <label for="confirmaSenha">Confirme a Senha:</label>
-                                                    <input type="password" class="form-control" id="confirmaSenha" name="confirmaSenha" placeholder="Confirme a Senha" required><br>
-                                                
+                                                    <input type="password" id="confirmaSenha" name="confirmaSenha"
+                                                        placeholder="Confirme a Senha" required><br>
                                                     <label for="concordo2">
-                                                        <input type="checkbox" id="concordo2" name="concordo2" required> Concordo com os
-                                                        <a href="termos.html" target="_blank">termos e condições</a>
+                                                        <input type="checkbox" id="concordo2" name="concordo2" required>
+                                                        Concordo com os <a href="termos.html">termos e condições</a>
                                                     </label>
-                                                    
-                                                
-                                                    <button type="submit">Criar conta</button>
+
+
                                                 </div>
-                                                
+                                                <!-- Outros campos do formulário -->
                                             </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Fechar</button>
+                                            <button type="button" class="btn btn-primary">Enviar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -96,33 +89,96 @@
                         </div>
                     </div>
                 </div>
+
                 <section class="parceiros">
-                    <h1 class="ongsparceiras">ONG'S Parceiras</h1>
+                    <h1>ONG'S Parceiras</h1>
                     <div class="container text-center">
                         <div class="row align-items-start">
                             <div class="col">
-                                <button class="ong-button" data-bs-toggle="modal" data-bs-target="#ongModal1">ONG
-                                    1</button>
-                                <img src="assets/img/icons8-coração-do-cão-64.png" alt="ícone de cachorro"
-                                    class="ong-image">
+                                <p><strong>ONG 1</strong></p>
+                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ongModal1">
+                                    <img src="assets/img/icons8-coração-do-cão-64.png" alt="icon de cachorro">
+                                </button>
                                 <p2>Localização</p2>
                             </div>
                             <div class="col">
-                                <button class="ong-button" data-bs-toggle="modal" data-bs-target="#ongModal2">ONG
-                                    2</button>
-                                <img src="assets/img/icons8-osso-de-cachorro-48.png" alt="ícone de cachorro"
-                                    width="64px" class="ong-image">
+                                <p><strong>ONG 2</strong></p>
+                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ongModal2">
+                                    <img src="assets/img/icons8-osso-de-cachorro-48.png" alt="icon de cachorro" width="64px">
+                                </button>
                                 <p2>Localização</p2>
                             </div>
                             <div class="col">
-                                <button class="ong-button" data-bs-toggle="modal" data-bs-target="#ongModal3">ONG
-                                    3</button>
-                                <img src="assets/img/icons8-pata-64.png" alt="ícone de cachorro" class="ong-image">
+                                <p><strong>ONG 3</strong></p>
+                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ongModal3">
+                                    <img src="assets/img/icons8-pata-64.png" alt="icon de cachorro">
+                                </button>
                                 <p2>Localização</p2>
                             </div>
                         </div>
                     </div>
                 </section>
+            
+                <!-- Modais para cada ONG -->
+                <div class="modal fade" id="ongModal1" tabindex="-1" role="dialog" aria-labelledby="ongModalLabel1" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ongModalLabel1">ONG 1</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/img/imagem-exemplo-ong.png" alt="Imagem da ONG 1">
+                                <p>Descrição breve da ONG 1  Descrição breve da ONG 1. Descrição breve da ONG 1.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="modal fade" id="ongModal2" tabindex="-1" role="dialog" aria-labelledby="ongModalLabel2" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ongModalLabel2">ONG 2</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/img/imagem-exemplo-ong.png" alt="Imagem da ONG 2">
+                                <p>Descrição breve da ONG 2.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="modal fade" id="ongModal3" tabindex="-1" role="dialog" aria-labelledby="ongModalLabel3" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ongModalLabel3">ONG 3</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="assets/img/imagem-exemplo-ong.png" alt="Imagem da ONG 3">
+                                <p>Descrição breve da ONG 3.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="modal fade" id="ongModal1" tabindex="-1" aria-labelledby="ongModal1Label"
                     aria-hidden="true">
                     <div class="modal-dialog">
@@ -132,21 +188,20 @@
                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                     aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
-                                <!-- Conteúdo do modal para ONG 1, como imagem e descrição -->
-                                <img src="assets/img/ong1.jpeg" alt="Imagem da ONG 1">
-                                <br>
-                                <br>
-                                <p2>
-                                    <strong>Breve descrição:</strong>
-                                    breve descrição sobre a ong
-                                    breve descrição sobre a ong breve descrição sobre a ong
-                                    breve descrição sobre a ong breve descrição sobre a ong
-                                </p2>
+
+                            <div class="modal fade" id="ongModal2" tabindex="-1" aria-labelledby="ongModal2Label"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ongModal2Label">ONG 1</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
+                
         </main>
         <div id="footer-placeholder"></div>
     </div>
