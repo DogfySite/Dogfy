@@ -66,9 +66,6 @@
                             </div>
                         </div>
                     </div>
-                
-                   
-
 
                     <hr mt-3>
 
@@ -95,34 +92,59 @@
                             </div>
                         </div>
 
-                        <div class="modal fade" id="ongModal1" tabindex="-1" aria-labelledby="ongModal1Label"
-                            aria-hidden="true">
+                        <!-- Seu modal existente -->
+                        <div class="modal fade" id="ongModal1" tabindex="-1" aria-labelledby="ongModal1Label" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="ongModal1Label">Confirme sua adoção: </h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
+                                        <!-- Seu conteúdo existente -->
                                         <img src="assets/img/lina.jfif" style="width: 200px;" alt="Imagem do pet">
                                         <br>
                                         <br>
-                                            <strong>Nome: </strong><p>Lina</p>
-                                            <strong>Idade: </strong><p>2 anos</p>
-                                            <strong>Gênero: </strong><p>Fêmea</p>
-                                            <strong>ONG localizado: </strong><p>ONG da gigi</p>
-                                            <strong>Cidade localizado: </strong><p>São Paulo - SP</p>
-                                            <strong>Por que quer adotar esse pet?</strong>
-                                            <form>
-                                                <label for="sobre"></label><input type="text" class="form-control" id="sobre" name="nome" required><br>
-                                                <strong>Você tem condições para cuidar desse pet com muito amor e carinho?</strong>
-                                                <label for="sobre"></label><input type="text" class="form-control" id="sobre" name="nome" required><br>
-                                                <button type="submit">Confirmo que quero adotar</button>
-                                            </form>
+                                        <strong>Nome: </strong><p>Lina</p>
+                                        <!-- ... (restante do conteúdo) ... -->
+                                        <strong>Por que quer adotar esse pet?</strong>
+                                        <form>
+                                            <label for="sobre"></label><input type="text" class="form-control" id="sobre" name="nome" required><br>
+                                            <strong>Você tem condições para cuidar desse pet com muito amor e carinho?</strong>
+                                            <label for="sobre"></label><input type="text" class="form-control" id="sobre" name="nome" required><br>
+                                            <button type="submit" class="btn btn-primary">Confirmo que quero adotar</button>
+                                        </form>
+
+                                        <!-- Mensagem de sucesso (adicione esta parte) -->
+                                        <div class="modal-footer">
+                                            <div id="success-message" style="display: none;" class="alert alert-success" role="alert">
+                                                Adoção realizada com sucesso! Aguarde que entraremos em contato com você.
+                                            </div>
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Seu script JavaScript (adicione esta parte) -->
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function () {
+                                var form = document.querySelector('#ongModal1 form');
+                                var successMessage = document.getElementById('success-message');
+
+                                form.addEventListener('submit', function (event) {
+                                    event.preventDefault(); // Evita o envio tradicional do formulário
+
+                                    // Aqui você pode adicionar lógica para enviar os dados do formulário, se necessário
+
+                                    // Exibe a mensagem de sucesso e oculta o formulário
+                                    form.style.display = 'none';
+                                    successMessage.style.display = 'block';
+                                });
+                            });
+                        </script>
+                            
                         </div>
 
 
