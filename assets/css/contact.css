@@ -58,9 +58,6 @@ form button {
     font-weight: 500;
 }
 
-button:hover {
-    background-color: #555;
-}
 
 form input[type="text"],
 form input[type="email"],
@@ -87,10 +84,6 @@ form textarea {
 
 .entre-em-contato2 {
     margin-bottom: 5px;
-}
-
-form button:hover {
-    background-color: #555;
 }
 
 form label {

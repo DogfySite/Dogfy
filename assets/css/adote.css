@@ -46,10 +46,6 @@ body {
 }
 
 
-button:hover {
-    background-color: #555;
-}
-
 .botaoBusca {
     background-color: #C9A98D;
     font-size: 10px;

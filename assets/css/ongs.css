@@ -91,9 +91,6 @@ img {
     align-items: center;
   }
 
-button:hover {
-    background-color: #555;
-}
 
 #abrir-modal.btn.btn-primary {
     background-color: #C9A98D;
