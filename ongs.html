@@ -46,7 +46,7 @@
                                                     <label for="nomedaong">ONG:</label>
                                                     <input type="text" class="form-control" id="nomedaong" name="nome">
                                                     <label for="cnpj">CNPJ:</label>
-                                                    <input type="text" class="form-control" id="nomedaong" name="nome">
+                                                    <input type="text" class="form-control" id="cnpj" name="cnpj">
                                                     <label for="rua">Rua:</label>
                                                     <input type="text" class="form-control" id="rua" name="nome">
                                                     <label for="bairro">Bairro:</label>
@@ -81,7 +81,8 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Fechar</button>
-                                            <button type="button" class="btn btn-primary">Enviar</button>
+                                            <button type="submit" class="btn btn-primary" onsubmit="registrarOng()" data-bs-toggle="modal"
+                                            data-bs-target="#cadastroModal" id="enviarButton">Enviar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -89,10 +90,10 @@
                         </div>
                     </div>
                 </div>
-
-                <section class="parceiros">
+                
+                <section class="parceiros" onload="carregarPgOngs()">
                     <h1>ONG'S Parceiras</h1>
-                    <div class="container text-center">
+                    <div class="container text-center" id="ongContainer">
                         <div class="row align-items-start">
                             <div class="col">
                                 <p><strong>ONG 1</strong></p>
@@ -203,10 +204,21 @@
                             </div>
                 
         </main>
+
+        <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner-border text-light" role="status">
+              <span class="visually-hidden">Carregando...</span>
+            </div>
+          </div>
+
+        <div id="footer-placeholder"></div>
+    </div>
+
         <div id="footer-placeholder"></div>
     </div>
     <script src="assets/js/hef.js"></script>
     <script src="assets/bs/js/bootstrap.min.js"></script>
+    <script src="assets/js/ongs.js"></script>
     <script src="assets/js/script.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

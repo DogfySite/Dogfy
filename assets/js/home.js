@@ -6,6 +6,7 @@ function fecharCarregamento(){
     document.getElementById('loadingSpinner').style.display = 'none';
 }
 
+
 function carregarOngsHome() {
     carregarApi();
     const apiUrl = "http://191.252.153.53:81/api/Ong/visualizarOngs";
@@ -67,3 +68,4 @@ function carregarOngsHome() {
 }
 
 window.addEventListener("load", carregarOngsHome);
+
