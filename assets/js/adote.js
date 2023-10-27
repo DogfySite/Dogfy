@@ -58,7 +58,8 @@ function solicitarAnimais() {
 
                 const pElement = document.createElement("p");
                 pElement.classList.add("card-text", "truncar-3l");
-                pElement.innerText = `Sobre: ${animal.sobrePet} ONG:${animal.nomeOng}, Idade: ${animal.idade}, Sexo: ${animal.sexoPet}`;
+                pElement.innerText = `Sobre: ${animal.sobrePet} \nONG:${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}`;
+                pElement.style.fontSize = '15px'
 
                 divCardBody.appendChild(h5Element);
                 divCardBody.appendChild(pElement);
