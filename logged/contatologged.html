@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="icon" type="image/x-icon" href="/assets/img/Dogfy-removebg-preview.png">
+    <title>Dogfy</title>
+</head>
+<body>
+            <header>    
+                <nav class="navbar navbar-expand-lg bg-white">
+                    <div class="container">
+                    <nav class="navbar bg-white">
+                        <div class="container">
+                        <a class="navbar-brand" href="homelogged.html">
+                            <img src="/assets/img/Dogfy (1).png" alt="Dogfy logo" width="196px">
+                        </a>
+                        </div>
+                    </nav>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                              <a class="nav-link" href="homelogged.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" onclick="tipoUsuario()">Adote</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="ongslogged.html">ONGs</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="contatologged.html">Contato</a>
+                            </li>
+                          </ul>
+                        <div class="align-self-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal">Meu perfil</a>
+                            </li>
+                            <!-- Modal de Perfil -->
+                            <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="perfilModalLabel">Meu Perfil</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h5>Nome completo: <span id="userName"></span></h5>
+                                        <h5>Email: <span id="userEmail"></span></h5>
+                                        <h5>Endereço: <span id="userAddress"></span></h5>
+                                        <h5>Telefone: <span id="userPhone"></span></h5>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" onclick="editarPerfil()">Editar Perfil</button>
+                                        <button type="button" onclick="excluirPerfil()">Excluir Perfil</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        
+                            <li class="nav-item">
+                            <a href="" class="nav-link">Sair</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </nav>
+            </header>   
+
+            <body>
+                <div class="d-flex flex-column wrapper">
+                    <div id="header-placeholder"></div>
+            
+                    <main class="flex-fill">
+                        <div class="content">
+                            <div class="column">
+                                <img class="img-contato" src="/assets/img/pngegg.png" alt="Imagem de cachorros e gatinhos">
+            
+                                <!-- Alerta de sucesso (inicialmente oculto) -->
+                                <div id="successAlert" class="alert alert-success" role="alert" style="display: none;">
+                                    Mensagem enviada com sucesso!
+                                </div>
+            
+                            </div>
+                            <div class="column">
+                                <div class="text-section">
+                                    <h1 class="entre-em-contato">Entre em Contato</h1>
+                                    <p class="entre-em-contato2">Se você tem alguma dúvida, sugestão, ou precisa de assistência sinta-se a vontade para entrar em contato!</p>
+                                </div>
+                                <section>
+                                    <div class="container">
+                                            <div class="container mt-4">
+                                                <form id="myForm" onsubmit="cadastrarMensagem()">
+                                                    <form id="contact-form">
+                                                        <label for="nome">Nome:</label>
+                                                        <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
+                            
+                                                        <label for="email">Email:</label>
+                                                        <input type="email" id="email" name="email" placeholder="Endereço de email" required>
+                            
+                                                        <label for="mensagem">Mensagem:</label>
+                                                        <textarea id="mensagem" name="mensagem" placeholder="Digite sua mensagem" required style="resize: none;"></textarea>
+                            
+                                                        <button type="submit">Enviar Mensagem</button>
+                                                    
+                                                </form>
+                                                
+                                            </div>
+                                        </form>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </main>
+                    </div>
+                    </main>
+        
+            <footer>
+              <div class="footer-wrapper">
+                  <div class="footer-columns">
+
+                      <section class="footer-logo">
+                          <h2>
+                              <img src="/assets/img/Dogfy (1).png" width="300px">
+                          </h2>
+                      </section>
+
+                      <section>
+                        <ul>
+                            <li>
+                                <a href="homelogged.html" title="home">Home</a>
+                            </li>
+                            <li>
+                                <a href="" title="adote">Adote</a>
+                            </li>
+                            <li>
+                                <a href="ongslogged.html" title="ongs">ONG's</a>
+                            </li>
+                            <li>
+                                <a href="contatologged.html" title="contato">Contato</a>
+                            </li>
+                          
+                        </ul>
+                    </section>
+
+                      <section>
+                          <ul>
+                              <li>
+                                  <a href="https://www.instagram.com/dogfysite/" title="instagram" target="_blank">Instagram</a>
+                              </li>                        
+                              <li>
+                                  <a href="/termos.html" title="termos" target="_blank">Termos de Uso</a>
+                              </li>
+                              <li>
+                                  <a href="/privacidade.html" title="privacidade" target="_blank">Política de Privacidade</a>
+                              </li>                        
+                          </ul>
+                      </section>
+
+                      <section class="allrights">
+                          <small>2023 © Dogfy</small> <br>
+                          <small>All rights reserved</small>
+                      </section>
+                  </div>
+
+                      
+              </div>
+          </footer>
+
+    <script src="/assets/bs/js/bootstrap.min.js"></script>
+    <script src="/assets/js/script.js"></script> 
+</body>
+</html>

@@ -46,7 +46,7 @@ body {
     margin: 30px;
 }
 
-img {
+.image-section img {
     max-width: 40%;
     height: auto;
     border-radius: 10px;
@@ -127,7 +127,6 @@ img {
 
 button a:visited,
 a:link {
-    color: white;
     text-decoration: none;
 }
 

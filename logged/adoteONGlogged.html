@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/bs/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/header.css">
+    <link rel="stylesheet" href="/assets/css/home.css">
+    <link rel="stylesheet" href="/assets/css/adote.css">
+    <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="icon" type="image/x-icon" href="/assets/img/Dogfy-removebg-preview.png">
+    <title>Dogfy - Adote</title>
+</head>
+<body>
+            <header>    
+                <nav class="navbar navbar-expand-lg bg-white">
+                    <div class="container">
+                    <nav class="navbar bg-white">
+                        <div class="container">
+                        <a class="navbar-brand" href="homelogged.html">
+                            <img src="/assets/img/Dogfy (1).png" alt="Dogfy logo" width="196px">
+                        </a>
+                        </div>
+                    </nav>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav flex-grow-1">
+                            <li class="nav-item">
+                              <a class="nav-link" href="homelogged.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" onclick="tipoUsuario()">Adote</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="ongslogged.html">ONGs</a>
+                            </li>
+                            <li class="nav-item">
+                              <a class="nav-link" href="contatologged.html">Contato</a>
+                            </li>
+                          </ul>
+                        <div class="align-self-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal">Meu perfil</a>
+                            </li>
+                            <!-- Modal de Perfil -->
+                            <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="perfilModalLabel">Meu Perfil</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <h5>Nome completo: <span id="userName"></span></h5>
+                                        <h5>Email: <span id="userEmail"></span></h5>
+                                        <h5>Endereço: <span id="userAddress"></span></h5>
+                                        <h5>Telefone: <span id="userPhone"></span></h5>
+                                    </div>
+                                    
+                                    <div class="modal-footer">
+                                        <button type="button" onclick="editarPerfil()">Editar Perfil</button>
+                                        <button type="button" onclick="excluirPerfil()">Excluir Perfil</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        
+                            <li class="nav-item">
+                            <a href="" class="nav-link">Sair</a>
+                            </li>
+                        </ul>
+                        </div>
+                    </div>
+                    
+                    </div>
+                </nav>
+            </header>   
+        
+
+            
+
+                <div class="d-flex flex-column wrapper">
+        
+            
+                    <main class="flex-fill">
+                        <h1 class="adoteumAumigo">Adote um aumigo!</h1>
+                        <p class="companheiro">Chegou a hora de escolher o seu companheiro...</p>
+            
+                        <main class="flex-fill">
+                            <div class="container">
+                                <div class="row filtro">
+                                    <div class="col-12 col-md-9 mx-auto">
+                                        <div class="d-flex flex-wrap justify-content-between align-items-center">
+                                            <div class="mb-2 d-flex align-items-center">
+                                                <label for="porte-select" class="me-2">Porte:</label>
+                                                <select id="porte-select" class="form-select form-select-sm">
+                                                    <option value="">Todos</option>
+                                                    <option value="Pequeno">Pequeno</option>
+                                                    <option value="Medio">Médio</option>
+                                                    <option value="Grande">Grande</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-2 d-flex align-items-center">
+                                                <label for="sexo-select" class="me-2">Sexo:</label>
+                                                <select id="sexo-select" class="form-select form-select-sm">
+                                                    <option value="">Todos</option>
+                                                    <option value="Feminino">Feminino</option>
+                                                    <option value="Masculino">Masculino</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-2 d-flex align-items-center">
+                                                <label for="tipo-animal-select" class="me-2">Tipo:</label>
+                                                <select id="tipo-animal-select" class="form-select form-select-sm">
+                                                    <option value="">Todos</option>
+                                                    <option value="Gato">Gato</option>
+                                                    <option value="Cachorro">Cachorro</option>
+                                                </select>
+                                            </div>
+                                            <div class="mb-2 d-flex align-items-center">
+                                                <label for="cidade-select" class="me-2">Cidade:</label>
+                                                <select id="cidade-animal" class="form-select form-select-sm">
+                                                    <option value="">Todas</option>
+                                                    <option value="São Paulo">São Paulo</option>
+                                                    <option value="Santo André">Santo André</option>
+                                                    <option value="São Bernardo do Campo">São Bernardo do Campo</option>
+                                                </select>
+                                                <button class="ms-md-2" style="margin-left: 20px;"
+                                                    onclick="filtrarAnimais()">Filtrar</button>
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="button-container">
+                                    <button class="cadastreAnimal">Cadastrar um animal</button>
+                                    <button class="excluirAnimal">Excluir um animal</button>
+                                    <button class="editarAnimal">Editar um animal</button>
+                                </div>
+            
+                                <hr mt-3>
+            
+                                <div class="row g-3" id="petList">
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="card text-center bg-light border-light">
+                                            <a href="">
+                                                <img src="/assets/img/lina.jfif" class="card-img-top"
+                                                    style="height: 200px; width: auto;">
+                                            </a>
+                                            <div class="card-header border-light">
+                                                Localização
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nome do auau</h5>
+                                                <p class="card-text truncar-3l">
+                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
+                                                </p>
+                                            </div>
+                                            <div class="card-footer border-light">
+                                                <button class="ong-button mt-2 d-block w-100" data-bs-toggle="modal"
+                                                    data-bs-target="#ongModal1">Quero adotar</button>
+                                                <small class="text-success">ONG</small>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <!-- Seu modal existente -->
+                                    <div class="modal fade" id="ongModal1" tabindex="-1" aria-labelledby="ongModal1Label"
+                                        aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="ongModal1Label">Confirme sua adoção: </h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <!-- Seu conteúdo existente -->
+                                                    <img src="/assets/img/lina.jfif" style="width: 200px;" alt="Imagem do pet">
+                                                    <br>
+                                                    <br>
+                                                    <strong>Nome: </strong>
+                                                    <p>Lina</p>
+                                                    <!-- ... (restante do conteúdo) ... -->
+                                                    <strong>Por que quer adotar esse pet?</strong>
+                                                    <form>
+                                                        <label for="sobre"></label><input type="text" class="form-control"
+                                                            id="sobre" name="nome" required><br>
+                                                        <strong>Você tem condições para cuidar desse pet com muito amor e
+                                                            carinho?</strong>
+                                                        <label for="sobre"></label><input type="text" class="form-control"
+                                                            id="sobre" name="nome" required><br>
+                                                        <button type="submit" class="btn btn-primary">Confirmo que quero
+                                                            adotar</button>
+                                                    </form>
+            
+                                                    <!-- Mensagem de sucesso (adicione esta parte) -->
+                                                    <div class="modal-footer">
+                                                        <div id="success-message" style="display: none;" class="alert alert-success"
+                                                            role="alert">
+                                                            Adoção realizada com sucesso! Aguarde que entraremos em contato com
+                                                            você.
+                                                        </div>
+                                                        <button type="button" class="btn btn-secondary"
+                                                            data-bs-dismiss="modal">Fechar</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                    <!-- Seu script JavaScript (adicione esta parte) -->
+                                    <script>
+                                        document.addEventListener('DOMContentLoaded', function () {
+                                            var form = document.querySelector('#ongModal1 form');
+                                            var successMessage = document.getElementById('success-message');
+            
+                                            form.addEventListener('submit', function (event) {
+                                                event.preventDefault(); // Evita o envio tradicional do formulário
+            
+                                                // Aqui você pode adicionar lógica para enviar os dados do formulário, se necessário
+            
+                                                // Exibe a mensagem de sucesso e oculta o formulário
+                                                form.style.display = 'none';
+                                                successMessage.style.display = 'block';
+                                            });
+                                        });
+                                    </script>
+            
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="card text-center bg-light border-light">
+                                            <a href="">
+                                                <img src="/assets/img/teste2.png" class="card-img-top"
+                                                    style="height: 200px; width: auto;">
+                                            </a>
+                                            <div class="card-header border-light">
+                                                Localização
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nome</h5>
+                                                <p class="card-text truncar-3l">
+                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
+                                                </p>
+                                            </div>
+                                            <div class="card-footer border-light">
+                                                <button href="" class="mt-2 d-block w-100">
+                                                    Quero adotar
+                                                </button>
+                                                <small class="text-success">ONG</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="card text-center bg-light border-light">
+                                            <a href="">
+                                                <img src="/assets/img/teste3.jpg" class="card-img-top"
+                                                    style="height: 200px; width: auto;">
+                                            </a>
+                                            <div class="card-header border-light">
+                                                Localização
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nome</h5>
+                                                <p class="card-text truncar-3l">
+                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
+                                                </p>
+                                            </div>
+                                            <div class="card-footer border-light">
+                                                <button href="" class="mt-2 d-block w-100">
+                                                    Quero adotar
+                                                </button>
+                                                <small class="text-success">ONG</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="card text-center bg-light border-light">
+                                            <a href="">
+                                                <img src="/assets/img/teste4.png" class="card-img-top"
+                                                    style="height: 200px; width: auto;">
+                                            </a>
+                                            <div class="card-header border-light">
+                                                Localização
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nome</h5>
+                                                <p class="card-text truncar-3l">
+                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
+                                                </p>
+                                            </div>
+                                            <div class="card-footer border-light">
+                                                <button href="" class="mt-2 d-block w-100">
+                                                    Quero adotar
+                                                </button>
+                                                <small class="text-success">ONG</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="card text-center bg-light border-light">
+                                            <a href="">
+                                                <img src="/assets/img/teste5.jpg" class="card-img-top"
+                                                    style="height: 200px; width: auto;">
+                                            </a>
+                                            <div class="card-header border-light">
+                                                Localização
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nome</h5>
+                                                <p class="card-text truncar-3l">
+                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
+                                                </p>
+                                            </div>
+                                            <div class="card-footer border-light">
+                                                <button href="" class="mt-2 d-block w-100">
+                                                    Quero adotar
+                                                </button>
+                                                <small class="text-success">ONG</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                                        <div class="card text-center bg-light border-light">
+                                            <a href="">
+                                                <img src="/assets/img/teste.jfif" class="card-img-top"
+                                                    style="height: 200px; width: auto;">
+                                            </a>
+                                            <div class="card-header border-light">
+                                                Localização
+                                            </div>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Nome</h5>
+                                                <p class="card-text truncar-3l">
+                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
+                                                </p>
+                                            </div>
+                                            <div class="card-footer border-light">
+                                                <button href="" class="mt-2 d-block w-100">
+                                                    Quero adotar
+                                                </button>
+                                                <small class="text-success">ONG</small>
+                                            </div>
+                                        </div>
+                                    </div>
+            
+                                </div>
+            
+                                <hr mt-3>
+            
+                                <div class="row pb-3">
+                                    <div class="col-12">
+                                        <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
+                                            <nav class="d-inline-block me-3">
+                                                <ul class="pagination pagination-sm my-0">
+                                                    <li class="page-item">
+                                                        <a class="page-link disabled" href="#">1</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">2</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">3</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">4</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">5</a>
+                                                    </li>
+                                                    <li class="page-item">
+                                                        <a class="page-link" href="#">6</a>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </main>
+            
+                        <div id="loadingSpinner" class="loading-spinner">
+                            <div class="spinner-border text-light" role="status">
+                                <span class="visually-hidden">Carregando...</span>
+                            </div>
+                        </div>
+
+            <footer>
+              <div class="footer-wrapper">
+                  <div class="footer-columns">
+
+                      <section class="footer-logo">
+                          <h2>
+                              <img src="/assets/img/Dogfy (1).png" width="300px">
+                          </h2>
+                      </section>
+
+                      <section>
+                        <ul>
+                            <li>
+                                <a href="homelogged.html" title="home">Home</a>
+                            </li>
+                            <li>
+                                <a href="" title="adote">Adote</a>
+                            </li>
+                            <li>
+                                <a href="ongslogged.html" title="ongs">ONG's</a>
+                            </li>
+                            <li>
+                                <a href="contatologged.html" title="contato">Contato</a>
+                            </li>
+                          
+                        </ul>
+                    </section>
+
+                      <section>
+                          <ul>
+                              <li>
+                                  <a href="https://www.instagram.com/dogfysite/" title="instagram" target="_blank">Instagram</a>
+                              </li>                        
+                              <li>
+                                  <a href="/termos.html" title="termos" target="_blank">Termos de Uso</a>
+                              </li>
+                              <li>
+                                  <a href="/privacidade.html" title="privacidade" target="_blank">Política de Privacidade</a>
+                              </li>                        
+                          </ul>
+                      </section>
+
+                      <section class="allrights">
+                          <small>2023 © Dogfy</small> <br>
+                          <small>All rights reserved</small>
+                      </section>
+                  </div>
+
+                      
+              </div>
+          </footer>
+
+    <script src="/assets/bs/js/bootstrap.min.js"></script>
+    <script src="/assets/js/script.js"></script> 
+</body>
+</html>
