@@ -10,9 +10,17 @@ function menuShow() {
 }
 
 function tipoUsuario(){
+    if(sessionStorage.getItem('OsessionId') || sessionStorage.getItem('UsessionId')){
+        if(!sessionStorage.getItem('OsessionId')){
+            window.location.href = 'adoteu.html';
+        }else{
+            window.location.href = 'adotex.html';
+        }
+    }else{
         if(!sessionStorage.getItem('OsessionId')){
             window.location.href = '/adote.html';
         }else{
             window.location.href = '/cadastraranimal.html';
         }
+    }
 }

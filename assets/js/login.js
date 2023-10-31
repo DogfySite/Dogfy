@@ -45,7 +45,7 @@ function validateLogin() {
                 sessionStorage.setItem('OsessionId', data.idOng);
             }
 
-            window.location.href = '/ongeusuarioLogado.html';
+            window.location.href = 'logged/home.html';
         })
         .catch((error) => {
             console.error('Error', error);
