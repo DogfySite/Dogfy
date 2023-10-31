@@ -135,11 +135,135 @@
                                     </div>
                                 </div>
                                 <div class="button-container">
-                                    <button class="cadastreAnimal">Cadastrar um animal</button>
-                                    <button class="excluirAnimal">Excluir um animal</button>
-                                    <button class="editarAnimal">Editar um animal</button>
+                                    <button class="cadastreAnimal" data-toggle="modal" data-target="#cadastroModal">Cadastrar um animal</button>
+                                    <button class="excluirAnimal" data-toggle="modal" data-target="#excluirModal">Excluir um animal</button>
+                                    <button class="editarAnimal" data-toggle="modal" data-target="#editarModal">Editar um animal</button>
                                 </div>
-            
+                                
+                                <!-- Modal de Cadastro -->
+                                <div class="modal fade" id="cadastroModal" tabindex="-1" role="dialog" aria-labelledby="cadastroModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="cadastroModalLabel">Cadastrar um animal</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="nomePet"><strong>Nome do Pet:</strong></label>
+                                                        <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet">
+                                                    </div>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <label for="idadePet"><strong>Idade:</strong></label>
+                                                        <input type="text" class="form-control" id="idadePet" placeholder="Digite a idade do pet (ex: 2 meses)">
+                                                    </div>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <label for="sexoPet"><strong>Sexo:</strong></label>
+                                                        <select class="form-control" id="sexoPet">
+                                                            <option value="masculino">Masculino</option>
+                                                            <option value="feminino">Feminino</option>
+                                                        </select>
+                                                    </div>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <label for="imagemPet"><strong>Enviar Imagem (JPEG ou JPG)</strong></label>
+                                                        <input type="file" class="form-control-file" id="imagemPet" accept=".jpg, .jpeg" max="1">
+                                                    </div>
+                                                    <br>
+                                                    <button type="submit">Cadastrar Pet</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Modal de Excluir -->
+                                <div class="modal fade" id="excluirModal" tabindex="-1" role="dialog" aria-labelledby="excluirModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="excluirModalLabel">Excluir um animal</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="nomePet"><strong>Nome do Pet:</strong></label>
+                                                        <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet">
+                                                    </div>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <label for="idadePet"><strong>Idade:</strong></label>
+                                                        <input type="text" class="form-control" id="idadePet" placeholder="Digite a idade do pet (ex: 2 meses)">
+                                                    </div>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <label for="sexoPet"><strong>Sexo:</strong></label>
+                                                        <select class="form-control" id="sexoPet">
+                                                            <option value="masculino">Masculino</option>
+                                                            <option value="feminino">Feminino</option>
+                                                        </select>
+                                                    </div>
+                                                    <br>
+                                                    </div>
+                                                </form>
+                                            <div class="modal-footer">
+                                                <button type="button" data-dismiss="modal">Cancelar</button>
+                                                <button type="button">Excluir</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Modal de Editar -->
+                                <div class="modal fade" id="editarModal" tabindex="-1" role="dialog" aria-labelledby="editarModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="editarModalLabel">Editar um animal</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                    <div class="form-group">
+                                                        <label for="nomePet"><strong>Nome do Pet:</strong></label>
+                                                        <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet">
+                                                    </div>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <label for="idadePet"><strong>Idade:</strong></label>
+                                                        <input type="text" class="form-control" id="idadePet" placeholder="Digite a idade do pet (ex: 2 meses)">
+                                                    </div>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <label for="sexoPet"><strong>Sexo:</strong></label>
+                                                        <select class="form-control" id="sexoPet">
+                                                            <option value="masculino">Masculino</option>
+                                                            <option value="feminino">Feminino</option>
+                                                        </select>
+                                                    </div>
+                                                    <br>
+                                                    <div class="form-group">
+                                                        <label for="imagemPetEditar"><strong>Enviar Nova Imagem (JPEG ou JPG)</strong></label>
+                                                        <input type="file" class="form-control-file" id="imagemPetEditar" accept=".jpg, .jpeg" max="1">
+                                                    </div>
+                                                    <br>
+                                                    <button type="submit">Salvar Alterações</button>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        
                                 <hr mt-3>
             
                                 <div class="row g-3" id="petList">
@@ -440,5 +564,9 @@
 
     <script src="/assets/bs/js/bootstrap.min.js"></script>
     <script src="/assets/js/script.js"></script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </body>
 </html>
