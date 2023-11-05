@@ -428,11 +428,11 @@ function converterImagem(){
     }
 }
 
-function cadastrarPet(){
+function cadastrarPet() {
     event.preventDefault();
     const apiUrl = "https://localhost:44309/api/Pet/inserirPets";
 
-    if(typeof ImgToBase64 !== undefined && ImgToBase64 !== null){
+    if (typeof ImgToBase64 !== undefined && ImgToBase64 !== null) {
         var imagemBase64 = ImgToBase64;
 
         var idOng = sessionStorage.getItem('OsessionId');
@@ -454,18 +454,28 @@ function cadastrarPet(){
             imgPet: imagemBase64
         }
 
-        fetch(apiUrl,{
-            method:'POST',
+        fetch(apiUrl, {
+            method: 'POST',
             headers: {
-                'Content-type':'application/json'
+                'Content-type': 'application/json'
             },
             body: JSON.stringify(registro),
         })
-        .then(response => response.text())
-        .then(data => console.log('Sucesso', data))
-        .catch(error => console.error('Erro na solicitação', error));
+            .then(response => response.text())
+            .then(data => {
+                console.log('Sucesso', data);
+
+                const petCadastradoModal = new bootstrap.Modal(document.getElementById('petCadastrado'));
+                petCadastradoModal.show();
+
+                setTimeout(() => {
+                    window.location.reload();
+                }, 5000);
+            })
+            .catch(error => console.error('Erro na solicitação', error));
     }
 }
+
 
 function excluirPet(){
     event.preventDefault()

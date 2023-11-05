@@ -6,6 +6,8 @@ function carregarApi(){
     }, 800);
 }
 
+window.addEventListener("load", carregarApi);
+
 function validateLogin() {
     event.preventDefault();
 
@@ -15,7 +17,7 @@ function validateLogin() {
     var senha = document.getElementById('password').value;
 
     if(document.querySelector("#pessoa").checked == true){
-        apiUrl = 'http://191.252.153.53:81/api/Usuario/validarLoginUser';
+        apiUrl = 'https://localhost:44309/api/Usuario/validarLoginUser';
 
         var login = {
             email: email,

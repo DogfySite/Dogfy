@@ -1,3 +1,13 @@
+function carregarApi(){
+    document.getElementById('loadingSpinner').style.display = 'flex';
+
+    setTimeout(() => {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }, 800);
+}
+
+window.addEventListener("load", carregarApi);
+
 function postRequest(url, body){
     let request = new XMLHttpRequest();
     request.open("POST", url, true);

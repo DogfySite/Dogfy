@@ -419,6 +419,8 @@ function preencherModal(data, petId) {
         <p style="font-size: 15px">Opa, opa, opa! Antes de solicitar a adoção, por favor realize login em nosso site!</p>
         <br>
         <p style="font-size: 15px">Agradecemos pela compreensão!</p>
+        <hr>
+        <a href="login.html"><button type="button">Ir para a tela de login</button></a>
     `;
     }
     

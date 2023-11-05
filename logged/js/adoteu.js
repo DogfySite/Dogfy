@@ -6,6 +6,8 @@ function carregarApi(){
     }, 800);
 }
 
+window.addEventListener("load", carregarApi);
+
 function solicitarAnimais() {
     const apiUrl = "https://localhost:44309/api/Pet/petsEOngs";
 

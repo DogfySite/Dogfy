@@ -202,8 +202,23 @@
                                                     <br>
                                                     <div id="imagem-pet"></div>
                                                     <br>
-                                                    <button type="submit">Cadastrar Pet</button>
+                                                    <button type="submit" id="btnCadastrarPet">Cadastrar Pet</button>
                                                 </form>
+                                                <div class="modal fade" id="petCadastrado" tabindex="-1" aria-labelledby="petCadastradoLabel"
+                                                aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="petCadastradoLabel">Pet cadastrado com sucesso</h5>
+                                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                                aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                Pet registrado com sucesso!
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -355,73 +370,7 @@
                                 <hr mt-3>
             
                                 <div class="row g-3" id="petList">
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                        <div class="card text-center bg-light border-light">
-                                            <a href="">
-                                                <img src="/assets/img/lina.jfif" class="card-img-top"
-                                                    style="height: 200px; width: auto;">
-                                            </a>
-                                            <div class="card-header border-light">
-                                                Localização
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Nome do auau</h5>
-                                                <p class="card-text truncar-3l">
-                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
-                                                </p>
-                                            </div>
-                                            <div class="card-footer border-light">
-                                                <button class="ong-button mt-2 d-block w-100" data-bs-toggle="modal"
-                                                    data-bs-target="#ongModal1">Quero adotar</button>
-                                                <small class="text-success">ONG</small>
-                                            </div>
-                                        </div>
-                                    </div>
-            
-                                    <!-- Seu modal existente -->
-                                    <div class="modal fade" id="ongModal1" tabindex="-1" aria-labelledby="ongModal1Label"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="ongModal1Label">Confirme sua adoção: </h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <!-- Seu conteúdo existente -->
-                                                    <img src="/assets/img/lina.jfif" style="width: 200px;" alt="Imagem do pet">
-                                                    <br>
-                                                    <br>
-                                                    <strong>Nome: </strong>
-                                                    <p>Lina</p>
-                                                    <!-- ... (restante do conteúdo) ... -->
-                                                    <strong>Por que quer adotar esse pet?</strong>
-                                                    <form>
-                                                        <label for="sobre"></label><input type="text" class="form-control"
-                                                            id="sobre" name="nome" required><br>
-                                                        <strong>Você tem condições para cuidar desse pet com muito amor e
-                                                            carinho?</strong>
-                                                        <label for="sobre"></label><input type="text" class="form-control"
-                                                            id="sobre" name="nome" required><br>
-                                                        <button type="submit" class="btn btn-primary">Confirmo que quero
-                                                            adotar</button>
-                                                    </form>
-            
-                                                    <!-- Mensagem de sucesso (adicione esta parte) -->
-                                                    <div class="modal-footer">
-                                                        <div id="success-message" style="display: none;" class="alert alert-success"
-                                                            role="alert">
-                                                            Adoção realizada com sucesso! Aguarde que entraremos em contato com
-                                                            você.
-                                                        </div>
-                                                        <button type="button" class="btn btn-secondary"
-                                                            data-bs-dismiss="modal">Fechar</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <p style="text-align: center;">Aguardando carregar...</p> 
             
                                     <!-- Seu script JavaScript (adicione esta parte) -->
                                     <script>
@@ -440,155 +389,8 @@
                                             });
                                         });
                                     </script>
-            
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                        <div class="card text-center bg-light border-light">
-                                            <a href="">
-                                                <img src="/assets/img/teste2.png" class="card-img-top"
-                                                    style="height: 200px; width: auto;">
-                                            </a>
-                                            <div class="card-header border-light">
-                                                Localização
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Nome</h5>
-                                                <p class="card-text truncar-3l">
-                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
-                                                </p>
-                                            </div>
-                                            <div class="card-footer border-light">
-                                                <button href="" class="mt-2 d-block w-100">
-                                                    Quero adotar
-                                                </button>
-                                                <small class="text-success">ONG</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                        <div class="card text-center bg-light border-light">
-                                            <a href="">
-                                                <img src="/assets/img/teste3.jpg" class="card-img-top"
-                                                    style="height: 200px; width: auto;">
-                                            </a>
-                                            <div class="card-header border-light">
-                                                Localização
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Nome</h5>
-                                                <p class="card-text truncar-3l">
-                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
-                                                </p>
-                                            </div>
-                                            <div class="card-footer border-light">
-                                                <button href="" class="mt-2 d-block w-100">
-                                                    Quero adotar
-                                                </button>
-                                                <small class="text-success">ONG</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                        <div class="card text-center bg-light border-light">
-                                            <a href="">
-                                                <img src="/assets/img/teste4.png" class="card-img-top"
-                                                    style="height: 200px; width: auto;">
-                                            </a>
-                                            <div class="card-header border-light">
-                                                Localização
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Nome</h5>
-                                                <p class="card-text truncar-3l">
-                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
-                                                </p>
-                                            </div>
-                                            <div class="card-footer border-light">
-                                                <button href="" class="mt-2 d-block w-100">
-                                                    Quero adotar
-                                                </button>
-                                                <small class="text-success">ONG</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                        <div class="card text-center bg-light border-light">
-                                            <a href="">
-                                                <img src="/assets/img/teste5.jpg" class="card-img-top"
-                                                    style="height: 200px; width: auto;">
-                                            </a>
-                                            <div class="card-header border-light">
-                                                Localização
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Nome</h5>
-                                                <p class="card-text truncar-3l">
-                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
-                                                </p>
-                                            </div>
-                                            <div class="card-footer border-light">
-                                                <button href="" class="mt-2 d-block w-100">
-                                                    Quero adotar
-                                                </button>
-                                                <small class="text-success">ONG</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                                        <div class="card text-center bg-light border-light">
-                                            <a href="">
-                                                <img src="/assets/img/teste.jfif" class="card-img-top"
-                                                    style="height: 200px; width: auto;">
-                                            </a>
-                                            <div class="card-header border-light">
-                                                Localização
-                                            </div>
-                                            <div class="card-body">
-                                                <h5 class="card-title">Nome</h5>
-                                                <p class="card-text truncar-3l">
-                                                    Sobre o auau, ong do auau, idade do auau, sexo do auau!
-                                                </p>
-                                            </div>
-                                            <div class="card-footer border-light">
-                                                <button href="" class="mt-2 d-block w-100">
-                                                    Quero adotar
-                                                </button>
-                                                <small class="text-success">ONG</small>
-                                            </div>
-                                        </div>
-                                    </div>
-            
                                 </div>
-            
                                 <hr mt-3>
-            
-                                <div class="row pb-3">
-                                    <div class="col-12">
-                                        <div class="d-flex flex-row-reverse justify-content-center justify-content-md-start">
-                                            <nav class="d-inline-block me-3">
-                                                <ul class="pagination pagination-sm my-0">
-                                                    <li class="page-item">
-                                                        <a class="page-link disabled" href="#">1</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">2</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">3</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">4</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">5</a>
-                                                    </li>
-                                                    <li class="page-item">
-                                                        <a class="page-link" href="#">6</a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </main>
             
