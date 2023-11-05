@@ -1,9 +1,9 @@
 function carregarApi(){
     document.getElementById('loadingSpinner').style.display = 'flex';
-}
 
-function fecharCarregamento(){
-    document.getElementById('loadingSpinner').style.display = 'none';
+    setTimeout(() => {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }, 800);
 }
 
 function solicitarAnimais() {
@@ -17,9 +17,7 @@ function solicitarAnimais() {
             return response.json();
         })
         .then(data => {
-            setTimeout(() => {
-                fecharCarregamento();
-            }, 700);
+            carregarApi();
             
             //console.log(data);
             document.getElementById("petList").innerHTML = "";
@@ -99,9 +97,7 @@ function solicitarAnimais() {
                             setTimeout(() => {
                                 preencherModal(data, petId);
                             }, 700);
-                            setTimeout(() => {
-                                fecharCarregamento();
-                            }, 1000);
+                            carregarApi();
                         })
                         .catch(error => {
                             console.error("Erro na requisição:", error);
@@ -147,12 +143,7 @@ function solicitarAnimais() {
                 const modalTitle = document.createElement("h5");
                 modalTitle.classList.add("modal-title");
                 modalTitle.id = `petModal${animal.idPet}Label`;
-                if(sessionStorage.getItem('UsessionId')){
-                    modalTitle.innerText = `Confirme sua adoção:`;
-                }else{
-                    modalTitle.innerText = `Realize login`;
-                }
-                
+                modalTitle.innerText = `Confirme sua adoção:`;
 
                 const closeButton = document.createElement("button");
                 closeButton.type = "button";
@@ -183,9 +174,9 @@ function solicitarAnimais() {
 }
 
 window.addEventListener("load", solicitarAnimais);
-window.addEventListener("load", carregarApi);
 
 function filtrarAnimais() {
+    carregarApi();
     event.preventDefault();
 
     const apiUrl = "https://localhost:44309/api/Pet/filtrarAnimais";
@@ -295,7 +286,7 @@ function filtrarAnimais() {
                         id: petId,
                     };
 
-                    fetch(`https://localhost:44309/api/Pet/buscarPetId`, {
+                    fetch(`http://191.252.153.53:81/api/Pet/buscarPetId`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json", // Especifique o tipo de conteúdo como JSON
@@ -361,11 +352,7 @@ function filtrarAnimais() {
                 const modalTitle = document.createElement("h5");
                 modalTitle.classList.add("modal-title");
                 modalTitle.id = `petModal${animal.idPet}Label`;
-                if(sessionStorage.getItem('UsessionId')){
-                    modalTitle.innerText = `Confirme sua adoção:`;
-                }else{
-                    modalTitle.innerText = `Realize login`;
-                }
+                modalTitle.innerText = `Confirme sua adoção:`;
 
                 const closeButton = document.createElement("button");
                 closeButton.type = "button";
@@ -397,8 +384,8 @@ function filtrarAnimais() {
 
 function preencherModal(data, petId) {
     const modalBody = document.querySelector(`#petModal${petId} .modal-body`);
-    if(sessionStorage.getItem('UsessionId')){
-        modalBody.innerHTML = `
+
+    modalBody.innerHTML = `
         <img src="${data.imgPet}" style="width: 200px;" alt="Imagem do pet">
         <br><br>
         <strong>Nome: </strong><p>${data.nomePet}</p>
@@ -414,14 +401,102 @@ function preencherModal(data, petId) {
             <button type="button" value="${data.idPet}" onclick="enviarAdocao(event)">Confirmo que quero adotar</button>
         </form>
     `;
-    }else{
-        modalBody.innerHTML = `
-        <p style="font-size: 15px">Opa, opa, opa! Antes de solicitar a adoção, por favor realize login em nosso site!</p>
-        <br>
-        <p style="font-size: 15px">Agradecemos pela compreensão!</p>
-    `;
-    }
-    
 }
 
+function converterImagem(){
+    var buscarImagem = document.getElementById('imagemPet').files;
+
+    if(buscarImagem.length > 0){
+        var carregarImagem = buscarImagem[0];
+        var lerArquivo = new FileReader();
+
+        lerArquivo.onload = function (arquivoCarregado){
+            ImgToBase64 = arquivoCarregado.target.result;
+
+            var novaImagem = document.createElement('img');
+            novaImagem.src = ImgToBase64;
+
+            novaImagem.style.width = '300px';
+            novaImagem.style.height = '300px';
+            novaImagem.style.justifyContent = 'center';
+
+            var container = document.getElementById('imagem-pet');
+            container.innerHTML = '';
+            container.appendChild(novaImagem);
+        }
+        lerArquivo.readAsDataURL(carregarImagem);
+    }
+}
+
+function cadastrarPet(){
+    event.preventDefault();
+    const apiUrl = "https://localhost:44309/api/Pet/inserirPets";
+
+    if(typeof ImgToBase64 !== undefined && ImgToBase64 !== null){
+        var imagemBase64 = ImgToBase64;
+
+        var idOng = sessionStorage.getItem('OsessionId');
+        var nomePet = document.getElementById('nomePet').value.trim();
+        var idadePet = document.getElementById('idadePet').value;
+        var sexoPet = document.getElementById('sexoPet').value;
+        var tipoPet = document.getElementById('tipoPet').value;
+        var portePet = document.getElementById('portePet').value;
+        var sobrePet = document.getElementById('sobrePet').value;
+
+        var registro = {
+            idOng: idOng,
+            nomePet: nomePet,
+            porte: portePet,
+            idade: idadePet,
+            sexoPet: sexoPet,
+            sobrePet: sobrePet,
+            tipoPet: tipoPet,
+            imgPet: imagemBase64
+        }
+
+        fetch(apiUrl,{
+            method:'POST',
+            headers: {
+                'Content-type':'application/json'
+            },
+            body: JSON.stringify(registro),
+        })
+        .then(response => response.text())
+        .then(data => console.log('Sucesso', data))
+        .catch(error => console.error('Erro na solicitação', error));
+    }
+}
+
+function excluirPet(){
+    event.preventDefault()
+
+    const apiUrl = "https://localhost:44309/api/Pet/atualizarStatus";
+
+    var idOng = sessionStorage.getItem('OsessionId');
+    var nomePet = document.getElementById('nomePetExcluir').value.trim();
+    var idadePet = document.getElementById('idadePetExcluir').value;
+    var sexoPet = document.getElementById('sexoPetExcluir').value;
+    var tipoPet = document.getElementById('tipoPetExcluir').value;
+    var portePet = document.getElementById('portePetExcluir').value;
+
+    var excluir = {
+        idOng: idOng,
+        nomePet: nomePet,
+        porte: portePet,
+        idade: idadePet,
+        sexoPet: sexoPet,
+        tipoPet: tipoPet
+    }
+
+    fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+            'Content-type':'application/json'
+        },
+        body: JSON.stringify(excluir),
+    })
+    .then(response => response.text())
+    .then(data => console.log('Sucesso', data))
+    .catch(error => console.error("Erro na solicitação", error))
+}
 

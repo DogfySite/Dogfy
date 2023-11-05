@@ -17,7 +17,7 @@
                     <div class="container">
                     <nav class="navbar bg-white">
                         <div class="container">
-                        <a class="navbar-brand" href="homelogged.html">
+                        <a class="navbar-brand" href="home.html">
                             <img src="/assets/img/Dogfy (1).png" alt="Dogfy logo" width="196px">
                         </a>
                         </div>
@@ -28,16 +28,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                              <a class="nav-link" href="homelogged.html">Home</a>
+                              <a class="nav-link" href="home.html">Home</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" onclick="tipoUsuario()">Adote</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="ongslogged.html">ONGs</a>
+                              <a class="nav-link" href="ongs.html">ONGs</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="contatologged.html">Contato</a>
+                              <a class="nav-link" href="contato.html">Contato</a>
                             </li>
                           </ul>
                         <div class="align-self-end">
@@ -68,7 +68,7 @@
                             </div>
                         
                             <li class="nav-item">
-                            <a href="" class="nav-link">Sair</a>
+                                <a class="nav-link" onclick="realizarLogout()">Sair</a>
                             </li>
                         </ul>
                         </div>
@@ -125,6 +125,22 @@
                     </main>
                     </div>
                     </main>
+
+                    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel"
+                    aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="logoutModalLabel">Logout efetuado com sucesso!</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Seu logout foi realizado com sucesso! Até logo!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
         
             <footer>
               <div class="footer-wrapper">

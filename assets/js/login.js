@@ -1,3 +1,11 @@
+function carregarApi(){
+    document.getElementById('loadingSpinner').style.display = 'flex';
+
+    setTimeout(() => {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }, 800);
+}
+
 function validateLogin() {
     event.preventDefault();
 
@@ -17,7 +25,7 @@ function validateLogin() {
     }
 
     if(document.querySelector("#ong").checked == true){
-        apiUrl = 'http://191.252.153.53:81/api/Ong/validarLogin';
+        apiUrl = 'https://localhost:44309/api/Ong/validarLogin';
 
         var login = {
             emailOng: email,
@@ -44,7 +52,7 @@ function validateLogin() {
             }else{
                 sessionStorage.setItem('OsessionId', data.idOng);
             }
-
+            carregarApi();
             window.location.href = 'logged/home.html';
         })
         .catch((error) => {

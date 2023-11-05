@@ -17,7 +17,7 @@
                     <div class="container">
                     <nav class="navbar bg-white">
                         <div class="container">
-                        <a class="navbar-brand" href="homelogged.html">
+                        <a class="navbar-brand" href="home.html">
                             <img src="/assets/img/Dogfy (1).png" alt="Dogfy logo" width="196px">
                         </a>
                         </div>
@@ -28,16 +28,16 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav flex-grow-1">
                             <li class="nav-item">
-                              <a class="nav-link" href="homelogged.html">Home</a>
+                              <a class="nav-link" href="home.html">Home</a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" onclick="tipoUsuario()">Adote</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="ongslogged.html">ONGs</a>
+                              <a class="nav-link" href="ongs.html">ONGs</a>
                             </li>
                             <li class="nav-item">
-                              <a class="nav-link" href="contatologged.html">Contato</a>
+                              <a class="nav-link" href="contato.html">Contato</a>
                             </li>
                           </ul>
                         <div class="align-self-end">
@@ -69,7 +69,7 @@
                             </div>
                         
                             <li class="nav-item">
-                            <a href="" class="nav-link">Sair</a>
+                                <a class="nav-link" onclick="realizarLogout()">Sair</a>
                             </li>
                         </ul>
                         </div>
@@ -135,14 +135,14 @@
                                     </div>
                                 </div>
                                 <div class="button-container">
-                                    <button class="cadastreAnimal" data-toggle="modal" data-target="#cadastroModal">Cadastrar um animal</button>
+                                    <button class="cadastreAnimal" data-toggle="modal" data-target="#cadastroModal" onclick="carregarApi()">Cadastrar um animal</button>
                                     <button class="excluirAnimal" data-toggle="modal" data-target="#excluirModal">Excluir um animal</button>
                                     <button class="editarAnimal" data-toggle="modal" data-target="#editarModal">Editar um animal</button>
                                 </div>
                                 
                                 <!-- Modal de Cadastro -->
                                 <div class="modal fade" id="cadastroModal" tabindex="-1" role="dialog" aria-labelledby="cadastroModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
+                                    <div class="modal-dialog" role="document" onload>
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="cadastroModalLabel">Cadastrar um animal</h5>
@@ -151,7 +151,7 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
+                                                <form onsubmit="cadastrarPet()">
                                                     <div class="form-group">
                                                         <label for="nomePet"><strong>Nome do Pet:</strong></label>
                                                         <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet" required>
@@ -166,8 +166,8 @@
                                                         <label for="sexoPet"><strong>Sexo:</strong></label>
                                                         <select class="form-control" id="sexoPet" required>
                                                             <option value="Null">Selecione</option>
-                                                            <option value="masculino">Masculino</option>
-                                                            <option value="feminino">Feminino</option>
+                                                            <option value="Masculino">Masculino</option>
+                                                            <option value="Feminino">Feminino</option>
                                                         </select>
                                                     </div>
                                                     <br>
@@ -197,8 +197,10 @@
                                                     <br>
                                                     <div class="form-group">
                                                         <label for="imagemPet"><strong>Enviar Imagem (JPEG ou JPG)</strong></label>
-                                                        <input type="file" class="form-control-file" id="imagemPet" accept=".jpg, .jpeg" max="1" required>
+                                                        <input type="file" class="form-control-file" id="imagemPet" accept=".jpg, .jpeg" max="1" onchange="converterImagem()" required>
                                                     </div>
+                                                    <br>
+                                                    <div id="imagem-pet"></div>
                                                     <br>
                                                     <button type="submit">Cadastrar Pet</button>
                                                 </form>
@@ -218,29 +220,29 @@
                                                 </button>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
+                                                <form onsubmit="excluirPet()">
                                                     <div class="form-group">
                                                         <label for="nomePet"><strong>Nome do Pet:</strong></label>
-                                                        <input type="text" class="form-control" id="nomePet" placeholder="Digite o nome do pet" required>
+                                                        <input type="text" class="form-control" id="nomePetExcluir" placeholder="Digite o nome do pet" required>
                                                     </div>
                                                     <br>
                                                     <div class="form-group">
                                                         <label for="idadePet"><strong>Idade:</strong></label>
-                                                        <input type="text" class="form-control" id="idadePet" placeholder="Digite a idade do pet (ex: 2 meses)" required>
+                                                        <input type="text" class="form-control" id="idadePetExcluir" placeholder="Digite a idade do pet (ex: 2 meses)" required>
                                                     </div>
                                                     <br>
                                                     <div class="form-group">
                                                         <label for="sexoPet"><strong>Sexo:</strong></label>
-                                                        <select class="form-control" id="sexoPet" required>
+                                                        <select class="form-control" id="sexoPetExcluir" required>
                                                             <option value="Null">Selecione</option>
-                                                            <option value="masculino">Masculino</option>
-                                                            <option value="feminino">Feminino</option>
+                                                            <option value="Masculino">Masculino</option>
+                                                            <option value="Feminino">Feminino</option>
                                                         </select>
                                                     </div>
                                                     <br>
                                                     <div class="form-group">
                                                         <label for="portePet"><strong>Porte:</strong></label>
-                                                        <select class="form-control" id="portePet" required>
+                                                        <select class="form-control" id="portePetExcluir" required>
                                                             <option value="Null">Selecione</option>
                                                             <option value="Pequeno">Pequeno</option>
                                                             <option value="Medio">Medio</option>
@@ -250,7 +252,7 @@
                                                     <br>
                                                     <div class="form-group">
                                                         <label for="tipoPet"><strong>Tipo do Pet</strong></label>
-                                                        <select class="form-control" id="tipoPet" required>
+                                                        <select class="form-control" id="tipoPetExcluir" required>
                                                             <option value="Null">Selecione</option>
                                                             <option value="Cachorro">Cachorro</option>
                                                             <option value="Gato">Gato</option>
@@ -258,11 +260,27 @@
                                                     </div>
                                                     <br>
                                                     </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" data-dismiss="modal">Cancelar</button>
+                                                        <button type="button" data-toggle="modal" data-target="#confirmModal">Excluir</button>
+                                                        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title" id="confirmModalLabel">Confirmar exclusão</h5>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        Confirma e exclusão do animal solicitado?
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="submit">Sim</button>
+                                                                        <button type="button" data-dismiss="modal">Não</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </form>
-                                            <div class="modal-footer">
-                                                <button type="button" data-dismiss="modal">Cancelar</button>
-                                                <button type="button">Excluir</button>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -580,6 +598,22 @@
                             </div>
                         </div>
 
+                        <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel"
+                        aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="logoutModalLabel">Logout efetuado com sucesso!</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Seu logout foi realizado com sucesso! Até logo!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
             <footer>
               <div class="footer-wrapper">
                   <div class="footer-columns">
@@ -634,6 +668,7 @@
 
     <script src="/assets/bs/js/bootstrap.min.js"></script>
     <script src="/assets/js/script.js"></script> 
+    <script src="js/adotex.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>

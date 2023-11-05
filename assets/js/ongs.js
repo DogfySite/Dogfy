@@ -8,7 +8,7 @@ function fecharCarregamento(){
 
 function carregarPgOngs() {
     carregarApi();
-    const apiUrl = "http://191.252.153.53:81/api/Ong/visualizarOngs";
+    const apiUrl = "https://localhost:44309/api/Ong/visualizarOngs";
 
     document.getElementById("ongContainer").innerHTML = "";
 
@@ -65,7 +65,7 @@ window.addEventListener("load", carregarPgOngs);
 
 
 function registrarOng(){
-    const apiUrl = "http://191.252.153.53:81/api/Ong/registrarOng"
+    const apiUrl = "https://localhost:44309/api/Ong/registrarOng"
 
     var nomeOng = document.querySelector("#nomedaong").value;
     var cnpjOng = document.querySelector("#cnpj").value;
