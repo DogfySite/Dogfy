@@ -3,7 +3,7 @@ function carregarApi(){
 
     setTimeout(() => {
         document.getElementById('loadingSpinner').style.display = 'none';
-    }, 800);
+    }, 1200);
 }
 
 window.addEventListener("load", carregarApi);
@@ -171,7 +171,7 @@ function solicitarAnimais() {
         })
         .catch(error => {
             console.error("Erro:", error);
-            fecharCarregamento();
+            carregarApi();
         });
 }
 
@@ -288,7 +288,7 @@ function filtrarAnimais() {
                         id: petId,
                     };
 
-                    fetch(`http://191.252.153.53:81/api/Pet/buscarPetId`, {
+                    fetch(`https://localhost:44309/api/Pet/buscarPetId`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json", // Especifique o tipo de conteúdo como JSON
@@ -305,13 +305,11 @@ function filtrarAnimais() {
                             setTimeout(() => {
                                 preencherModal(data, petId);
                             }, 700);
-                            setTimeout(() => {
-                                fecharCarregamento();
-                            }, 1000);
+                            carregarApi();
                         })
                         .catch(error => {
                             console.error("Erro na requisição:", error);
-                            fecharCarregamento();
+                            carregarApi();
                         });
                 });
 
@@ -380,7 +378,7 @@ function filtrarAnimais() {
         })
         .catch(error => {
             console.error("Erro:", error);
-            fecharCarregamento();
+            carregarApi();
         });
 }
 
@@ -402,15 +400,30 @@ function preencherModal(data, petId) {
             <label for="sobre"></label><input type="text" class="form-control" id="condicao" name="nome" required><br>
             <button type="button" value="${data.idPet}" onclick="enviarAdocao(event)">Confirmo que quero adotar</button>
         </form>
+        <div class="modal fade" id="adocaoModal" tabindex="-1" aria-labelledby="adocaoModalLabel"
+        aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="adocaoModalLabel">Adoção enviada com sucesso!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        Sua solicitação de adoção foi enviada com sucesso! Agora só aguardar entrarem em contato!!
+                    </div>
+                </div>
+            </div>
+        </div>
     `;
 }
 
 function enviarAdocao(event) {
     carregarApi();
-    const apiUrl = "http://191.252.153.53:81/api/Adoption/envioDeAdocao";
+    const apiUrl = "https://localhost:44309/api/Adoption/envioDeAdocao";
 
     const petId = event.target.value;
-    const userId = sessionStorage.getItem('sessionId');
+    const userId = sessionStorage.getItem('UsessionId');
     const dataAdocao = new Date().toISOString();
     const motivoInput = document.getElementById('motivo').value;
     //const condicoesInput = document.getElementById('condicao').value;    
@@ -436,13 +449,17 @@ function enviarAdocao(event) {
             return response.text();
         })
         .then(data => {
+            carregarApi();
+            console.log('Sucesso: ', data);     
+            var adocaoModal = new bootstrap.Modal(document.getElementById('adocaoModal'));
+            adocaoModal.show(); 
+            
             setTimeout(() => {
-                fecharCarregamento();
-            }, 1000);
-            console.log('Sucesso: ', data);            
+                window.location.reload();
+            }, 5000);
         })
         .catch((error) => {
             console.log('Erro:', error);
-            fecharCarregamento();
+            carregarApi();
         })
 }

@@ -43,7 +43,7 @@
                         <div class="align-self-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal">Meu perfil</a>
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal" onclick="dadosPerfil()">Meu perfil</a>
                             </li>
                             <!-- Modal de Perfil -->
                             <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
@@ -95,10 +95,10 @@
                                             Se torne um parceiro! Juntos podemos construir histórias de sucesso e mudar a vida
                                             desses bichinhos.</p>
                                         <button id="abrir-modal" class="btn btn-primary mt-2 d-block w-100" data-bs-toggle="modal"
-                                        data-bs-target="#meu-modal">Quero me tornar um parceiro</button>
+                                        data-bs-target="#cadModal">Quero me tornar um parceiro</button>
                                     </div>
                                     <!-- O modal -->
-                                    <div id="meu-modal" class="modal fade">
+                                    <div id="cadModal" class="modal fade">
                                         <div class="modal-dialog modal-dialog-centered">
                                             <div class="modal-content">
                                                 <div class="modal-header">
@@ -111,12 +111,6 @@
                                                         <div class="form-group">
                                                             <label for="nomedaong">ONG:</label>
                                                             <input type="text" class="form-control" id="nomedaong" name="nome">
-                                                            <label for="cnpj">CNPJ:</label>
-                                                            <input type="text" class="form-control" id="cnpj" name="cnpj">
-                                                            <label for="rua">Rua:</label>
-                                                            <input type="text" class="form-control" id="rua" name="nome">
-                                                            <label for="bairro">Bairro:</label>
-                                                            <input type="text" class="form-control" id="bairro" name="nome">
                                                             <label for="cidade">Cidade:</label>
                                                             <input type="text" class="form-control" id="cidade" name="nome">
                                                             <label for="estado">Estado:</label>
@@ -130,7 +124,6 @@
                                                             <label for="senha">Senha:</label>
                                                             <input type="password" id="senha" name="senha" placeholder="Senha"
                                                                 required><br>
-        
                                                             <label for="confirmaSenha">Confirme a Senha:</label>
                                                             <input type="password" id="confirmaSenha" name="confirmaSenha"
                                                                 placeholder="Confirme a Senha" required><br>
@@ -293,7 +286,25 @@
                         </div>
                     </div>
                 </div>
-            
+                
+                <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="excludeModalLabel"
+                aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="excludeModalLabel">Conta excluida com sucesso!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Sua conta foi desativada, espero que tenhamos te ajudado nesse tempo, e estamos ansiosos por sua possível volta
+                                <br>
+                                Obrigado, e até logo!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
         
             <footer>
               <div class="footer-wrapper">

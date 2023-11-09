@@ -68,9 +68,6 @@ function registrarOng(){
     const apiUrl = "https://localhost:44309/api/Ong/registrarOng"
 
     var nomeOng = document.querySelector("#nomedaong").value;
-    var cnpjOng = document.querySelector("#cnpj").value;
-    var ruaOng = document.querySelector("#rua").value;
-    var bairroOng = document.querySelector("#bairro").value;
     var cidaOng = document.querySelector("#cidade").value;
     var estadoOng = document.querySelector("#estado").value;
     var emailOng = document.querySelector("#email").value;
@@ -83,15 +80,11 @@ function registrarOng(){
     }
     else
     {
-            
+        
     }
     
     const cadastro = {
         nomeOng: nomeOng,
-        cnpjOng: cnpjOng,
-        ruaOng: ruaOng,
-        numOng: string,
-        bairroOng: bairroOng,
         cidaOng: cidaOng,
         estadoOng: estadoOng,
         emailOng: emailOng,

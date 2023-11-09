@@ -1,9 +1,9 @@
 function carregarApi(){
     document.getElementById('loadingSpinner').style.display = 'flex';
-}
 
-function fecharCarregamento(){
-    document.getElementById('loadingSpinner').style.display = 'none';
+    setTimeout(() => {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }, 1200);
 }
 
 function carregarPgOngs() {
@@ -48,10 +48,7 @@ function carregarPgOngs() {
 
             // Adicione o divRow ao ongContainer após o loop
             ongContainer.appendChild(divRow);
-
-            setTimeout(() => {
-                fecharCarregamento();
-            }, 800);
+            
         })
         .catch(error => {
             console.error("Erro:", error);

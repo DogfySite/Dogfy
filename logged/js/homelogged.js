@@ -1,9 +1,9 @@
 function carregarApi(){
     document.getElementById('loadingSpinner').style.display = 'flex';
-}
 
-function fecharCarregamento(){
-    document.getElementById('loadingSpinner').style.display = 'none';
+    setTimeout(() => {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }, 1200);
 }
 
 function carregarOngsHomeLogado() {
@@ -52,17 +52,10 @@ function carregarOngsHomeLogado() {
     
                 ongContainer.appendChild(divRow);
             }, 500);
-
-            setTimeout(() => {
-                fecharCarregamento();
-            }, 800);
         })
         .catch(error => {
             
             console.error("Erro:", error);
-            setTimeout(() => {
-                fecharCarregamento();
-            }, 800);
         });
 }
 

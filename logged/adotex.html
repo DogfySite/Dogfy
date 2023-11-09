@@ -43,7 +43,7 @@
                         <div class="align-self-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal">Meu perfil</a>
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal" onclick="dadosPerfil()">Meu perfil</a>
                             </li>
                             <!-- Modal de Perfil -->
                             <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
@@ -411,6 +411,24 @@
                                     </div>
                                     <div class="modal-body">
                                         Seu logout foi realizado com sucesso! Até logo!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="excludeModalLabel"
+                        aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="excludeModalLabel">Conta excluida com sucesso!</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Sua conta foi desativada, espero que tenhamos te ajudado nesse tempo, e estamos ansiosos por sua possível volta
+                                        <br>
+                                        Obrigado, e até logo!
                                     </div>
                                 </div>
                             </div>

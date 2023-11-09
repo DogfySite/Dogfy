@@ -43,7 +43,7 @@
                         <div class="align-self-end">
                         <ul class="navbar-nav">
                             <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal">Meu perfil</a>
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal" onclick="dadosPerfil()">Meu perfil</a>
                             </li>
                             <!-- Modal de Perfil -->
                             <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
@@ -139,23 +139,6 @@
                                 <div class="row g-3" id="petList">
                                     <p style="text-align: center;">Aguardando carregar...</p>    
             
-                                    <!-- Seu script JavaScript (adicione esta parte) -->
-                                    <script>
-                                        document.addEventListener('DOMContentLoaded', function () {
-                                            var form = document.querySelector('#ongModal1 form');
-                                            var successMessage = document.getElementById('success-message');
-            
-                                            form.addEventListener('submit', function (event) {
-                                                event.preventDefault(); // Evita o envio tradicional do formulário
-            
-                                                // Aqui você pode adicionar lógica para enviar os dados do formulário, se necessário
-            
-                                                // Exibe a mensagem de sucesso e oculta o formulário
-                                                form.style.display = 'none';
-                                                successMessage.style.display = 'block';
-                                            });
-                                        });
-                                    </script>
                                 </div>
                                 <hr mt-3>
                             </div>
@@ -182,7 +165,24 @@
                                 </div>
                             </div>
                         </div>
-
+                                
+                        <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="excludeModalLabel"
+                        aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="excludeModalLabel">Conta excluida com sucesso!</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Sua conta foi desativada, espero que tenhamos te ajudado nesse tempo, e estamos ansiosos por sua possível volta
+                                        <br>
+                                        Obrigado, e até logo!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
             <footer>
               <div class="footer-wrapper">
                   <div class="footer-columns">
