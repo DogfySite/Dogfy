@@ -49,6 +49,15 @@ function cadastrarUsuario(){
         
         var successModal = new bootstrap.Modal(document.getElementById('successModal'));
         successModal.show();
+
+        const fecharModalSucessoBtn = document.getElementById('fecharModalSucesso');
+
+         if (fecharModalSucessoBtn) {
+                fecharModalSucessoBtn.addEventListener('click', function () {
+                    // Redirecionar para a tela de login
+                    window.location.href = 'login.html';
+                });
+         }
     })
     .catch((error) =>{
         console.log('Error', error);
