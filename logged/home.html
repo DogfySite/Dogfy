@@ -16,7 +16,7 @@
             <div class="container">
               <nav class="navbar bg-white">
                 <div class="container">
-                  <a class="navbar-brand" href="homelogged.html">
+                  <a class="navbar-brand" href="home.html">
                     <img src="/assets/img/Dogfy (1).png" alt="Dogfy logo" width="196px">
                   </a>
                 </div>
@@ -27,22 +27,22 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav flex-grow-1">
                   <li class="nav-item">
-                    <a class="nav-link" href="homelogged.html">Home</a>
+                    <a class="nav-link" href="home.html">Home</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" onclick="tipoUsuario()">Adote</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="ongslogged.html">ONGs</a>
+                    <a class="nav-link" href="ongs.html">ONGs</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="contatologged.html">Contato</a>
+                    <a class="nav-link" href="contato.html">Contato</a>
                   </li>
                 </ul>
                 <div class="align-self-end">
                   <ul class="navbar-nav">
                     <li class="nav-item">
-                      <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal">Meu perfil</a>
+                      <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal" onclick="dadosPerfil()">Meu perfil</a>
                     </li>
                     <!-- Modal de Perfil -->
                     <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
@@ -59,15 +59,16 @@
                                 <h5>Telefone: <span id="userPhone"></span></h5>
                             </div>
                               <div class="modal-footer">
-                                  <button type="button" onclick="editarPerfil()">Editar Perfil</button>
-                                  <button type="button" onclick="excluirPerfil()">Excluir Perfil</button>
+                                  <!--<button type="button" onclick="editarPerfil()">Editar Perfil</button>-->
+                                  <button type="button" data-bs-toggle="modal"
+                                  data-bs-target="#confirmExclusao">Excluir Perfil</button>
                               </div>
                           </div>
                       </div>
                     </div>
                   
                     <li class="nav-item">
-                      <a href="" class="nav-link">Sair</a>
+                      <a class="nav-link" onclick="realizarLogout()">Sair</a>
                     </li>
                   </ul>
                 </div>
@@ -139,7 +140,7 @@
                         <img class="imgcarrosselm" src="/assets/img/carrosselmobile3.png" alt="imagem cachorrinho">
                     </div>
 
-                    <section class="parceiros" onload="carregarOngsHome()">
+                    <section class="parceiros" onload="carregarOngsHomeLogada()">
                         <h1>Nossos parceiros</h1>
                         <h3>Conheça quem faz parte desse projeto</h3>
                         <div class="container text-center" id="ongContainer">
@@ -285,6 +286,63 @@
                         </div>
                     </div>
 
+                    
+                <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel"
+                aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="logoutModalLabel">Logout efetuado com sucesso!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Seu logout foi realizado com sucesso! Até logo!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="confirmExclusao" tabindex="-1"
+                        aria-labelledby="confirmExclusaoLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmExclusaoLabel">Confirmar
+                                        exclusão</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Ao confirmar a exclusão não será possível realizar login em
+                                    nossa plataforma utilizando esse email, a menos que realize o
+                                    processo de reativação de conta.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" onclick="excluirPerfil()">Sim</button>
+                                    <button type="button" data-bs-dismiss="modal">Não</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="excludeModalLabel"
+                aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="excludeModalLabel">Conta excluida com sucesso!</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Sua conta foi desativada, espero que tenhamos te ajudado nesse tempo, e estamos ansiosos por sua possível volta
+                                <br>
+                                Obrigado, e até logo!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 </div>
             <footer>
               <div class="footer-wrapper">
@@ -340,5 +398,6 @@
 
     <script src="/assets/bs/js/bootstrap.min.js"></script>
     <script src="/assets/js/script.js"></script> 
+    <script src="js/homelogged.js"></script>
 </body>
 </html>

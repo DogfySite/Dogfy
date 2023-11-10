@@ -1,13 +1,12 @@
 function carregarApi(){
     document.getElementById('loadingSpinner').style.display = 'flex';
+
+    setTimeout(() => {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }, 1200);
 }
 
-function fecharCarregamento(){
-    document.getElementById('loadingSpinner').style.display = 'none';
-}
-
-
-function carregarOngsHome() {
+function carregarOngsHomeLogado() {
     carregarApi();
     const apiUrl = "https://localhost:44309/api/Ong/visualizarOngs";
     
@@ -38,7 +37,7 @@ function carregarOngsHome() {
                     ongNome.innerHTML = `<strong>${ong.nomeOng}</strong>`;
     
                     const ongIcon = document.createElement("img");
-                    ongIcon.src = "assets/img/icons8-coração-do-cão-64.png"; // Certifique-se de que 'icone' seja a propriedade correta em seus dados.
+                    ongIcon.src = "/assets/img/icons8-coração-do-cão-64.png"; // Certifique-se de que 'icone' seja a propriedade correta em seus dados.
                     ongIcon.alt = "Ícone de cachorro";
     
                     const ongLocalizacao = document.createElement("p2");
@@ -53,18 +52,11 @@ function carregarOngsHome() {
     
                 ongContainer.appendChild(divRow);
             }, 500);
-
-            setTimeout(() => {
-                fecharCarregamento();
-            }, 800);
         })
         .catch(error => {
             
             console.error("Erro:", error);
-            setTimeout(() => {
-                fecharCarregamento();
-            }, 800);
         });
 }
 
-window.addEventListener("load", carregarOngsHome);
+window.addEventListener("load", carregarOngsHomeLogado);

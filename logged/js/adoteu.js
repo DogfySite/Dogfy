@@ -1,10 +1,12 @@
 function carregarApi(){
     document.getElementById('loadingSpinner').style.display = 'flex';
+
+    setTimeout(() => {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }, 1200);
 }
 
-function fecharCarregamento(){
-    document.getElementById('loadingSpinner').style.display = 'none';
-}
+window.addEventListener("load", carregarApi);
 
 function solicitarAnimais() {
     const apiUrl = "https://localhost:44309/api/Pet/petsEOngs";
@@ -17,9 +19,7 @@ function solicitarAnimais() {
             return response.json();
         })
         .then(data => {
-            setTimeout(() => {
-                fecharCarregamento();
-            }, 700);
+            carregarApi();
             
             //console.log(data);
             document.getElementById("petList").innerHTML = "";
@@ -99,9 +99,7 @@ function solicitarAnimais() {
                             setTimeout(() => {
                                 preencherModal(data, petId);
                             }, 700);
-                            setTimeout(() => {
-                                fecharCarregamento();
-                            }, 1000);
+                            carregarApi();
                         })
                         .catch(error => {
                             console.error("Erro na requisição:", error);
@@ -147,12 +145,7 @@ function solicitarAnimais() {
                 const modalTitle = document.createElement("h5");
                 modalTitle.classList.add("modal-title");
                 modalTitle.id = `petModal${animal.idPet}Label`;
-                if(sessionStorage.getItem('UsessionId')){
-                    modalTitle.innerText = `Confirme sua adoção:`;
-                }else{
-                    modalTitle.innerText = `Realize login`;
-                }
-                
+                modalTitle.innerText = `Confirme sua adoção:`;
 
                 const closeButton = document.createElement("button");
                 closeButton.type = "button";
@@ -178,14 +171,14 @@ function solicitarAnimais() {
         })
         .catch(error => {
             console.error("Erro:", error);
-            fecharCarregamento();
+            carregarApi();
         });
 }
 
 window.addEventListener("load", solicitarAnimais);
-window.addEventListener("load", carregarApi);
 
 function filtrarAnimais() {
+    carregarApi();
     event.preventDefault();
 
     const apiUrl = "https://localhost:44309/api/Pet/filtrarAnimais";
@@ -312,13 +305,11 @@ function filtrarAnimais() {
                             setTimeout(() => {
                                 preencherModal(data, petId);
                             }, 700);
-                            setTimeout(() => {
-                                fecharCarregamento();
-                            }, 1000);
+                            carregarApi();
                         })
                         .catch(error => {
                             console.error("Erro na requisição:", error);
-                            fecharCarregamento();
+                            carregarApi();
                         });
                 });
 
@@ -361,11 +352,7 @@ function filtrarAnimais() {
                 const modalTitle = document.createElement("h5");
                 modalTitle.classList.add("modal-title");
                 modalTitle.id = `petModal${animal.idPet}Label`;
-                if(sessionStorage.getItem('UsessionId')){
-                    modalTitle.innerText = `Confirme sua adoção:`;
-                }else{
-                    modalTitle.innerText = `Realize login`;
-                }
+                modalTitle.innerText = `Confirme sua adoção:`;
 
                 const closeButton = document.createElement("button");
                 closeButton.type = "button";
@@ -391,14 +378,14 @@ function filtrarAnimais() {
         })
         .catch(error => {
             console.error("Erro:", error);
-            fecharCarregamento();
+            carregarApi();
         });
 }
 
 function preencherModal(data, petId) {
     const modalBody = document.querySelector(`#petModal${petId} .modal-body`);
-    if(sessionStorage.getItem('UsessionId')){
-        modalBody.innerHTML = `
+
+    modalBody.innerHTML = `
         <img src="${data.imgPet}" style="width: 200px;" alt="Imagem do pet">
         <br><br>
         <strong>Nome: </strong><p>${data.nomePet}</p>
@@ -406,6 +393,7 @@ function preencherModal(data, petId) {
         <strong>Gênero: </strong><p>${data.sexoPet}</p>
         <strong>ONG localizado: </strong><p>${data.nomeOng}</p>
         <strong>Cidade localizado: </strong><p>${data.cidaOng} - ${data.estadoOng}</p>
+        <strong>Sobre o Pet: </strong><p>${data.sobrePet}</p>
         <strong>Por que quer adotar esse pet?</strong>
         <form>
             <label for="sobre"></label><input type="text" class="form-control" id="motivo" name="nome" required><br>
@@ -414,15 +402,50 @@ function preencherModal(data, petId) {
             <button type="button" value="${data.idPet}" onclick="enviarAdocao(event)">Confirmo que quero adotar</button>
         </form>
     `;
-    }else{
-        modalBody.innerHTML = `
-        <p style="font-size: 15px">Opa, opa, opa! Antes de solicitar a adoção, por favor realize login em nosso site!</p>
-        <br>
-        <p style="font-size: 15px">Agradecemos pela compreensão!</p>
-        <hr>
-        <a href="login.html"><button type="button">Ir para a tela de login</button></a>
-    `;
-    }
 }
 
+function enviarAdocao(event) {
+    carregarApi();
+    const apiUrl = "https://localhost:44309/api/Adoption/envioDeAdocao";
 
+    const petId = event.target.value;
+    const userId = sessionStorage.getItem('UsessionId');
+    const dataAdocao = new Date().toISOString();
+    const motivoInput = document.getElementById('motivo').value;
+    //const condicoesInput = document.getElementById('condicao').value;    
+
+    const adoption = {
+        idUsuario: userId,
+        idPet: petId,
+        dataAdocao: dataAdocao,
+        motivoAdocao: motivoInput
+    };
+
+    fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-type': 'application/json'
+        },
+        body: JSON.stringify(adoption)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro na requisição: ' + response.status)
+            }
+            return response.text();
+        })
+        .then(data => {
+            carregarApi();
+            console.log('Sucesso: ', data);     
+            var adocaoModal = new bootstrap.Modal(document.getElementById('adocaoModal'));
+            adocaoModal.show(); 
+            
+            setTimeout(() => {
+                window.location.reload();
+            }, 5000);
+        })
+        .catch((error) => {
+            console.log('Erro:', error);
+            carregarApi();
+        })
+}

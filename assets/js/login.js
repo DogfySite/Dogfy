@@ -1,3 +1,13 @@
+function carregarApi(){
+    document.getElementById('loadingSpinner').style.display = 'flex';
+
+    setTimeout(() => {
+        document.getElementById('loadingSpinner').style.display = 'none';
+    }, 800);
+}
+
+window.addEventListener("load", carregarApi);
+
 function validateLogin() {
     event.preventDefault();
 
@@ -7,7 +17,7 @@ function validateLogin() {
     var senha = document.getElementById('password').value;
 
     if(document.querySelector("#pessoa").checked == true){
-        apiUrl = 'http://191.252.153.53:81/api/Usuario/validarLoginUser';
+        apiUrl = 'https://localhost:44309/api/Usuario/validarLoginUser';
 
         var login = {
             email: email,
@@ -17,7 +27,7 @@ function validateLogin() {
     }
 
     if(document.querySelector("#ong").checked == true){
-        apiUrl = 'http://191.252.153.53:81/api/Ong/validarLogin';
+        apiUrl = 'https://localhost:44309/api/Ong/validarLogin';
 
         var login = {
             emailOng: email,
@@ -44,11 +54,11 @@ function validateLogin() {
             }else{
                 sessionStorage.setItem('OsessionId', data.idOng);
             }
-
-            window.location.href = '/ongeusuarioLogado.html';
+            carregarApi();
+            window.location.href = 'logged/home.html';
         })
         .catch((error) => {
-            console.error('Error', error);
+            //console.error('Error', error);
             document.getElementById('mensagemSucesso').innerHTML = error.message;
         });
 }

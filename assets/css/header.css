@@ -19,9 +19,13 @@ body {
 
 .nav-link {
     line-height: 144px;
+    color: black;
 }
 
-    
+.nav-link[onclick] {
+    line-height: 144px;
+    color: black;
+}
 
 @media screen and (max-width: 990px) {
     .nav-link {
