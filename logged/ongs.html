@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,355 +12,388 @@
     <link rel="icon" type="image/x-icon" href="/assets/img/Dogfy-removebg-preview.png">
     <title>Dogfy</title>
 </head>
+
 <body>
-            <header>    
-                <nav class="navbar navbar-expand-lg bg-white">
+    <header>
+        <nav class="navbar navbar-expand-lg bg-white">
+            <div class="container">
+                <nav class="navbar bg-white">
                     <div class="container">
-                    <nav class="navbar bg-white">
-                        <div class="container">
                         <a class="navbar-brand" href="home.html">
                             <img src="/assets/img/Dogfy (1).png" alt="Dogfy logo" width="196px">
                         </a>
-                        </div>
-                    </nav>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li class="nav-item">
-                              <a class="nav-link" href="home.html">Home</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" onclick="tipoUsuario()">Adote</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="ongs.html">ONGs</a>
-                            </li>
-                            <li class="nav-item">
-                              <a class="nav-link" href="contato.html">Contato</a>
-                            </li>
-                          </ul>
-                        <div class="align-self-end">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal" onclick="dadosPerfil()">Meu perfil</a>
-                            </li>
-                            <!-- Modal de Perfil -->
-                            <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="perfilModalLabel">Meu Perfil</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h5>Nome completo: <span id="userName"></span></h5>
-                                        <h5>Email: <span id="userEmail"></span></h5>
-                                        <h5>Endereço: <span id="userAddress"></span></h5>
-                                        <h5>Telefone: <span id="userPhone"></span></h5>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" onclick="editarPerfil()">Editar Perfil</button>
-                                        <button type="button" onclick="excluirPerfil()">Excluir Perfil</button>
-                                    </div>
-                                </div>
-                            </div>
-                            </div>
-                        
-                            <li class="nav-item">
-                            <a class="nav-link" onclick="realizarLogout()">Sair</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </div>
-                    
                     </div>
                 </nav>
-            </header>   
-
-            <div class="d-flex flex-column wrapper">
-                <div id="header-placeholder"></div>
-        
-                <main class="flex-fill">
-                    <div>
-                        <div class="content">
-                            <div class="text-section">
-                                <h1 class="parceiro">Como se tornar um parceiro</h1>
-                                <div class="image-text-wrapper">
-                                    <div class="image-section">
-                                        <img src="/assets/img/dog-ong.png" alt="imagem de cachorrinho com cara fofa">
-                                    </div>
-                                    <div class="text-ao-lado">
-                                        <p>Deseja fazer parte desse sonho e garantir visibilidade pra sua ONG?
-                                            Se torne um parceiro! Juntos podemos construir histórias de sucesso e mudar a vida
-                                            desses bichinhos.</p>
-                                        <button id="abrir-modal" class="btn btn-primary mt-2 d-block w-100" data-bs-toggle="modal"
-                                        data-bs-target="#cadModal" disabled>Quero me tornar um parceiro</button>
-                                    </div>
-                                    <!-- O modal -->
-                                    <div id="cadModal" class="modal fade">
-                                        <div class="modal-dialog modal-dialog-centered">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title">Preencha o formulário</h5>
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                </div>
-                                                <div class="modal-body">
-                                                    <form>
-                                                        <!-- Seus campos de formulário aqui -->
-                                                        <div class="form-group">
-                                                            <label for="nomedaong">ONG:</label>
-                                                            <input type="text" class="form-control" id="nomedaong" name="nome">
-                                                            <label for="cidade">Cidade:</label>
-                                                            <input type="text" class="form-control" id="cidade" name="nome">
-                                                            <label for="estado">Estado:</label>
-                                                            <input type="text" class="form-control" id="estado" name="nome">
-                                                            <label for="email">Email:</label>
-                                                            <input type="text" class="form-control" id="email" name="nome">
-                                                            <label for="contato">Contato:</label>
-                                                            <input type="text" class="form-control" id="contato" name="nome">
-                                                            <label for="sobre">Nos conte brevemente sobre sua ONG:</label>
-                                                            <input type="text" class="form-control" id="sobre" name="nome">
-                                                            <label for="senha">Senha:</label>
-                                                            <input type="password" id="senha" name="senha" placeholder="Senha"
-                                                                required><br>
-                                                            <label for="confirmaSenha">Confirme a Senha:</label>
-                                                            <input type="password" id="confirmaSenha" name="confirmaSenha"
-                                                                placeholder="Confirme a Senha" required><br>
-                                                            <label for="concordo2">
-                                                                <input type="checkbox" id="concordo2" name="concordo2" required>
-                                                                Concordo com os <a href="/termos.html">termos e condições</a>
-                                                            </label>
-        
-        
-                                                        </div>
-                                                        <!-- Outros campos do formulário -->
-                                                    </form>
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
-                                                        data-dismiss="modal">Fechar</button>
-                                                    <button type="submit" class="btn btn-primary" onsubmit="registrarOng()" data-bs-toggle="modal"
-                                                    data-bs-target="#cadastroModal" id="enviarButton">Enviar</button>
-                                                </div>
-                                            </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" href="home.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="tipoUsuario()">Adote</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ongs.html">ONGs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contato.html">Contato</a>
+                        </li>
+                    </ul>
+                    <div class="align-self-end">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#perfilModal"
+                                    onclick="dadosPerfil()">Meu perfil</a>
+                            </li>
+                            <!-- Modal de Perfil -->
+                            <div class="modal fade" id="perfilModal" tabindex="-1" aria-labelledby="perfilModalLabel"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="perfilModalLabel">Meu Perfil</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Fechar"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <h5>Nome completo: <span id="userName"></span></h5>
+                                            <h5>Email: <span id="userEmail"></span></h5>
+                                            <h5>Endereço: <span id="userAddress"></span></h5>
+                                            <h5>Telefone: <span id="userPhone"></span></h5>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <!--<button type="button" onclick="editarPerfil()">Editar Perfil</button>-->
+                                            <button type="button" data-bs-toggle="modal"
+                                                data-bs-target="#confirmExclusao">Excluir Perfil</button>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        
-                        <section class="parceiros" onload="carregarPgOngs()">
-                            <h1>ONG'S Parceiras</h1>
-                            <div class="container text-center" id="ongContainer">
-                                <div class="row align-items-start">
-                                    <div class="col">
-                                        <p><strong>ONG 1</strong></p>
-                                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ongModal1">
-                                            <img src="/assets/img/icons8-coração-do-cão-64.png" alt="icon de cachorro">
-                                        </button>
-                                        <p2>Localização</p2>
-                                    </div>
-                                    <div class="col">
-                                        <p><strong>ONG 2</strong></p>
-                                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ongModal2">
-                                            <img src="/assets/img/icons8-osso-de-cachorro-48.png" alt="icon de cachorro" width="64px">
-                                        </button>
-                                        <p2>Localização</p2>
-                                    </div>
-                                    <div class="col">
-                                        <p><strong>ONG 3</strong></p>
-                                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ongModal3">
-                                            <img src="/assets/img/icons8-pata-64.png" alt="icon de cachorro">
-                                        </button>
-                                        <p2>Localização</p2>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    
-                        <!-- Modais para cada ONG -->
-                        <div class="modal fade" id="ongModal1" tabindex="-1" role="dialog" aria-labelledby="ongModalLabel1" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="ongModalLabel1">ONG 1</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="/assets/img/imagem-exemplo-ong.png" alt="Imagem da ONG 1">
-                                        <p>Descrição breve da ONG 1  Descrição breve da ONG 1. Descrição breve da ONG 1.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="modal fade" id="ongModal2" tabindex="-1" role="dialog" aria-labelledby="ongModalLabel2" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="ongModalLabel2">ONG 2</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="/assets/img/imagem-exemplo-ong.png" alt="Imagem da ONG 2">
-                                        <p>Descrição breve da ONG 2.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                        <div class="modal fade" id="ongModal3" tabindex="-1" role="dialog" aria-labelledby="ongModalLabel3" aria-hidden="true">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="ongModalLabel3">ONG 3</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <img src="/assets/img/imagem-exemplo-ong.png" alt="Imagem da ONG 3">
-                                        <p>Descrição breve da ONG 3.</p>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="modal fade" id="ongModal1" tabindex="-1" aria-labelledby="ongModal1Label"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="ongModal1Label">ONG 1</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-        
-                                    <div class="modal fade" id="ongModal2" tabindex="-1" aria-labelledby="ongModal2Label"
-                                        aria-hidden="true">
-                                        <div class="modal-dialog">
-                                            <div class="modal-content">
-                                                <div class="modal-header">
-                                                    <h5 class="modal-title" id="ongModal2Label">ONG 1</h5>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                                        aria-label="Close"></button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                        
-                </main>
-        
-                <div id="loadingSpinner" class="loading-spinner">
-                    <div class="spinner-border text-light" role="status">
-                      <span class="visually-hidden">Carregando...</span>
-                    </div>
-                  </div>
-                </div>
-                
-                <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel"
-                aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="logoutModalLabel">Logout efetuado com sucesso!</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                Seu logout foi realizado com sucesso! Até logo!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="excludeModalLabel"
-                aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="excludeModalLabel">Conta excluida com sucesso!</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                Sua conta foi desativada, espero que tenhamos te ajudado nesse tempo, e estamos ansiosos por sua possível volta
-                                <br>
-                                Obrigado, e até logo!
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-        
-            <footer>
-              <div class="footer-wrapper">
-                  <div class="footer-columns">
 
-                      <section class="footer-logo">
-                          <h2>
-                              <img src="/assets/img/Dogfy (1).png" width="300px">
-                          </h2>
-                      </section>
+                            </div>
 
-                      <section>
-                        <ul>
-                            <li>
-                                <a href="homelogged.html" title="home">Home</a>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="realizarLogout()">Sair</a>
                             </li>
-                            <li>
-                                <a href="" title="adote">Adote</a>
-                            </li>
-                            <li>
-                                <a href="ongslogged.html" title="ongs">ONG's</a>
-                            </li>
-                            <li>
-                                <a href="contatologged.html" title="contato">Contato</a>
-                            </li>
-                          
                         </ul>
-                    </section>
+                    </div>
+                </div>
 
-                      <section>
-                          <ul>
-                              <li>
-                                  <a href="https://www.instagram.com/dogfysite/" title="instagram" target="_blank">Instagram</a>
-                              </li>                        
-                              <li>
-                                  <a href="/termos.html" title="termos" target="_blank">Termos de Uso</a>
-                              </li>
-                              <li>
-                                  <a href="/privacidade.html" title="privacidade" target="_blank">Política de Privacidade</a>
-                              </li>                        
-                          </ul>
-                      </section>
+            </div>
+        </nav>
+    </header>
 
-                      <section class="allrights">
-                          <small>2023 © Dogfy</small> <br>
-                          <small>All rights reserved</small>
-                      </section>
-                  </div>
+    <div class="d-flex flex-column wrapper">
+        <div id="header-placeholder"></div>
 
-                      
-              </div>
-          </footer>
+        <main class="flex-fill">
+            <div>
+                <div class="content">
+                    <div class="text-section">
+                        <h1 class="parceiro">Como se tornar um parceiro</h1>
+                        <div class="image-text-wrapper">
+                            <div class="image-section">
+                                <img src="/assets/img/dog-ong.png" alt="imagem de cachorrinho com cara fofa">
+                            </div>
+                            <div class="text-ao-lado">
+                                <p>Deseja fazer parte desse sonho e garantir visibilidade pra sua ONG?
+                                    Se torne um parceiro! Juntos podemos construir histórias de sucesso e mudar a vida
+                                    desses bichinhos.</p>
+                                <button id="abrir-modal" class="btn btn-primary mt-2 d-block w-100"
+                                    data-bs-toggle="modal" data-bs-target="#cadModal" disabled>Quero me tornar um
+                                    parceiro</button>
+                            </div>
+                            <!-- O modal -->
+                            <div id="cadModal" class="modal fade">
+                                <div class="modal-dialog modal-dialog-centered">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Preencha o formulário</h5>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <!-- Seus campos de formulário aqui -->
+                                                <div class="form-group">
+                                                    <label for="nomedaong">ONG:</label>
+                                                    <input type="text" class="form-control" id="nomedaong" name="nome">
+                                                    <label for="cidade">Cidade:</label>
+                                                    <input type="text" class="form-control" id="cidade" name="nome">
+                                                    <label for="estado">Estado:</label>
+                                                    <input type="text" class="form-control" id="estado" name="nome">
+                                                    <label for="email">Email:</label>
+                                                    <input type="text" class="form-control" id="email" name="nome">
+                                                    <label for="contato">Contato:</label>
+                                                    <input type="text" class="form-control" id="contato" name="nome">
+                                                    <label for="sobre">Nos conte brevemente sobre sua ONG:</label>
+                                                    <input type="text" class="form-control" id="sobre" name="nome">
+                                                    <label for="senha">Senha:</label>
+                                                    <input type="password" id="senha" name="senha" placeholder="Senha"
+                                                        required><br>
+                                                    <label for="confirmaSenha">Confirme a Senha:</label>
+                                                    <input type="password" id="confirmaSenha" name="confirmaSenha"
+                                                        placeholder="Confirme a Senha" required><br>
+                                                    <label for="concordo2">
+                                                        <input type="checkbox" id="concordo2" name="concordo2" required>
+                                                        Concordo com os <a href="/termos.html">termos e condições</a>
+                                                    </label>
+
+
+                                                </div>
+                                                <!-- Outros campos do formulário -->
+                                            </form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Fechar</button>
+                                            <button type="submit" class="btn btn-primary" onsubmit="registrarOng()"
+                                                data-bs-toggle="modal" data-bs-target="#cadastroModal"
+                                                id="enviarButton">Enviar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="parceiros" onload="carregarPgOngs()">
+                    <h1>ONG'S Parceiras</h1>
+                    <div class="container text-center" id="ongContainer">
+                        <div class="row align-items-start">
+                            <div class="col">
+                                <p><strong>ONG 1</strong></p>
+                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ongModal1">
+                                    <img src="/assets/img/icons8-coração-do-cão-64.png" alt="icon de cachorro">
+                                </button>
+                                <p2>Localização</p2>
+                            </div>
+                            <div class="col">
+                                <p><strong>ONG 2</strong></p>
+                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ongModal2">
+                                    <img src="/assets/img/icons8-osso-de-cachorro-48.png" alt="icon de cachorro"
+                                        width="64px">
+                                </button>
+                                <p2>Localização</p2>
+                            </div>
+                            <div class="col">
+                                <p><strong>ONG 3</strong></p>
+                                <button type="button" class="btn btn-link" data-toggle="modal" data-target="#ongModal3">
+                                    <img src="/assets/img/icons8-pata-64.png" alt="icon de cachorro">
+                                </button>
+                                <p2>Localização</p2>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Modais para cada ONG -->
+                <div class="modal fade" id="ongModal1" tabindex="-1" role="dialog" aria-labelledby="ongModalLabel1"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ongModalLabel1">ONG 1</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="/assets/img/imagem-exemplo-ong.png" alt="Imagem da ONG 1">
+                                <p>Descrição breve da ONG 1 Descrição breve da ONG 1. Descrição breve da ONG 1.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="ongModal2" tabindex="-1" role="dialog" aria-labelledby="ongModalLabel2"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ongModalLabel2">ONG 2</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="/assets/img/imagem-exemplo-ong.png" alt="Imagem da ONG 2">
+                                <p>Descrição breve da ONG 2.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="ongModal3" tabindex="-1" role="dialog" aria-labelledby="ongModalLabel3"
+                    aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ongModalLabel3">ONG 3</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <img src="/assets/img/imagem-exemplo-ong.png" alt="Imagem da ONG 3">
+                                <p>Descrição breve da ONG 3.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" id="ongModal1" tabindex="-1" aria-labelledby="ongModal1Label"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="ongModal1Label">ONG 1</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+
+                            <div class="modal fade" id="ongModal2" tabindex="-1" aria-labelledby="ongModal2Label"
+                                aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ongModal2Label">ONG 1</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+        </main>
+
+        <div id="loadingSpinner" class="loading-spinner">
+            <div class="spinner-border text-light" role="status">
+                <span class="visually-hidden">Carregando...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logoutModalLabel">Logout efetuado com sucesso!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Seu logout foi realizado com sucesso! Até logo!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmExclusao" tabindex="-1" aria-labelledby="confirmExclusaoLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmExclusaoLabel">Confirmar
+                        exclusão</h5>
+                </div>
+                <div class="modal-body">
+                    Ao confirmar a exclusão não será possível realizar login em
+                    nossa plataforma utilizando esse email, a menos que realize o
+                    processo de reativação de conta.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="excluirPerfil()">Sim</button>
+                    <button type="button" data-bs-dismiss="modal">Não</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="excludeModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="excludeModalLabel">Conta excluida com sucesso!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    Sua conta foi desativada, espero que tenhamos te ajudado nesse tempo, e estamos ansiosos por sua
+                    possível volta
+                    <br>
+                    Obrigado, e até logo!
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-wrapper">
+            <div class="footer-columns">
+
+                <section class="footer-logo">
+                    <h2>
+                        <img src="/assets/img/Dogfy (1).png" width="300px">
+                    </h2>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>
+                            <a href="homelogged.html" title="home">Home</a>
+                        </li>
+                        <li>
+                            <a href="" title="adote">Adote</a>
+                        </li>
+                        <li>
+                            <a href="ongslogged.html" title="ongs">ONG's</a>
+                        </li>
+                        <li>
+                            <a href="contatologged.html" title="contato">Contato</a>
+                        </li>
+
+                    </ul>
+                </section>
+
+                <section>
+                    <ul>
+                        <li>
+                            <a href="https://www.instagram.com/dogfysite/" title="instagram"
+                                target="_blank">Instagram</a>
+                        </li>
+                        <li>
+                            <a href="/termos.html" title="termos" target="_blank">Termos de Uso</a>
+                        </li>
+                        <li>
+                            <a href="/privacidade.html" title="privacidade" target="_blank">Política de Privacidade</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section class="allrights">
+                    <small>2023 © Dogfy</small> <br>
+                    <small>All rights reserved</small>
+                </section>
+            </div>
+
+
+        </div>
+    </footer>
 
     <script src="/assets/bs/js/bootstrap.min.js"></script>
-    <script src="/assets/js/script.js"></script> 
+    <script src="/assets/js/script.js"></script>
     <script src="js/ongslogged.js"></script>
 </body>
+
 </html>

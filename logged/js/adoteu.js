@@ -58,7 +58,7 @@ function solicitarAnimais() {
 
                 const pElement = document.createElement("p");
                 pElement.classList.add("card-text", "truncar-3l");
-                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}`;
+                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}, \nPorte: ${animal.porte}`;
                 pElement.style.fontSize = '15px'
 
                 divCardBody.appendChild(h5Element);
@@ -264,7 +264,7 @@ function filtrarAnimais() {
 
                 const pElement = document.createElement("p");
                 pElement.classList.add("card-text", "truncar-3l");
-                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}`;
+                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}, \nPorte: ${animal.porte}`;
                 pElement.style.fontSize = '15px'
 
                 divCardBody.appendChild(h5Element);
@@ -393,6 +393,7 @@ function preencherModal(data, petId) {
         <strong>Gênero: </strong><p>${data.sexoPet}</p>
         <strong>ONG localizado: </strong><p>${data.nomeOng}</p>
         <strong>Cidade localizado: </strong><p>${data.cidaOng} - ${data.estadoOng}</p>
+        <strong>Sobre o Pet: </strong><p>${data.sobrePet}</p>
         <strong>Por que quer adotar esse pet?</strong>
         <form>
             <label for="sobre"></label><input type="text" class="form-control" id="motivo" name="nome" required><br>
@@ -400,21 +401,6 @@ function preencherModal(data, petId) {
             <label for="sobre"></label><input type="text" class="form-control" id="condicao" name="nome" required><br>
             <button type="button" value="${data.idPet}" onclick="enviarAdocao(event)">Confirmo que quero adotar</button>
         </form>
-        <div class="modal fade" id="adocaoModal" tabindex="-1" aria-labelledby="adocaoModalLabel"
-        aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="adocaoModalLabel">Adoção enviada com sucesso!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        Sua solicitação de adoção foi enviada com sucesso! Agora só aguardar entrarem em contato!!
-                    </div>
-                </div>
-            </div>
-        </div>
     `;
 }
 

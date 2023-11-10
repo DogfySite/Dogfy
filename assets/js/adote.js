@@ -58,7 +58,7 @@ function solicitarAnimais() {
 
                 const pElement = document.createElement("p");
                 pElement.classList.add("card-text", "truncar-3l");
-                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}`;
+                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}, \nPorte: ${animal.porte}`;
                 pElement.style.fontSize = '15px'
 
                 divCardBody.appendChild(h5Element);
@@ -271,7 +271,7 @@ function filtrarAnimais() {
 
                 const pElement = document.createElement("p");
                 pElement.classList.add("card-text", "truncar-3l");
-                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}`;
+                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}, \nPorte: ${animal.porte}`;
                 pElement.style.fontSize = '15px'
 
                 divCardBody.appendChild(h5Element);
@@ -423,7 +423,6 @@ function preencherModal(data, petId) {
         <a href="login.html"><button type="button">Ir para a tela de login</button></a>
     `;
     }
-    
 }
 
 

@@ -59,8 +59,9 @@
                                 <h5>Telefone: <span id="userPhone"></span></h5>
                             </div>
                               <div class="modal-footer">
-                                  <button type="button" onclick="editarPerfil()">Editar Perfil</button>
-                                  <button type="button" onclick="excluirPerfil()">Excluir Perfil</button>
+                                  <!--<button type="button" onclick="editarPerfil()">Editar Perfil</button>-->
+                                  <button type="button" data-bs-toggle="modal"
+                                  data-bs-target="#confirmExclusao">Excluir Perfil</button>
                               </div>
                           </div>
                       </div>
@@ -297,6 +298,28 @@
                             </div>
                             <div class="modal-body">
                                 Seu logout foi realizado com sucesso! Até logo!
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal fade" id="confirmExclusao" tabindex="-1"
+                        aria-labelledby="confirmExclusaoLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmExclusaoLabel">Confirmar
+                                        exclusão</h5>
+                                </div>
+                                <div class="modal-body">
+                                    Ao confirmar a exclusão não será possível realizar login em
+                                    nossa plataforma utilizando esse email, a menos que realize o
+                                    processo de reativação de conta.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" onclick="excluirPerfil()">Sim</button>
+                                    <button type="button" data-bs-dismiss="modal">Não</button>
+                                </div>
                             </div>
                         </div>
                     </div>

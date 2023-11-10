@@ -58,7 +58,7 @@ function validateLogin() {
             window.location.href = 'logged/home.html';
         })
         .catch((error) => {
-            console.error('Error', error);
+            //console.error('Error', error);
             document.getElementById('mensagemSucesso').innerHTML = error.message;
         });
 }

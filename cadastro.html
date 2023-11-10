@@ -54,8 +54,8 @@
                                                 required><br>
 
                                             <label for="telefone">Telefone:</label>
-                                            <input type="tel" id="telefone" name="telefone" placeholder="Insira sem caracteres especiais"
-                                                required><br>
+                                            <input type="tel" id="telefone" name="telefone"
+                                                placeholder="Insira sem caracteres especiais" required><br>
 
                                             <label for="senha">Senha:</label>
                                             <input type="password" id="senha" name="senha" placeholder="Senha"
@@ -86,10 +86,32 @@
                                         aria-label="Fechar"></button>
                                 </div>
                                 <div class="modal-body">
-                                    Cadastro realizado com sucesso!
+                                    Cadastro realizado com sucesso! Realize login em nossa plataforma
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" data-bs-dismiss="modal" id="fecharModalSucesso">Fechar</button>
+                                    <button type="button" data-bs-dismiss="modal"
+                                        id="fecharModalSucesso">Fechar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="erroModal" tabindex="-1" aria-labelledby="erroModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="erroModalLabel">Erro
+                                    </h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"
+                                        id="btnFechar"></button>
+                                </div>
+                                <div class="modal-body">
+                                    Já existe uma conta com esse email cadastrado!
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" data-bs-dismiss="modal"
+                                        id="fecharModalSucesso">Fechar</button>
                                 </div>
                             </div>
                         </div>
@@ -98,8 +120,8 @@
                     <div id="loadingSpinner" class="loading-spinner">
                         <div class="spinner-border text-light" role="status">
                             <span class="visually-hidden">Carregando...</span>
-                    </div>
-                        
+                        </div>
+
                     </div>
                 </main>
             </div>

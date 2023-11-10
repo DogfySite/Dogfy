@@ -7,6 +7,7 @@ function carregarApi(){
 }
 
 function carregarPgOngs() {
+    event.preventDefault();
     carregarApi();
     const apiUrl = "https://localhost:44309/api/Ong/visualizarOngs";
 
@@ -24,7 +25,7 @@ function carregarPgOngs() {
             return response.json();
         })
         .then(data => {
-            console.log(data);
+            //console.log(data);
             data.forEach(ong => {
                 const divCol = document.createElement("div");
                 divCol.classList.add("col");
@@ -60,6 +61,7 @@ window.addEventListener("load", carregarPgOngs);
 
 
 function registrarOng(){
+    carregarApi();
     const apiUrl = "https://localhost:44309/api/Ong/registrarOng"
 
     var nomeOng = document.querySelector("#nomedaong").value;
@@ -75,7 +77,8 @@ function registrarOng(){
     }
     else
     {
-        
+        window.alert("As senhas não coincidem");
+        return
     }
     
     const cadastro = {
@@ -102,9 +105,39 @@ function registrarOng(){
         return response.text();
     })
     .then(data => {
-        console.log('Sucesso: ', data);
+        //console.log('Sucesso: ', data);
+        carregarApi();
+        
+        var cadModal = new bootstrap.Modal(document.getElementById('cadModal'));
+        cadModal.hide();
+   
+        
+        setTimeout(() => {
+            var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+            successModal.show();
+
+            const btnFechar = document.getElementById('btnFechar');
+
+            if (btnFechar) {
+                btnFechar.addEventListener('click', function () {
+                    window.location.href = 'login.html';
+                });
+            }
+
+            const fecharModalSucessoBtn = document.getElementById('fecharModalSucesso');
+
+            if (fecharModalSucessoBtn) {
+                    fecharModalSucessoBtn.addEventListener('click', function () {
+                        window.location.href = 'login.html';
+                    });
+            }
+        }, 1500);
+        
     })
     .catch((error) => {
-        console.log('Erro: ', error);
+        //console.log('Erro: ', 'A');
+
+        var erroModal = new bootstrap.Modal(document.getElementById('erroModal'));
+        erroModal.show();
     })
 }

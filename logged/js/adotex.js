@@ -56,7 +56,7 @@ function solicitarAnimais() {
 
                 const pElement = document.createElement("p");
                 pElement.classList.add("card-text", "truncar-3l");
-                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}`;
+                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}, \nPorte: ${animal.porte}`;
                 pElement.style.fontSize = '15px'
 
                 divCardBody.appendChild(h5Element);
@@ -262,7 +262,7 @@ function filtrarAnimais() {
 
                 const pElement = document.createElement("p");
                 pElement.classList.add("card-text", "truncar-3l");
-                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}`;
+                pElement.innerText = `ONG: ${animal.nomeOng}, \nIdade: ${animal.idade}, \nSexo: ${animal.sexoPet}, \nPorte: ${animal.porte}`;
                 pElement.style.fontSize = '15px'
 
                 divCardBody.appendChild(h5Element);
@@ -393,6 +393,7 @@ function preencherModal(data, petId) {
         <strong>Gênero: </strong><p>${data.sexoPet}</p>
         <strong>ONG localizado: </strong><p>${data.nomeOng}</p>
         <strong>Cidade localizado: </strong><p>${data.cidaOng} - ${data.estadoOng}</p>
+        <strong>Sobre o Pet: </strong><p>${data.sobrePet}</p>
         <strong>Por que quer adotar esse pet?</strong>
         <form>
             <label for="sobre"></label><input type="text" class="form-control" id="motivo" name="nome" required><br>
