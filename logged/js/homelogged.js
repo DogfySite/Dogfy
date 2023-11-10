@@ -8,7 +8,7 @@ function carregarApi(){
 
 function carregarOngsHomeLogado() {
     carregarApi();
-    const apiUrl = "https://localhost:44309/api/Ong/visualizarOngs";
+    const apiUrl = "http://191.252.153.53:81/api/Ong/visualizarOngs";
     
     document.getElementById("ongContainer").innerHTML = ""
 
@@ -37,12 +37,11 @@ function carregarOngsHomeLogado() {
                     ongNome.innerHTML = `<strong>${ong.nomeOng}</strong>`;
     
                     const ongIcon = document.createElement("img");
-                    ongIcon.src = "/assets/img/icons8-coração-do-cão-64.png"; // Certifique-se de que 'icone' seja a propriedade correta em seus dados.
+                    ongIcon.src = "/assets/img/icons8-coração-do-cão-64.png";
                     ongIcon.alt = "Ícone de cachorro";
     
                     const ongLocalizacao = document.createElement("p2");
-                    ongLocalizacao.textContent = ong.cidaOng + ', ' + ong.estadoOng.toUpperCase(); // Certifique-se de que 'localizacao' seja a propriedade correta em seus dados.
-    
+                    ongLocalizacao.textContent = ong.cidaOng + ', ' + ong.estadoOng.toUpperCase();
                     divCol.appendChild(ongNome);
                     divCol.appendChild(ongIcon);
                     divCol.appendChild(ongLocalizacao);

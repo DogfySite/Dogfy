@@ -9,7 +9,7 @@ function carregarApi(){
 window.addEventListener("load", carregarApi);
 
 function solicitarAnimais() {
-    const apiUrl = "https://localhost:44309/api/Pet/petsEOngs";
+    const apiUrl = "http://191.252.153.53:81/api/Pet/petsEOngs";
 
     fetch(apiUrl)
         .then(response => {
@@ -82,7 +82,7 @@ function solicitarAnimais() {
                         id: petId,
                     };
 
-                    fetch(`https://localhost:44309/api/Pet/buscarPetId`, {
+                    fetch(`http://191.252.153.53:81/api/Pet/buscarPetId`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json", // Especifique o tipo de conteúdo como JSON
@@ -181,7 +181,7 @@ function filtrarAnimais() {
     carregarApi();
     event.preventDefault();
 
-    const apiUrl = "https://localhost:44309/api/Pet/filtrarAnimais";
+    const apiUrl = "http://191.252.153.53:81/api/Pet/filtrarAnimais";
     let portePet = document.getElementById('porte-select').value;
     let sexoPet = document.getElementById('sexo-select').value;
     let tipoPet = document.getElementById('tipo-animal-select').value;
@@ -288,7 +288,7 @@ function filtrarAnimais() {
                         id: petId,
                     };
 
-                    fetch(`https://localhost:44309/api/Pet/buscarPetId`, {
+                    fetch(`http://191.252.153.53:81/api/Pet/buscarPetId`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json", // Especifique o tipo de conteúdo como JSON
@@ -406,7 +406,7 @@ function preencherModal(data, petId) {
 
 function enviarAdocao(event) {
     carregarApi();
-    const apiUrl = "https://localhost:44309/api/Adoption/envioDeAdocao";
+    const apiUrl = "http://191.252.153.53:81/api/Adoption/envioDeAdocao";
 
     const petId = event.target.value;
     const userId = sessionStorage.getItem('UsessionId');

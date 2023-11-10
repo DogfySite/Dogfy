@@ -9,7 +9,7 @@ function fecharCarregamento(){
 
 function carregarOngsHome() {
     carregarApi();
-    const apiUrl = "https://localhost:44309/api/Ong/visualizarOngs";
+    const apiUrl = "http://191.252.153.53:81/api/Ong/visualizarOngs";
     
     document.getElementById("ongContainer").innerHTML = ""
 

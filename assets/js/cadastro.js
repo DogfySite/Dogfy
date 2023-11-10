@@ -12,7 +12,7 @@ function cadastrarUsuario(){
     carregarApi();
     event.preventDefault();
 
-    const apiUrl = "https://localhost:44309/api/Usuario/registrarUsuario";
+    const apiUrl = "http://191.252.153.53:81/api/Usuario/registrarUsuario";
 
     var nomeUsuario = document.getElementById('nome').value;
     var emailUsuario = document.getElementById('email').value;
