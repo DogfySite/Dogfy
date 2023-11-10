@@ -69,18 +69,18 @@
                                         <div class="modal-footer">
                                             <!--<button type="button" onclick="editarPerfil()">Editar Perfil</button>-->
                                             <button type="button" data-bs-toggle="modal"
-                                            data-bs-target="#confirmExclusao">Excluir Perfil</button>
+                                                data-bs-target="#confirmExclusao">Excluir Perfil</button>
                                         </div>
                                     </div>
                                 </div>
 
                             </div>
-                    </div>
 
-                    <li class="nav-item">
-                        <a class="nav-link" onclick="realizarLogout()">Sair</a>
-                    </li>
-                    </ul>
+                            <li class="nav-item">
+                                <a class="nav-link" onclick="realizarLogout()">Sair</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
@@ -176,26 +176,26 @@
             </div>
 
             <div class="modal fade" id="confirmExclusao" tabindex="-1" aria-labelledby="confirmExclusaoLabel"
-            aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="confirmExclusaoLabel">Confirmar
-                            exclusão</h5>
-                    </div>
-                    <div class="modal-body">
-                        Ao confirmar a exclusão não será possível realizar login em
-                        nossa plataforma utilizando esse email, a menos que realize o
-                        processo de reativação de conta.
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" onclick="excluirPerfil()">Sim</button>
-                        <button type="button" data-bs-dismiss="modal">Não</button>
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="confirmExclusaoLabel">Confirmar
+                                exclusão</h5>
+                        </div>
+                        <div class="modal-body">
+                            Ao confirmar a exclusão não será possível realizar login em
+                            nossa plataforma utilizando esse email, a menos que realize o
+                            processo de reativação de conta.
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" onclick="excluirPerfil()">Sim</button>
+                            <button type="button" data-bs-dismiss="modal">Não</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            </div>
-    
+
 
             <div class="modal fade" id="excludeModal" tabindex="-1" aria-labelledby="excludeModalLabel"
                 aria-hidden="true">
@@ -210,6 +210,21 @@
                             sua possível volta
                             <br>
                             Obrigado, e até logo!
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="adocaoModal" tabindex="-1" aria-labelledby="adocaoModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="adocaoModalLabel">Solicitação enviada com sucesso</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                           Sua solicitação de adoção foi enviada com sucesso para ONG! Agora basta ficar de olho no seu email e telefone de contato!
                         </div>
                     </div>
                 </div>

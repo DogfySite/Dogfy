@@ -464,7 +464,7 @@ function cadastrarPet() {
         })
             .then(response => response.text())
             .then(data => {
-                console.log('Sucesso', data);
+                //console.log('Sucesso', data);
 
                 const petCadastradoModal = new bootstrap.Modal(document.getElementById('petCadastrado'));
                 petCadastradoModal.show();
@@ -473,7 +473,11 @@ function cadastrarPet() {
                     window.location.reload();
                 }, 5000);
             })
-            .catch(error => console.error('Erro na solicitação', error));
+            .catch(error => {
+                //console.error('Erro na solicitação', error)
+                const erroModal = new bootstrap.Modal(document.getElementById('erroModal'));
+                erroModal.show();
+            });
     }
 }
 
@@ -507,7 +511,20 @@ function excluirPet(){
         body: JSON.stringify(excluir),
     })
     .then(response => response.text())
-    .then(data => console.log('Sucesso', data))
-    .catch(error => console.error("Erro na solicitação", error))
+    .then(data => {
+        //console.log('Sucesso', data)
+        const excluirModalPet = new bootstrap.Modal(document.getElementById('excluirModalPet'));
+        excluirModalPet.show();
+
+        setTimeout(() => {
+            window.location.reload();
+        }, 5000);
+    })
+        
+    .catch(error => {
+        //console.error("Erro na solicitação", error)
+        const erroModal = new bootstrap.Modal(document.getElementById('erroModal'));
+        erroModal.show();
+    })
 }
 
