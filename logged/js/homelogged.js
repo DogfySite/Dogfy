@@ -54,7 +54,7 @@ function carregarOngsHomeLogado() {
         })
         .catch(error => {
             
-            console.error("Erro:", error);
+            //console.error("Erro:", error);
         });
 }
 

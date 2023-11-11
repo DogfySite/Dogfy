@@ -23,7 +23,7 @@ function cadastrarUsuario(){
 
     if(document.querySelector("#senha").value == document.querySelector("#confirmaSenha").value)
     {
-        var senhaOng = document.querySelector("#senha").value;
+        var senhaUsuario = document.querySelector("#senha").value;
     }
     else
     {

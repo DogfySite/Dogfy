@@ -104,7 +104,7 @@ function solicitarAnimais() {
                             }, 1000);
                         })
                         .catch(error => {
-                            console.error("Erro na requisição:", error);
+                            //console.error("Erro na requisição:", error);
                         });
                 });
 
@@ -177,7 +177,7 @@ function solicitarAnimais() {
             });
         })
         .catch(error => {
-            console.error("Erro:", error);
+            //console.error("Erro:", error);
             fecharCarregamento();
         });
 }
@@ -317,7 +317,7 @@ function filtrarAnimais() {
                             }, 1000);
                         })
                         .catch(error => {
-                            console.error("Erro na requisição:", error);
+                            //console.error("Erro na requisição:", error);
                             fecharCarregamento();
                         });
                 });
@@ -390,7 +390,7 @@ function filtrarAnimais() {
             });
         })
         .catch(error => {
-            console.error("Erro:", error);
+            //console.error("Erro:", error);
             fecharCarregamento();
         });
 }
