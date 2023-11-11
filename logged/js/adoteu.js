@@ -102,7 +102,7 @@ function solicitarAnimais() {
                             carregarApi();
                         })
                         .catch(error => {
-                            console.error("Erro na requisição:", error);
+                            //console.error("Erro na requisição:", error);
                         });
                 });
 
@@ -170,7 +170,7 @@ function solicitarAnimais() {
             });
         })
         .catch(error => {
-            console.error("Erro:", error);
+            //console.error("Erro:", error);
             carregarApi();
         });
 }
@@ -308,7 +308,7 @@ function filtrarAnimais() {
                             carregarApi();
                         })
                         .catch(error => {
-                            console.error("Erro na requisição:", error);
+                            //console.error("Erro na requisição:", error);
                             carregarApi();
                         });
                 });
@@ -377,7 +377,7 @@ function filtrarAnimais() {
             });
         })
         .catch(error => {
-            console.error("Erro:", error);
+            //console.error("Erro:", error);
             carregarApi();
         });
 }
@@ -436,7 +436,7 @@ function enviarAdocao(event) {
         })
         .then(data => {
             carregarApi();
-            console.log('Sucesso: ', data);     
+            //console.log('Sucesso: ', data);     
             var adocaoModal = new bootstrap.Modal(document.getElementById('adocaoModal'));
             adocaoModal.show(); 
             
@@ -445,7 +445,7 @@ function enviarAdocao(event) {
             }, 5000);
         })
         .catch((error) => {
-            console.log('Erro:', error);
+            //console.log('Erro:', error);
             carregarApi();
         })
 }

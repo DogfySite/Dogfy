@@ -60,7 +60,7 @@ function carregarOngsHome() {
         })
         .catch(error => {
             
-            console.error("Erro:", error);
+            //console.error("Erro:", error);
             setTimeout(() => {
                 fecharCarregamento();
             }, 800);

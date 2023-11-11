@@ -24,7 +24,7 @@ function carregarPgOngs() {
             return response.json();
         })
         .then(data => {
-            console.log(data);
+            //console.log(data);
             data.forEach(ong => {
                 const divCol = document.createElement("div");
                 divCol.classList.add("col");
@@ -51,7 +51,7 @@ function carregarPgOngs() {
             
         })
         .catch(error => {
-            console.error("Erro:", error);
+            //console.error("Erro:", error);
             setTimeout(() => {
                 fecharCarregamento();
             }, 800);
@@ -111,9 +111,9 @@ function registrarOng(){
         return response.text();
     })
     .then(data => {
-        console.log('Sucesso: ', data);
+        //console.log('Sucesso: ', data);
     })
     .catch((error) => {
-        console.log('Erro: ', error);
+        //console.log('Erro: ', error);
     })
 }

@@ -85,7 +85,7 @@ function dadosPerfil()  {
         preencherModalPerfil(data);
     })
     .catch((error) =>{
-        console.error('Error', error);
+        //console.error('Error', error);
     })
 }
 
@@ -142,8 +142,8 @@ function excluirPerfil(){
         return response.text();
     })
     .then(data =>{
-        console.log("Solicitação realizada", data);
-
+        //console.log("Solicitação realizada", data);
+        sessionStorage.clear();
         var excludeModal = new bootstrap.Modal(document.getElementById('excludeModal'));
         excludeModal.show();
 
@@ -152,6 +152,6 @@ function excluirPerfil(){
         }, 6000);
     })
     .catch((error) =>{
-        console.error('Error', error);
+        //console.error('Error', error);
     })
 }
