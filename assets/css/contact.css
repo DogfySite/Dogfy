@@ -104,4 +104,7 @@ label {
     .img-contato {
         display: none;
     }
+    .content {
+        margin: 0 !important;
+    }
 }
