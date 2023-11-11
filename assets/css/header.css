@@ -28,8 +28,8 @@ body {
 }
 
 @media screen and (max-width: 990px) {
-    .nav-link {
-        line-height: 15px;
+    .nav-link, .adote {
+        line-height: 15px !important;
         text-align: center;
     }
 }
