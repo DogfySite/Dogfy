@@ -9,7 +9,7 @@ function carregarApi(){
 function carregarPgOngs() {
     event.preventDefault();
     carregarApi();
-    const apiUrl = "https://localhost:44309/api/Ong/visualizarOngs";
+    const apiUrl = "http://191.252.153.53:81/api/Ong/visualizarOngs";
 
     document.getElementById("ongContainer").innerHTML = "";
 
@@ -34,7 +34,7 @@ function carregarPgOngs() {
                 ongNome.innerHTML = `<strong>${ong.nomeOng}</strong>`;
 
                 const ongIcon = document.createElement("img");
-                ongIcon.src = "assets/img/icons8-coração-do-cão-64.png";
+                ongIcon.src = "assets/img/osso.png";
                 ongIcon.alt = "Ícone de cachorro";
 
                 const ongLocalizacao = document.createElement("p");
@@ -62,7 +62,7 @@ window.addEventListener("load", carregarPgOngs);
 
 function registrarOng(){
     carregarApi();
-    const apiUrl = "https://localhost:44309/api/Ong/registrarOng"
+    const apiUrl = "http://191.252.153.53:81/api/Ong/registrarOng"
 
     var nomeOng = document.querySelector("#nomedaong").value;
     var cidaOng = document.querySelector("#cidade").value;

@@ -7,7 +7,7 @@ function carregarApi(){
 }
 
 function solicitarAnimais() {
-    const apiUrl = "https://localhost:44309/api/Pet/petsEOngs";
+    const apiUrl = "http://191.252.153.53:81/api/Pet/petsEOngs";
 
     fetch(apiUrl)
         .then(response => {
@@ -80,7 +80,7 @@ function solicitarAnimais() {
                         id: petId,
                     };
 
-                    fetch(`https://localhost:44309/api/Pet/buscarPetId`, {
+                    fetch(`http://191.252.153.53:81/api/Pet/buscarPetId`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json", // Especifique o tipo de conteúdo como JSON
@@ -179,7 +179,7 @@ function filtrarAnimais() {
     carregarApi();
     event.preventDefault();
 
-    const apiUrl = "https://localhost:44309/api/Pet/filtrarAnimais";
+    const apiUrl = "http://191.252.153.53:81/api/Pet/filtrarAnimais";
     let portePet = document.getElementById('porte-select').value;
     let sexoPet = document.getElementById('sexo-select').value;
     let tipoPet = document.getElementById('tipo-animal-select').value;
@@ -431,7 +431,7 @@ function converterImagem(){
 
 function cadastrarPet() {
     event.preventDefault();
-    const apiUrl = "https://localhost:44309/api/Pet/inserirPets";
+    const apiUrl = "http://191.252.153.53:81/api/Pet/inserirPets";
 
     if (typeof ImgToBase64 !== undefined && ImgToBase64 !== null) {
         var imagemBase64 = ImgToBase64;
@@ -485,7 +485,7 @@ function cadastrarPet() {
 function excluirPet(){
     event.preventDefault()
 
-    const apiUrl = "https://localhost:44309/api/Pet/atualizarStatus";
+    const apiUrl = "http://191.252.153.53:81/api/Pet/atualizarStatus";
 
     var idOng = sessionStorage.getItem('OsessionId');
     var nomePet = document.getElementById('nomePetExcluir').value.trim();
