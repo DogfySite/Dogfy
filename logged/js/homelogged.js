@@ -37,7 +37,7 @@ function carregarOngsHomeLogado() {
                     ongNome.innerHTML = `<strong>${ong.nomeOng}</strong>`;
     
                     const ongIcon = document.createElement("img");
-                    ongIcon.src = "/assets/img/icons8-coração-do-cão-64.png";
+                    ongIcon.src = "/assets/img/osso.png";
                     ongIcon.alt = "Ícone de cachorro";
     
                     const ongLocalizacao = document.createElement("p2");
