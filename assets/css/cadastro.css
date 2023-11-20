@@ -9,6 +9,7 @@ main {
     justify-content: center;
     background-color: #fcf4ec;
     padding: 20px;
+    display: flex;
 }
 
 .wrapper {
@@ -18,11 +19,13 @@ main {
 
 .content {
     max-width: 1000px;
+    width: 1000px;
     background-color: #fff;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     display: flex;
+
 }
 
 .column {
@@ -125,5 +128,10 @@ label {
 @media (max-width: 1100px) {
     main {
         padding: 0;
+    }
+
+    .content {
+        margin: 10px !important;
+        max-width: 350px;
     }
 }
