@@ -56,12 +56,12 @@ function dadosPerfil()  {
 
     if(sessionStorage.getItem('OsessionId')){
         var id = sessionStorage.getItem('OsessionId');
-        apiUrl = "http://191.252.153.53:81/api/Ong/buscarOngId"
+        apiUrl = "https://localhost:44309/api/Ong/buscarOngId"
     }
 
     if(sessionStorage.getItem('UsessionId')){
         var id = sessionStorage.getItem('UsessionId');
-        apiUrl = "http://191.252.153.53:81/api/Usuario/buscarUserId"
+        apiUrl = "https://localhost:44309/api/Usuario/buscarUserId"
     }
 
     var perfil = {
@@ -116,12 +116,12 @@ function excluirPerfil(){
 
     if(sessionStorage.getItem('OsessionId')){
         var id = sessionStorage.getItem('OsessionId');
-        apiUrl = `http://191.252.153.53:81/api/Ong/desativarOng/${id}`
+        apiUrl = `https://localhost:44309/api/Ong/desativarOng/${id}`
     }
 
     if(sessionStorage.getItem('UsessionId')){
         var id = sessionStorage.getItem('UsessionId');
-        apiUrl = `http://191.252.153.53:81/api/Usuario/desativarUsuario/${id}`
+        apiUrl = `https://localhost:44309/api/Usuario/desativarUsuario/${id}`
     }
 
     var perfil = {

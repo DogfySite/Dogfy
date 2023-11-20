@@ -7,7 +7,7 @@ function fecharCarregamento(){
 }
 
 function solicitarAnimais() {
-    const apiUrl = "http://191.252.153.53:81/api/Pet/petsEOngs";
+    const apiUrl = "https://localhost:44309/api/Pet/petsEOngs";
 
     fetch(apiUrl)
         .then(response => {
@@ -82,7 +82,7 @@ function solicitarAnimais() {
                         id: petId,
                     };
 
-                    fetch(`http://191.252.153.53:81/api/Pet/buscarPetId`, {
+                    fetch(`https://localhost:44309/api/Pet/buscarPetId`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json", // Especifique o tipo de conteúdo como JSON
@@ -188,7 +188,7 @@ window.addEventListener("load", carregarApi);
 function filtrarAnimais() {
     event.preventDefault();
 
-    const apiUrl = "http://191.252.153.53:81/api/Pet/filtrarAnimais";
+    const apiUrl = "https://localhost:44309/api/Pet/filtrarAnimais";
     let portePet = document.getElementById('porte-select').value;
     let sexoPet = document.getElementById('sexo-select').value;
     let tipoPet = document.getElementById('tipo-animal-select').value;
@@ -295,7 +295,7 @@ function filtrarAnimais() {
                         id: petId,
                     };
 
-                    fetch(`http://191.252.153.53:81/api/Pet/buscarPetId`, {
+                    fetch(`https://localhost:44309/api/Pet/buscarPetId`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json", // Especifique o tipo de conteúdo como JSON

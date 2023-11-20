@@ -24,7 +24,7 @@ function postRequest(url, body){
 function cadastrarMensagem(){
     event.preventDefault()
 
-    let url = "http://191.252.153.53:81/api/Contato/registrarContato"; 
+    let url = "https://localhost:44309/api/Contato/registrarContato"; 
     
     let nome = document.getElementById("nome").value;
     let email = document.getElementById("email").value;
@@ -38,3 +38,50 @@ function cadastrarMensagem(){
 
     postRequest(url, body)
 }
+
+function userReplace()  {
+    var apiUrl = "";
+
+    if(sessionStorage.getItem('OsessionId')){
+        var id = sessionStorage.getItem('OsessionId');
+        apiUrl = "https://localhost:44309/api/Ong/buscarOngId"
+    }
+
+    if(sessionStorage.getItem('UsessionId')){
+        var id = sessionStorage.getItem('UsessionId');
+        apiUrl = "https://localhost:44309/api/Usuario/buscarUserId"
+    }
+
+    var perfil = {
+        id: id
+    }
+    
+    fetch(apiUrl,{
+        method: 'POST',
+        headers: {
+            'Content-type':'application/json',
+        },
+        body: JSON.stringify(perfil),
+    })
+    .then(response =>{
+        if(!response.ok){
+            throw new Error('Erro na requisição');
+        }
+        return response.json();
+    })
+    .then(data =>{
+        if (sessionStorage.getItem('OsessionId')) {
+            var primeiroNomeOng = data.nomeOng.split(' ')[0];
+            document.getElementById('helloUser').innerHTML = `Olá, ${primeiroNomeOng}`;
+        }
+        if (sessionStorage.getItem('UsessionId')) {
+            var primeiroNomeUsuario = data.nome.split(' ')[0];
+            document.getElementById('helloUser').innerHTML = `Olá, ${primeiroNomeUsuario}`;
+        }
+    })
+    .catch((error) =>{
+        //console.error('Error', error);
+    })
+}
+
+window.addEventListener("load", userReplace);

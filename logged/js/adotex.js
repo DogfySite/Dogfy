@@ -7,7 +7,7 @@ function carregarApi(){
 }
 
 function solicitarAnimais() {
-    const apiUrl = "http://191.252.153.53:81/api/Pet/petsEOngs";
+    const apiUrl = "https://localhost:44309/api/Pet/petsEOngs";
 
     fetch(apiUrl)
         .then(response => {
@@ -80,7 +80,7 @@ function solicitarAnimais() {
                         id: petId,
                     };
 
-                    fetch(`http://191.252.153.53:81/api/Pet/buscarPetId`, {
+                    fetch(`https://localhost:44309/api/Pet/buscarPetId`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json", // Especifique o tipo de conteúdo como JSON
@@ -179,7 +179,7 @@ function filtrarAnimais() {
     carregarApi();
     event.preventDefault();
 
-    const apiUrl = "http://191.252.153.53:81/api/Pet/filtrarAnimais";
+    const apiUrl = "https://localhost:44309/api/Pet/filtrarAnimais";
     let portePet = document.getElementById('porte-select').value;
     let sexoPet = document.getElementById('sexo-select').value;
     let tipoPet = document.getElementById('tipo-animal-select').value;
@@ -286,7 +286,7 @@ function filtrarAnimais() {
                         id: petId,
                     };
 
-                    fetch(`http://191.252.153.53:81/api/Pet/buscarPetId`, {
+                    fetch(`https://localhost:44309/api/Pet/buscarPetId`, {
                         method: "POST",
                         headers: {
                             "Content-Type": "application/json", // Especifique o tipo de conteúdo como JSON
@@ -431,7 +431,7 @@ function converterImagem(){
 
 function cadastrarPet() {
     event.preventDefault();
-    const apiUrl = "http://191.252.153.53:81/api/Pet/inserirPets";
+    const apiUrl = "https://localhost:44309/api/Pet/inserirPets";
 
     if (typeof ImgToBase64 !== undefined && ImgToBase64 !== null) {
         var imagemBase64 = ImgToBase64;
@@ -485,7 +485,7 @@ function cadastrarPet() {
 function excluirPet(){
     event.preventDefault()
 
-    const apiUrl = "http://191.252.153.53:81/api/Pet/atualizarStatus";
+    const apiUrl = "https://localhost:44309/api/Pet/atualizarStatus";
 
     var idOng = sessionStorage.getItem('OsessionId');
     var nomePet = document.getElementById('nomePetExcluir').value.trim();
@@ -528,3 +528,49 @@ function excluirPet(){
     })
 }
 
+function userReplace()  {
+    var apiUrl = "";
+
+    if(sessionStorage.getItem('OsessionId')){
+        var id = sessionStorage.getItem('OsessionId');
+        apiUrl = "https://localhost:44309/api/Ong/buscarOngId"
+    }
+
+    if(sessionStorage.getItem('UsessionId')){
+        var id = sessionStorage.getItem('UsessionId');
+        apiUrl = "https://localhost:44309/api/Usuario/buscarUserId"
+    }
+
+    var perfil = {
+        id: id
+    }
+    
+    fetch(apiUrl,{
+        method: 'POST',
+        headers: {
+            'Content-type':'application/json',
+        },
+        body: JSON.stringify(perfil),
+    })
+    .then(response =>{
+        if(!response.ok){
+            throw new Error('Erro na requisição');
+        }
+        return response.json();
+    })
+    .then(data =>{
+        if (sessionStorage.getItem('OsessionId')) {
+            var primeiroNomeOng = data.nomeOng.split(' ')[0];
+            document.getElementById('helloUser').innerHTML = `Olá, ${primeiroNomeOng}`;
+        }
+        if (sessionStorage.getItem('UsessionId')) {
+            var primeiroNomeUsuario = data.nome.split(' ')[0];
+            document.getElementById('helloUser').innerHTML = `Olá, ${primeiroNomeUsuario}`;
+        }
+    })
+    .catch((error) =>{
+        //console.error('Error', error);
+    })
+}
+
+window.addEventListener("load", userReplace);
